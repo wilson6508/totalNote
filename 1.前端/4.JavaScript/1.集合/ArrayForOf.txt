@@ -1,0 +1,7 @@
+const a = [1, 3, 5, 7]
+for (const element of a) {
+  console.log(element);
+}
+for (const [index, element] of a.entries()) {
+  console.log(`${index} -- ${element}`);
+}

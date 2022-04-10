@@ -1,0 +1,29 @@
+function copyFunction() {
+    const resultTable = $('#resultTable');
+    const tableSortedData = resultTable.bootstrapTable('getData', true);
+    let str = "排序\t頻道\t粉絲數\t前30天粉絲成長率\t前90天粉絲成長率\t總主文數\t平均被回應數\t平均被讚數\t平均分享數\t互動率\n";
+    for(const [index, element] of tableSortedData.entries()) {
+        str += (index+1) + "\t" + element.channelName + "\t"
+                                + element.fansCount + "\t"
+                                + transToDecimal(element.growthRateMOM, 1) + "%\t"
+                                + transToDecimal(element.growthRateQOQ, 1) + "%\t"
+                                + element.articleCount + "\t"
+                                + element.respondCountAverage + "\t"
+                                + element.likeCountAverage + "\t"
+                                + element.shareCountAverage + "\t"
+                                + transToDecimal(element.engagementRate, 1) + "\n";
+    }
+        var dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.value = str;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+        alert('複製成功');
+    }
+	
+function transToDecimal(value, position) {          // position取到小數點後第幾位
+    const tenPow = Math.pow(10, position);
+    return Math.round(value * tenPow) / tenPow;     // 四捨五入
+}
+

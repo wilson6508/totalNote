@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <Highcharts :options="figInfo"></Highcharts>
+  </div>
+</template>
+
+<script>
+import { Chart } from "highcharts-vue";
+import Highcharts from "highcharts";
+
+Highcharts.setOptions({
+  yAxis: {
+    labels: {
+      formatter() {
+        return Highcharts.numberFormat(this.value, 0, ".", ",");
+      }
+    }
+  },
+  lang: {
+    thousandsSep: ",",
+    resetZoom: "重置縮放比例",
+  },
+  credits: {
+    enabled: false
+  },
+  exporting: {
+    buttons: false,
+  },
+});
+
+export default {
+  name: "FigTool",
+  components: {
+    Highcharts: Chart,
+  },
+  props: {
+    figInfo: {
+      type: Object,
+    }
+  },
+};
+</script>

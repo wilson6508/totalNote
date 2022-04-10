@@ -1,0 +1,45 @@
+<DatePicker
+  type="datetime"
+  format="YYYY/MM/DD HH"
+  :show-minute="false"
+  :show-second="false"
+  :clearable="false"
+  v-model="selectDateTimeRangeStart"
+  :show-time-panel="showTimeRangePanel"
+  @change="test()"
+  ref="kkk"
+>
+	<template v-slot:footer>
+		<button class="mx-btn mx-btn-text" @click="toggleTimeRangePanel">
+		  {{ showTimeRangePanel ? "選擇日期" : "選擇時間" }}
+		</button>
+	</template>
+</DatePicker>
+
+<span v-if="choose === 'type3'" class="px-1">~</span>
+
+<DatePicker
+  type="datetime"
+  format="YYYY/MM/DD HH"
+  :show-minute="false"
+  :show-second="false"
+  :clearable="false"
+  v-model="selectDateTimeRangeEnd"
+  :show-time-panel="showTimeRangePanel"
+  ref="qqq"
+>
+  <template v-slot:footer>
+	<button class="mx-btn mx-btn-text" @click="toggleTimeRangePanel">
+	  {{ showTimeRangePanel ? "選擇日期" : "選擇時間" }}
+	</button>
+  </template>
+</DatePicker>
+
+
+toggleTimeRangePanel() {
+  this.showTimeRangePanel = !this.showTimeRangePanel;
+},
+test() {
+  this.$refs.kkk.closePopup();
+  this.$refs.qqq.focus();
+}

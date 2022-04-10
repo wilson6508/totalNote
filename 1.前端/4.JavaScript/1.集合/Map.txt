@@ -1,0 +1,21 @@
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Map
+-------------------------------------------------------------------------------------------
+Create
+1. const correspondMap = new Map([
+	 ['a', 'one'],
+	 ['b', 'two'],
+	 ['c', 'three'],
+   ])
+2. var myMap = new Map();
+   myMap.set(keyString, "value associated with 'a string'");
+-------------------------------------------------------------------------------------------
+Read
+var myMap = new Map();
+1. for (var [key, value] of myMap) {
+	console.log(key + ' = ' + value);
+   }
+2. myMap.forEach(function(value, key) {
+	console.log(key + ' = ' + value);
+   });
+3. myMap.get(keyString);
+-------------------------------------------------------------------------------------------

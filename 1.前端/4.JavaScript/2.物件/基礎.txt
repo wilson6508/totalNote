@@ -1,0 +1,48 @@
+const obj = {};
+obj.name = "Tom";
+obj.age = 18;
+console.log(Object.keys(obj));    // ["name", "age"]
+console.log(Object.values(obj));  // ["Tom", 18]
+console.log(Object.entries(obj)); // [["name", "Tom"],["age", 18]]
+for (const [key, value] of Object.entries(obj)) {
+	console.log(key, value);
+}
+---------------------------------------------------------------------------------------------
+Object.is(value1, value2);        // 比較 value1 和 value2 是否為相同的 value
+delete temp.age;                  // 刪除物件中的屬性
+---------------------------------------------------------------------------------------------
+const obj = {};
+obj.name = "Tom";
+obj.age = 18;
+console.log(Object.prototype.hasOwnProperty.call(obj, "age"));
+delete obj.age;
+console.log(Object.prototype.hasOwnProperty.call(obj, "age"));
+---------------------------------------------------------------------------------------------
+======Number======
+typeof 10   
+typeof 3.14
+typeof Infinity 
+typeof typeof NaN 
+======String======
+typeof ''  
+typeof 'abc' 
+======Boolean======
+typeof true 
+typeof !!(1) 
+======Undefined======
+typeof undefined
+typeof declaredButUndefinedVariable  //宣告但沒賦值
+typeof undeclaredVariable            //未宣告
+======Object======
+typeof {a: 1} 
+typeof null 
+typeof new Date()
+typeof new RegExp()
+======被判定成object======
+typeof new Boolean(true) 
+typeof new Number(1)
+typeof new String('abc')
+======function======
+typeof function() {}
+typeof Math.sin
+typeof class C {}

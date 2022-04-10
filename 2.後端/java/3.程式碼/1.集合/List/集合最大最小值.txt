@@ -1,0 +1,8 @@
+TopicModelResult temp01 = Collections.max(topicModelResultList, Comparator.comparing(TopicModelResult::getTotalCountPnUse));
+TopicModelResult temp02 = Collections.min(topicModelResultList, Comparator.comparing(TopicModelResult::getTotalCountPnUse));
+
+TopicModelResult temp03 = Collections.max(topicModelResultList, Comparator.comparing(e -> e.getPnRatioResult().get(3).getRatio()));
+TopicModelResult temp04 = Collections.min(topicModelResultList, Comparator.comparing(e -> e.getPnRatioResult().get(3).getRatio()));
+
+Double maxValue = Collections.max(list);
+int index = list.indexOf(maxValue);

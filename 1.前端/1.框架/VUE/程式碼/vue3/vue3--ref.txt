@@ -1,0 +1,32 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <span>{{ number }}</span
+    ><br />
+    <span>{{ str }}</span
+    ><br />
+    <button @click="test01()">修改num</button>
+  </div>
+</template>
+
+<script>
+// import { defineComponent } from '@vue/composition-api'
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    let number = ref(3);
+    const str = "AAA";
+    let test01 = () => {
+      number.value ++;
+    };
+    return { number, str, test01 };
+  },
+  // beforeCreate() {
+  //   console.log("beforeCreate");
+  // },
+  // created() {
+  //   console.log("created");
+  // },
+};
+</script>

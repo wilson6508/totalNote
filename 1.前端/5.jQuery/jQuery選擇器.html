@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.class1{background-color:red;}
+.class2{background-color:blue;}
+.class3{background-color:orange;}
+.class4{background-color:purple;}
+</style>
+<title>Insert title here</title>
+</head>
+
+<input type="Button" id="btn1" name="btn1" value="改變div1中的p">
+<input type="Button" id="btn2" name="btn2" value="改變整個div1">
+<input type="Button" id="btn3" name="btn3" value="改變div1後第1個p">
+<input type="Button" id="btn4" name="btn4" value="改變div1後所有p">
+<input type="Button" id="btn5" name="btn5" value="移除所有效果">
+<hr />
+
+<div id="div1">
+div1
+<p>
+div1 裡面的 p
+</p>
+</div>
+
+<p>div1後第1個P</p>
+<p>div1後第2個P</p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+//改變div1中的p
+$('#btn1').click(function() {
+    $('#div1 p').addClass('class1');
+});
+
+//改變整個div1                
+$('#btn2').click(function() {
+    $('#div1 *').removeClass();
+    $('#div1').addClass('class2');
+});
+
+//改變div1後第1個p
+$('#btn3').click(function() {
+    $('#div1 + p').addClass('class3');
+});
+
+//改變div1後所有p
+$('#btn4').click(function() {
+    $('#div1 ~ p').addClass('class4');
+});
+
+//移除所有效果
+$('#btn5').click(function() {
+    $('*').removeClass('class1');
+    $('*').removeClass('class2');
+    $('*').removeClass('class3');
+    $('*').removeClass('class4');    
+});
+
+</script>
+</html>

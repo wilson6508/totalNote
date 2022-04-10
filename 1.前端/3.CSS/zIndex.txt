@@ -1,0 +1,39 @@
+搜尋 : "css 顯示在最上層"
+
+<div class="sticky-top" style="z-index: 1">
+
+	<b-button
+	  v-if="JIRAReportAuthority && twoButton"
+	  size="sm"
+	  @click="reportError()"
+	  variant="danger"
+	  style="float: right"
+	  >JIRA回報</b-button
+	>
+	<b-button v-if="false" size="sm" class="mr-2" variant="success" style="float: right" @click="callExcel()"
+	  >Excel下載</b-button
+	>
+	<b-button
+	  v-if="channelAdjustAuthority && twoButton"
+	  size="sm"
+	  class="mr-2"
+	  @click="channelAdjust()"
+	  variant="primary"
+	  style="float: right"
+	  >網站/頻道調整</b-button
+	>
+	<!-- <b-button v-if="false" size="sm" class="mr-2" @click="channelMark()" variant="primary" style="float: right">頻道標記</b-button> -->
+	<b-button
+	  v-if="editAuthority"
+	  size="sm"
+	  class="mr-2"
+	  @click="batchEdit()"
+	  variant="primary"
+	  style="float: right"
+	  >批量編輯</b-button
+	>
+	<b-button size="sm" class="mr-2" @click="clearSelected()" style="float: right">取消選取</b-button>
+	<b-button size="sm" class="mr-2" @click="selectAllRows()" style="float: right">資料全選</b-button>
+	<!-- <b-button size="sm" class="mr-2" @click="fieldDisplay()" variant="dark" style="float: right">欄位顯示</b-button> -->
+
+</div>

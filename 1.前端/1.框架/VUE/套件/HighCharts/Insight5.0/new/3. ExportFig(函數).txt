@@ -1,0 +1,20 @@
+import Highcharts from "highcharts";
+import exportingInit from "highcharts/modules/exporting";
+import offlineExporting from "highcharts/modules/offline-exporting";
+
+exportingInit(Highcharts);
+offlineExporting(Highcharts);
+
+
+    /**
+     * 下載 HighChart or 全螢幕
+     * @param fig = { id: "trendPieChart", choose: "png" }
+     */
+    exportFig(fig) {
+      const chart = Highcharts.charts.filter(e => e !== undefined).find(e => e.userOptions.id === fig.id);
+      if (fig.choose === "full") {
+        chart.fullscreen.toggle();
+      } else {
+        chart.exportChartLocal({ type: `image/${fig.choose}` });
+      }
+    },

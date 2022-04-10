@@ -1,0 +1,28 @@
+npm install vue-moment
+
+import vueMoment from 'vue-moment';
+Vue.use(vueMoment);
+
+https://www.npmjs.com/package/vue-moment
+
+----------------------------------------------------
+
+const moment = require("moment");
+export default {
+
+var date = new Date(moment().subtract(1, "years"));
+var date = new Date(moment().endOf("month"));
+var createTime = moment(data.createTime).format("YYYY/MM/DD HH:mm:ss"),
+
+setCookie(name, value, days) {
+   var date = new Date();
+   var cookiesDeadline = moment().add(days, "days").endOf("day");
+   date.setTime(cookiesDeadline);
+   cookies.set(name, value, date, "/", cookieDomain);
+},
+setCookieByMin(name, value, minutes) {
+   var date = new Date();
+   var cookiesDeadline = moment().add(minutes, "minutes").endOf("minutes");
+   date.setTime(cookiesDeadline);
+   cookies.set(name, value, date, null, cookieDomain);
+},

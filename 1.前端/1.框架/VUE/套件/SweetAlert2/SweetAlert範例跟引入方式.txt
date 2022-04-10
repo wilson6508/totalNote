@@ -1,0 +1,25 @@
+    testAlert() {
+      Swal.fire({
+        title: 'Test',
+        text: "https://rd3-localhost-test.opview.com.tw:8080/ShareResult?promotionCode=QCMAYSf35hz2",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '複製連結'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+    },
+
+https://sweetalert2.github.io/
+
+<div>
+<button class="btn btn-dark btn-sm btn-block btn-gradient" @click="testAlert()">測試alert</button>
+</div>

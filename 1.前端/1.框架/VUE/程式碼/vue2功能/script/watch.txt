@@ -1,0 +1,16 @@
+  watch: { // 監聽父元件傳過來的props
+    bottomShortcut: {
+      handler() {
+        console.log(this.bottomShortcut);
+      },
+      // deep: true, // 物件要用deep
+      immediate: true,
+    },
+  }
+  
+   watch: {  // 監聽物件傳的屬性(沒辦法用displayChart.series[0].visible)
+	  "displayChart.series.visible": function (newVal, oldVal) {
+		console.log(newVal);
+		console.log(oldVal);
+	  },
+   },

@@ -1,0 +1,13 @@
+    test01() {
+      this.$swal.fire({
+        title: "下載中",
+        text: "",
+        icon: "info",
+        showConfirmButton: false,
+        showCancelButton: false,
+        allowOutsideClick: true,
+        didOpen: () => {
+          this.$swal.showLoading();
+        },
+      });
+    }

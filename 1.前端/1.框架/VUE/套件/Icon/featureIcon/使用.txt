@@ -1,0 +1,11 @@
+npm install feather-icons-vue
+
+main.js
+import IconBase from "feather-icons-vue";
+Vue.use(IconBase);
+
+test.vue
+<IconBase name="arrow-left" />
+
+搜尋可用的
+https://feathericons.com/

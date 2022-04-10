@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>	
+</body>
+
+<script>
+var str1 = '生于2000年';
+var num1 = str1.replace(/[^\d]/g,' ');
+var num2 = parseInt("12個月");
+document.write(num1);
+document.write(num2);
+document.write('\t');
+var str = '大米:2.57斤/元,白菜:3.65元/斤';
+var arr = str.match(/\d+(.\d+)?/g);    // arr: ["2.75","3.65"]
+document.write(arr);
+</script>
+</html>

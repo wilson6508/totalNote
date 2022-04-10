@@ -1,0 +1,180 @@
+//package com.eland.scheduler;
+//
+//import com.eland.dao.general.AutoCustomReportConfigRepository;
+//import com.eland.dao.general.AutoReportConfigRepository;
+//import com.eland.dao.general.AutoReportConfigTopicRepository;
+//import com.eland.dao.general.OldAutoReportHistoryRepository;
+//import com.eland.dao.insight.AutoReportHistoryRepository;
+//import com.eland.dao.insight.AutoReportTaskRepository;
+//import com.eland.pojo.entity.general.AutoCustomReportConfigEntity;
+//import com.eland.pojo.entity.general.AutoReportConfigEntity;
+//import com.eland.pojo.entity.general.AutoReportConfigTopicEntity;
+//import com.eland.pojo.entity.general.OldAutoReportHistoryEntity;
+//import com.eland.pojo.entity.insight.AutoReportHistoryEntity;
+//import com.eland.pojo.entity.insight.AutoReportTaskEntity;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.scheduling.annotation.Scheduled;
+//import org.springframework.stereotype.Component;
+//
+//import java.sql.Timestamp;
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.stream.Collectors;
+//
+//@Component
+//public class CopyDbTask {
+//
+//    @Autowired
+//    private AutoReportConfigRepository autoReportConfigRepository;
+//    @Autowired
+//    private AutoCustomReportConfigRepository autoCustomReportConfigRepository;
+//    @Autowired
+//    private AutoReportConfigTopicRepository autoReportConfigTopicRepository;
+//    @Autowired
+//    private AutoReportTaskRepository autoReportTaskRepository;
+//
+//    @Autowired
+//    private OldAutoReportHistoryRepository oldAutoReportHistoryRepository;
+//    @Autowired
+//    private AutoReportHistoryRepository autoReportHistoryRepository;
+//
+//    @Scheduled(cron = "0 5 13 * * *")    // 300組10秒
+//    public void task() {
+//        System.out.println("start");
+//        for (int i = 4001; i <= 4613; i++) {
+//            AutoReportConfigEntity autoReportConfigEntity = autoReportConfigRepository.findById(i).orElse(null);
+//            AutoReportTaskEntity autoReportTaskEntity = new AutoReportTaskEntity();
+//            if (autoReportConfigEntity == null) {
+//                autoReportTaskEntity.setServiceId(-1);
+//                autoReportTaskEntity.setUserId(-1);
+//                autoReportTaskEntity.setScheduleId(0);
+//                autoReportTaskEntity.setReportName("");
+//                autoReportTaskEntity.setSearchTime("");
+//                autoReportTaskEntity.setPreviousSearchTime("");
+//                autoReportTaskEntity.setSourceList("");
+//                autoReportTaskEntity.setSourceClusterList("");
+//                autoReportTaskEntity.setTopicList("");
+//                autoReportTaskEntity.setCreateTime(new Timestamp(System.currentTimeMillis()));
+//                autoReportTaskEntity.setUpdateTime(new Timestamp(System.currentTimeMillis()));
+//                autoReportTaskEntity.setStatus("");
+//                autoReportTaskEntity.setEnableMentionAnalysis(false);
+//                autoReportTaskEntity.setEnablePn(false);
+//                autoReportTaskEntity.setEnableSn(false);
+//                autoReportTaskEntity.setEnableChannel(false);
+//                autoReportTaskEntity.setEnablePopularTheme(false);
+//                autoReportTaskEntity.setEnableSummarize(false);
+//                autoReportTaskEntity.setEnableKeywords(0);
+//            } else {
+//                autoReportTaskEntity.setServiceId(autoReportConfigEntity.getServiceId());
+//                autoReportTaskEntity.setUserId(autoReportConfigEntity.getUserId());
+//                autoReportTaskEntity.setScheduleId(0);
+//                autoReportTaskEntity.setReportName(autoReportConfigEntity.getReportName());
+//                autoReportTaskEntity.setSearchTime(autoReportConfigEntity.getSearchTime());
+//                autoReportTaskEntity.setCreateTime(autoReportConfigEntity.getCreateTime());
+//                if (autoReportConfigEntity.getFinishTime() == null) {
+//                    autoReportTaskEntity.setUpdateTime(autoReportConfigEntity.getCreateTime());
+//                } else {
+//                    autoReportTaskEntity.setUpdateTime(autoReportConfigEntity.getFinishTime());
+//                }
+//                autoReportTaskEntity.setStatus(autoReportConfigEntity.getStatus());
+//
+//                AutoCustomReportConfigEntity autoCustomReportConfigEntity = autoCustomReportConfigRepository.findByReportId(i).orElse(null);
+//                if (autoCustomReportConfigEntity != null) {
+//                    if (autoCustomReportConfigEntity.getSearchTimeBefore() != null) {
+//                        autoReportTaskEntity.setPreviousSearchTime(autoCustomReportConfigEntity.getSearchTimeBefore());
+//                    }
+//                    autoReportTaskEntity.setSourceList(autoCustomReportConfigEntity.getSource());
+//                    if (autoCustomReportConfigEntity.getSourceClusterId() != null) {
+//                        autoReportTaskEntity.setSourceClusterList(String.valueOf(autoCustomReportConfigEntity.getSourceClusterId()));
+//                    }
+//                    autoReportTaskEntity.setTopicList(String.valueOf(autoCustomReportConfigEntity.getTopicId()));
+//                    autoReportTaskEntity.setEnableMentionAnalysis(autoCustomReportConfigEntity.isEnableMentionAnaylsis());
+//                    autoReportTaskEntity.setEnablePn(autoCustomReportConfigEntity.isEnablePn());
+//                    autoReportTaskEntity.setEnableSn(autoCustomReportConfigEntity.isEnableSn());
+//                    autoReportTaskEntity.setEnableChannel(autoCustomReportConfigEntity.isEnableChannel());
+//                    autoReportTaskEntity.setEnablePopularTheme(autoCustomReportConfigEntity.isEnablePopularTheme());
+//                    autoReportTaskEntity.setEnableSummarize(autoCustomReportConfigEntity.isEnableSummarize());
+//                    autoReportTaskEntity.setEnableKeywords(autoCustomReportConfigEntity.getEnableKeywords());
+//                } else {
+//                    autoReportTaskEntity.setPreviousSearchTime(null);
+//                    autoReportTaskEntity.setSourceList("");
+//                    autoReportTaskEntity.setSourceClusterList(null);
+//                    autoReportTaskEntity.setTopicList("");
+//                    autoReportTaskEntity.setEnableMentionAnalysis(false);
+//                    autoReportTaskEntity.setEnablePn(false);
+//                    autoReportTaskEntity.setEnableSn(false);
+//                    autoReportTaskEntity.setEnableChannel(false);
+//                    autoReportTaskEntity.setEnablePopularTheme(false);
+//                    autoReportTaskEntity.setEnableSummarize(false);
+//                    autoReportTaskEntity.setEnableKeywords(0);
+//                }
+//
+//                List<AutoReportConfigTopicEntity> list = autoReportConfigTopicRepository.findByConfigId(i).orElse(new ArrayList<>());
+//                if (list.size() != 0) {
+//                    List<String> topicList = new ArrayList<>();
+//                    for (AutoReportConfigTopicEntity temp : list) {
+//                        topicList.add(String.valueOf(temp.getTopicId()));
+//                    }
+//                    autoReportTaskEntity.setTopicList(topicList.stream().collect(Collectors.joining(";")));
+//                }
+//            }
+//            autoReportTaskRepository.save(autoReportTaskEntity);
+//        }
+//        System.out.println("done");
+//        // id 1~1000     (V)
+//        // id 1001~2000  (V)
+//        // id 2001~3000  (V)
+//        // id 3001~4000  (V)
+//        // id 4001~XXXX
+//    }
+//
+//    @Scheduled(cron = "30 2 13 * * *")    // 500組12秒
+//    public void history() {
+//        System.out.println("start");
+//        for (int i = 7001; i <= 7879; i++) {
+//            OldAutoReportHistoryEntity oldAutoReportHistoryEntity = oldAutoReportHistoryRepository.findById(i).orElse(null);
+//            if (oldAutoReportHistoryEntity == null) {
+//                AutoReportHistoryEntity autoReportHistoryEntity = new AutoReportHistoryEntity();
+//                autoReportHistoryEntity.setServiceAccount("");
+//                autoReportHistoryEntity.setUserAccount("");
+//                autoReportHistoryEntity.setTaskId(-1);
+//                autoReportHistoryEntity.setScheduleId(-1);
+//                autoReportHistoryEntity.setReportName("");
+//                autoReportHistoryEntity.setSearchTime("");
+//                autoReportHistoryEntity.setUpdateTime(new Timestamp(System.currentTimeMillis()));
+//                autoReportHistoryEntity.setAction("");
+//                autoReportHistoryRepository.save(autoReportHistoryEntity);
+//            } else {
+//                AutoReportHistoryEntity autoReportHistoryEntity = new AutoReportHistoryEntity();
+//                autoReportHistoryEntity.setServiceAccount(oldAutoReportHistoryEntity.getServiceAccount());
+//                autoReportHistoryEntity.setUserAccount(oldAutoReportHistoryEntity.getUserName());
+//                autoReportHistoryEntity.setTaskId(oldAutoReportHistoryEntity.getReportId());
+//                autoReportHistoryEntity.setScheduleId(0);
+//                autoReportHistoryEntity.setReportName(oldAutoReportHistoryEntity.getReportName());
+//                autoReportHistoryEntity.setSearchTime(oldAutoReportHistoryEntity.getSearchTime());
+//                autoReportHistoryEntity.setUpdateTime(oldAutoReportHistoryEntity.getUpdateTime());
+//                autoReportHistoryEntity.setAction(oldAutoReportHistoryEntity.getDataType());
+//                autoReportHistoryRepository.save(autoReportHistoryEntity);
+//            }
+//        }
+//        System.out.println("done");
+//        // id 1~1000     (V)
+//        // id 1001~2000  (V)
+//        // id 2001~3000  (V)
+//        // id 3001~4000  (V)
+//        // id 4001~5000  (V)
+//        // id 5001~6000  (V)
+//        // id 6001~7000  (V)
+//        // id 7001~XXXX
+//    }
+//
+//    @Scheduled(cron = "30 46 9 * * *")
+//    public void test() {
+//        OldAutoReportHistoryEntity oldAutoReportHistoryEntity = oldAutoReportHistoryRepository.findById(7827).orElse(null);
+//        System.out.println(oldAutoReportHistoryEntity.getReportName());
+//        AutoReportTaskEntity autoReportTaskEntity = autoReportTaskRepository.findById(4000).orElse(null);
+//        System.out.println(autoReportTaskEntity.getReportName());
+//    }
+//
+//}
+//

@@ -1,0 +1,25 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <p>{{ num }}</p>
+    <br />
+    <button @click="test01()">修改</button>
+  </div>
+</template>
+
+<script>
+import { ref, watchEffect } from "vue";
+
+export default {
+  setup() {
+    const num = ref(1);
+    watchEffect(() => {
+      console.log(num.value * 6);  // 
+    });
+    let test01 = () => {
+      num.value++;
+    };
+    return { num, test01 };
+  },
+};
+</script>

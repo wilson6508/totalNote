@@ -1,0 +1,9 @@
+<b-container>
+<b-row>
+<label>股票性質:</label>
+<b-col><b-form-radio v-model="type" name="radio01" value="false">ETF</b-form-radio></b-col>
+<b-col><b-form-radio v-model="type" name="radio01" value="true">一般股票</b-form-radio></b-col>
+</b-row>
+</b-container>
+
+看起來是選了以後 type就會變成value

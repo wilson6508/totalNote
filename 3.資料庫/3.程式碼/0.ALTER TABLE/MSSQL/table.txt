@@ -1,0 +1,15 @@
+CREATE TABLE user_information ( 
+	id int IDENTITY(1,1) NOT NULL,
+	account nvarchar(80) NOT NULL,
+	password nvarchar(80) NOT NULL,
+  	name nvarchar(80) NOT NULL,
+  	age int NOT NULL,	
+  	PRIMARY KEY (id)
+)
+----------------------------------------------------------------
+DROP TABLE dbo.user_information;
+----------------------------------------------------------------
+USE testdb;
+GO
+EXECUTE sp_rename 'user_information','userKKK_information';
+----------------------------------------------------------------

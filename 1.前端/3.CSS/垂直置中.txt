@@ -1,0 +1,2 @@
+用css讓div垂直置中的方式
+https://www.webdesigns.com.tw/css_align-center.asp

@@ -1,0 +1,14 @@
+    var future = new Date();
+    future.setDate(future.getDate() - 90);
+    console.log(future);
+
+
+    setTime() {
+      const date = new Date();
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const past = `${year - 1}/${month}/${day}`;
+      const now = `${year}/${month}/${day}`;
+      this.value = [new Date(past), new Date(now)];
+    },

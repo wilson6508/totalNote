@@ -1,0 +1,25 @@
+<b-modal v-model="modalShow" id="editInfo" :title="title" hide-header-close="true"></b-modal>
+<b-modal v-model="modalShow" id="editInfo" :title="title" hide-header="true"></b-modal>
+<b-modal v-model="modalShow" id="editInfo" :title="title" hide-footer="true"></b-modal>
+
+
+<b-modal v-model="modalShow" title="JIRA回報" size="xl" :hide-footer="true" modal-class="bModalWidth90"></b-modal>
+<style>
+// 整個版面
+.channelAdjust .modal-dialog {
+  max-width: 100%;
+  margin: 0;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  z-index: 100000; */
+}
+// 90%
+.bModalWidth90 .modal-dialog {
+  max-width: 90%;
+}
+</style>

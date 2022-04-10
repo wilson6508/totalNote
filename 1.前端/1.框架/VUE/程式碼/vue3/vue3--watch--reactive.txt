@@ -1,0 +1,37 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <br />
+    <span>{{ user.name }}</span
+    ><br />
+    <button @click="test01()">修改</button>
+  </div>
+</template>
+
+<script>
+import { reactive, watch } from "vue";
+
+export default {
+  setup() {
+    const user = reactive({
+      name: "Mike",
+      age: 12,
+      tel: "09XX-XXX-XXX",
+    });
+    watch(
+      () => user.name, // 目前測試還不知道怎麼watch物件
+      (after, before) => {
+        console.log(before, after);
+      }
+    );
+    function test01() {
+      if (user.name === "Mary") {
+        user.name = "Tom";
+      } else {
+        user.name = "Mary";
+      }
+    }
+    return { user, test01 };
+  },
+};
+</script>

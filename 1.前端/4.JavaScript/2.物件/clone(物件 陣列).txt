@@ -1,0 +1,9 @@
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+https://www.samanthaming.com/tidbits/70-3-ways-to-clone-objects/
+https://askie.today/javascript-deep-copy-swallow-copy/
+
+複製物件 (深層) clone by value
+const copyItem = Object.assign({}, item);
+
+複製陣列 (深層) clone by value
+const copyArray = JSON.parse(JSON.stringify(array));

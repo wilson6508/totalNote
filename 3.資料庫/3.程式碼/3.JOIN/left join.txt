@@ -1,0 +1,9 @@
+SELECT dbo.trend_search_history.*, dbo.user_profile.user_name
+
+FROM dbo.trend_search_history LEFT JOIN dbo.user_profile
+
+ON dbo.user_profile.user_email = dbo.trend_search_history.user_email
+
+AND dbo.user_profile.user_type = dbo.trend_search_history.user_type
+
+ORDER BY dbo.trend_search_history.id DESC;

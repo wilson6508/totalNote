@@ -1,0 +1,5 @@
+Default Function Parameters
+https://www.fooish.com/javascript/ES6/default-function-parameters.html
+multiply(a, b = true) {
+  b ? console.log(a) : console.log("QQ");
+},

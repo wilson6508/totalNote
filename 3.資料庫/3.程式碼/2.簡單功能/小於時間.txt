@@ -1,0 +1,2 @@
+DELETE FROM dbo.promotion_info WHERE expired_time < '2019-01-24 16:38:41.990';
+DELETE FROM dbo.promotion_info WHERE expired_time < :expiredTime

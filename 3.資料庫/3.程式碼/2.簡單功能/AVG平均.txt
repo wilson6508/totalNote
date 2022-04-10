@@ -1,0 +1,3 @@
+SELECT AVG(payment) FROM stock_log;
+
+SELECT AVG(payment) FROM stock_log WHERE id > 2;

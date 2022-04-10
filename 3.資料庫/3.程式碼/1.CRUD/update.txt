@@ -1,0 +1,1 @@
+UPDATE dbo.promotion_info SET expired_time = '2021-01-25 16:38:41.990' WHERE USER_ID = 4;

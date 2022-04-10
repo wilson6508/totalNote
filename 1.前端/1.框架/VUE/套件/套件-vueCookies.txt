@@ -1,0 +1,10 @@
+https://www.npmjs.com/package/vue-cookies
+
+https://iter01.com/441404.html
+
+https://www.itread01.com/content/1545382649.html
+
+npm install vue-cookie --save
+
+import VueCookie from 'vue-cookie';
+Vue.use(VueCookie);

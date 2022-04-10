@@ -1,0 +1,3 @@
+SELECT tempA.report_name, tempA.資料長度
+FROM (SELECT report_name, LEN (report_name) AS 資料長度 FROM dbo.auto_report_config) tempA
+WHERE tempA.資料長度 > 100;

@@ -1,0 +1,7 @@
+同一層目錄   import './'  
+
+上一層目錄   import '../'
+
+src目錄下    import '@/'
+
+node_modules import ''

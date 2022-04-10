@@ -1,0 +1,2 @@
+Random random = new Random();
+System.out.println(random.nextInt(3));  //ÀH¾÷0,1,2

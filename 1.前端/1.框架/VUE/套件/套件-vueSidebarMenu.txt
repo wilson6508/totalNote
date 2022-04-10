@@ -1,0 +1,3 @@
+https://www.npmjs.com/package/vue-sidebar-menu
+
+npm i vue-sidebar-menu --save

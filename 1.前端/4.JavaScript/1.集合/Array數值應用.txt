@@ -1,0 +1,97 @@
+建立數值陣列
+1. const array1to5 = Array.from(new Array(5), (val, index) => index + 1);     // [1, 2, 3, 4, 5]
+2. const array100to505 = range(100, 105);                                     // [100,101,102,103,104,105]
+function range(start, end, step = 1) {
+  const allNumbers = [start, end, step].every(Number.isFinite);
+  if (!allNumbers) {
+    throw new TypeError('range() expects only finite numbers as arguments.');
+  }
+  if (step <= 0) {
+    throw new Error('step must be a number greater than 0.');
+  }
+  if (start > end) {
+    step = -step;
+  }
+  const length = Math.floor(Math.abs((end - start) / step)) + 1;
+  return Array.from(Array(length), (x, index) => start + index * step);
+}
+-------------------------------------------------------------------------------------------------------------
+總和(sum)
+const sum = arr.reduce((acc, cur) => acc + cur);
+-------------------------------------------------------------------------------------------------------------
+平均數(Mean)
+function getMean(arr) {
+  const sum = arr.reduce((acc, cur) => acc + cur);
+  const mean = sum / arr.length;
+  return Math.round(mean * 100) / 100; // 取到小數第二位
+}
+-------------------------------------------------------------------------------------------------------------
+中位數(Median)
+function getMedian(arr) {
+  arr = arr.sort((a, b) => a - b);
+  let median;
+  if (arr.length % 2 === 0) { // 數目為偶數  
+    median = (arr[arr.length / 2] + arr[arr.length / 2 - 1]) / 2;
+  } else { // 數目為奇數
+    median = arr[(arr.length - 1) / 2];
+  }
+  return median;
+}
+-------------------------------------------------------------------------------------------------------------
+計次
+function getCountList(arr) {
+  const countList = {};
+  for (const value of arr) {
+    value = value.toString();
+    if (!countList[value]) {
+	  countList[value] = 0;
+	}
+    countList[value]++;
+  }
+  return countList;
+}
+function getCountMap() {
+  const hashTable = new Map();
+  const arr = ['apple','apple','banana','banana','cat','dog','fat','fat','fat','fat',];
+  arr.forEach((item) => {
+    if (hashTable.has(item)) {
+	  hashTable.set(item, hashTable.get(item) + 1);
+	} else {
+	  hashTable.set(item, 1);
+	}
+  });
+  return hashTable; // Map { 'apple' => 2, 'banana' => 2, 'cat' => 1, 'dog' => 1, 'fat' => 4 }
+}
+-------------------------------------------------------------------------------------------------------------
+眾數(mode)
+function getMode(arr) {
+  const countList = getCountList(arr);
+  let maxCount = 0;
+  let mode = [];
+  for (const prop in countList) {
+    if (maxCount < countList[prop]) {
+      maxCount = countList[prop];
+      mode = [prop];
+    } else if (maxCount === countList[prop]) { // 如果有同樣數目的眾數
+      mode.push(prop);
+    }
+  }
+  // 如果每個元素的計數一樣，則沒有眾數
+  if (mode.length === Object.keys(countList).length) {
+    mode = [];
+  }
+  return mode;
+}
+-------------------------------------------------------------------------------------------------------------
+function meanMedianMode(arr) {
+  arr.forEach((item) => {
+    if (!/^[0-9]+$/.test(item)) {
+      console.warn(item + ' is not a number.');
+    }
+  });
+  return {
+    mean: getMean(arr),
+    median: getMedian(arr),
+    mode: getMode(arr),
+  };
+}

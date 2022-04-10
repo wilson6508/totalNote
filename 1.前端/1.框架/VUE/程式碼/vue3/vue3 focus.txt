@@ -1,0 +1,27 @@
+Template Refs 模板引用
+子元件：@/components/TemplateRef.vue
+<script>
+import { onMounted, ref } from "vue";
+export default {
+  setup() {
+    const txtInput = ref(null);
+    onMounted(() => {
+      txtInput.value.focus();
+    });
+    const num = ref(12345);
+    return { txtInput, num };
+  },
+};
+</script>
+
+<template>
+  <input v-model="num" ref="txtInput" type="text" />
+</template>
+
+<style>
+</style>
+Copy
+ 
+
+設定一個 const txtInput = ref(null)，然後在樣板中用 ref="txtInput" 綁定即可
+如此，在 setup 裡面就可以取得被綁定的動元素，並做一些動作，例如取得焦點：txtInput.value.focus();

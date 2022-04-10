@@ -1,0 +1,59 @@
+      barChart: {
+        id: "trendBarChart",
+        chart: {
+          type: "bar",
+        },
+        title: {
+          text: "聲量統計-長條圖",
+        },
+        subtitle: {
+          text: "",
+        },
+        xAxis: {
+          categories: ["疫情", "公投", "民進黨"],
+        },
+        yAxis: {
+          title: {
+            text: "則數",
+          },
+          labels: {
+            formatter: function() {
+              return Highcharts.numberFormat(this.value, 0, ".", ",");
+            }
+          }
+        },
+        tooltip: {
+          headerFormat: "{point.key}<br>",
+          pointFormat: "共{point.y}則",
+        },
+        legend: {
+          y: 0.0,
+          align: "right",
+        },
+        verticalAlign: "top",
+        borderWidth: 1.0,
+        credits: {
+          enabled: false
+        },
+        series: [
+          {
+            data: [
+              { y: 995, color: "#7cb5ec" },
+              { y: 832, color: "#434348" },
+              { y: 721, color: "#90ed7d" },
+            ],
+            showInLegend: false,
+          }
+        ],
+        exporting: {
+          sourceWidth: 700,
+          buttons: false
+        },
+        plotOptions: {
+          bar: {
+            dataLabels: {
+              enabled: true // 顯示數據
+            }
+          },
+        },
+      },

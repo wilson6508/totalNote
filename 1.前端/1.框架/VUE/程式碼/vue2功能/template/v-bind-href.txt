@@ -1,0 +1,10 @@
+<template #cell(url)="row">
+  <div class="fontFormat"><a :href="`${row.item.url}`" target="_blank">{{ row.item.url }}</a></div>
+</template>
+
+:href="`${homeLocation}/Listening/List`"
+this.homeLocation = window.location.origin;
+
+closeButton() {
+  window.close();
+},

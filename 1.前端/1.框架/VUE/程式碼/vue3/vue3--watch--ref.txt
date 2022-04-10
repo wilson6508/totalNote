@@ -1,0 +1,34 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <p>{{ num }}</p>
+    <br />
+    <button @click="test01()">修改</button>
+  </div>
+</template>
+
+<script>
+import { ref, watch } from "vue";
+
+export default {
+  setup() {
+    let num = ref(1);
+    watch(num, () => {                // 不紀錄變化前後
+      console.log("change");
+    });
+    watch(num, (num, prevNum) => {    // 紀錄變化前
+      console.log(`舊的${prevNum}`);
+    });
+    watch(num, (num) => {             // 紀錄變化後
+      console.log(`新的${num}`);
+    });     
+    watch(num, (num, prevNum) => {    // 紀錄變化前後
+      console.log(`舊的${prevNum} 新的${num}`);
+    });       
+    let test01 = () => {
+      num.value *= 6;
+    };
+    return { num, test01 };
+  },
+};
+</script>

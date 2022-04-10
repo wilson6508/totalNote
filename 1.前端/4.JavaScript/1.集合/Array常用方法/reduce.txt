@@ -1,0 +1,10 @@
+test() {
+  const array = [1, 2, 3];
+  const val = array.reduce((accumulator, item, index) => {
+	console.log(accumulator);   // 100, 101, 103
+	console.log(item);          //   1,   2,   3
+	console.log(index);         //   0,   1,   2
+	return accumulator + item; 
+  }, 100);           // accumulator起始值
+  console.log(val);  // 106
+},

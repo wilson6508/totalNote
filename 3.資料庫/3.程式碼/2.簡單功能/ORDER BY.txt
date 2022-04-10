@@ -1,0 +1,4 @@
+SELECT * FROM dbo.welcome_newsletter ORDER BY id DESC
+
+SELECT ROW_NUMBER() OVER(ORDER BY usage_amount) AS ROWID, * FROM dbo.user_profile;  -- AS可以不寫
+SELECT ROW_NUMBER() OVER(ORDER BY id desc)      AS ROWID, * FROM dbo.user_profile;  -- AS可以不寫

@@ -1,0 +1,26 @@
+https://www.minwt.com/webdesign-dev/html/22111.html
+https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/sizing-icons (大小)
+
+1.https://fontawesome.com/
+
+2.Start for Free
+
+3.Download
+
+4.Download Font Awesome Free
+
+5.解壓縮
+
+6.在vue專案的 src > assets > plugins > fontawesome-free
+  放入解壓縮後的css跟webfonts
+
+7.App.vue
+<style src="@/assets/plugins/fontawesome-free/css/all.min.css"></style>
+
+8.普通vue
+<i class="fas fa-bars"></i>
+
+9.查詢可使用的icon
+https://fontawesome.com/v5.15/icons?d=gallery&p=2
+
+

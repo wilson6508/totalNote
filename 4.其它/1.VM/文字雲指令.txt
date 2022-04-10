@@ -1,0 +1,31 @@
+C:/report/json/634_c5177664-2b2a-4f01-917b-0ccd61fbe30a_20211221_10-32-11.json
+C:/report/pic/634_c5177664-2b2a-4f01-917b-0ccd61fbe30a_20211221_10-32-11.png
+C:/webapps/AutoReportApi/wordCloud.js
+call highcharts-export-server -infile C:/report/json/634_c5177664-2b2a-4f01-917b-0ccd61fbe30a_20211221_10-32-11.json -outfile chart.png -callback C:/webapps/AutoReportApi/wordCloud.js
+cmd /c call highcharts-export-server -infile C:/report/json/634_c5177664-2b2a-4f01-917b-0ccd61fbe30a_20211221_10-32-11.json -outfile C:/report/pic/634_c5177664-2b2a-4f01-917b-0ccd61fbe30a_20211221_10-32-11.png -callback C:/webapps/AutoReportApi/wordCloud.js
+-------------------------------------------------------------------------------
+cmd直接run(普通圖):highcharts-export-server -infile C:/report/json/test.json -outfile C:/report/pic/test.png
+cmd直接run(文字雲):highcharts-export-server -infile C:/report/json/test.json -outfile C:/report/pic/test.png --allowCodeExecution 1 -callback C:/webapps/AutoReportApi/wordCloud.js
+
+highcharts-export-server 
+-infile C:/report/json/test.json 
+-outfile C:/report/pic/test.png 
+--allowCodeExecution 1
+-callback C:/webapps/AutoReportApi/wordCloud.js
+-------------------------------------------------------------------------------
+專案裡的指令
+String cmd = "cmd /c call highcharts-export-server"
+		   + " -infile " + jsonPath
+		   + " -outfile " + chartPath
+		   + " --allowCodeExecution 1"
+		   + " -callback " + WORD_CLOUD_JS_PATH;	   
+-------------------------------------------------------------------------------
+https://github.com/highcharts/node-export-server
+1.cmd 直接輸入 highcharts-export-server 可以看到版本        
+本機        : v2.0.24
+10.20.70.11 : v2.1.0
+10.20.60.42 : v2.0.28
+因為新版本不能直接 -callback wordCloud.js ，要加 --allowCodeExecution 1
+所以新舊指令改為都加 --allowCodeExecution 1
+-------------------------------------------------------------------------------
+

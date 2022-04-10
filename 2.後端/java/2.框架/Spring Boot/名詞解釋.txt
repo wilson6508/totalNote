@@ -1,0 +1,17 @@
+1. 表示層(Application logic)：也就是Controller，應該負責接收前端的請求（request），並請Service處理，最後將資料回傳（response）。
+2. 業務邏輯層(Business logic)：又稱作Service，會被Controller呼叫。它負責根據請求來進行資料處理，並回傳結果。也可能被其他Service呼叫。
+3. 資料持久層(DB interactions)：擔任與資料庫溝通的媒介，會被Service呼叫。常透過「資料存取物件」（data access object，DAO）來實現。
+
+@RestController： 用來接收請求與回傳資料的表示層。
+@Service：		  代表這是一個業務邏輯層，進行資料處理
+@Repository：	  代表這是一個資料持久層，負責對資料庫進行存取。
+@Configuration：  專門讀取應用程式設定值的類別。
+@Component：      不太好歸類的類型，中文意思「元件」。
+@Bean：      	  標記在方法上，其回傳值將被建立成元件。該方法通常被宣告在Configuration類別中。好處是能自行進行元件的建構。
+@ComponentScan：  定義需要掃描的package。當啟動類別沒有在所有bean的最上層，就需要加上此標記指定要掃描的package。
+
+
+@RequestMapping： 藉由參數來定義回傳的資料格式為JSON。
+@RequestBody：	  將前台傳過來的固定格式資料（例：JSON）封裝為對應的 JavaBean 物件。
+@ResponseBody：   該方法的返回结果直接寫入HTTP Response Body中。
+@PostMapping：    傳入資源路徑，即可配置一個POST請求的API。當前端呼叫時，後端便會自動執行這個「trendApiSearch」方法。

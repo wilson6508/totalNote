@@ -1,0 +1,19 @@
+<b-table :fields="fields" />
+
+...
+
+methods: {
+  tCol (colName) {
+    return this.$i18n.t(this.$route.name + '.fields.' + colName + '.label')
+  }
+},
+computed: {
+  fields () {
+    return [
+      { key: 'id', label: this.tCol('id'), sortable: true },
+      { key: 'name', label: this.tCol('name'), sortable: true },
+      { key: 'description', label: this.tCol('description'), sortable: true },
+      { key: 'priority', label: this.tCol('priority'), sortable: true }
+    ]
+  }
+}

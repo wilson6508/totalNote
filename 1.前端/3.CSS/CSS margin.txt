@@ -1,0 +1,13 @@
+margin:上 右 下 左;　
+margin:上下 左右;　
+margin:上 左右 下;　
+margin:四個邊同樣値;
+
+margin-top：與上方元素的距離
+margin-right：與右方元素的距離
+margin-bottom：與下方元素的距離
+margin-left：與左方元素的距離
+
+margin:auto;　	  //代表讓瀏覽器自己去設定。
+margin:長度單位;　//就是給數字跟單位，單位可以是 em、px、pt 等値。
+margin:%;　		  //讓瀏覽器自己去設定，跟邊界元素有關。

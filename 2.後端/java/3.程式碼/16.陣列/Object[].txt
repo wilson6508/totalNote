@@ -1,0 +1,22 @@
+public static void main(String[] args) {
+	Object[] objArr = {567, "ABC", 10.23};
+	System.out.println(objArr.length);
+	for (Object obj : objArr) {
+		System.out.println(obj.toString());
+	}
+}
+
+public static void main(String[] args) {
+	Object[][] objArrArr = {
+			{"Head First Java", "Kathy Serria", 79},
+			{"Effective Java", "Joshua Bloch", 36},
+			{"Clean Code", "Robert martin", 42},
+			{"Thinking in Java", "Bruce Eckel", 35},
+	};
+	for (Object[] objArr : objArrArr) {
+		System.out.println(objArr.length);
+		for (Object obj : objArr) {
+			System.out.println(obj);
+		}
+	}
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第一個 Highcharts 圖表</title>
+</head>
+<body>
+    <div id="container" style="width: 50%;height:400px;"></div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
+    <script>
+		const lineChart = {
+			  "chart": {
+				"type": "line",
+				"zoomType": "x"
+			  },
+			  "title": {
+				"text": ""
+			  },
+			  "tooltip": {
+				"headerFormat": "{series.name}<br>{point.key}",
+				"pointFormat": "日共{point.y}則"
+			  },
+			  "xAxis": {
+				"categories": [
+				  "2020/05/01",
+				  "2020/05/02",
+				  "2020/05/03",
+				  "2020/05/04",
+				  "2020/05/05",
+				  "2020/05/06",
+				  "2020/05/07",
+				  "2020/05/08",
+				  "2020/05/09",
+				  "2020/05/10"
+				],
+				"tickmarkPlacement": "on",
+				"tickInterval": 1  // 調間隔
+			  },
+			  "yAxis": [
+				{
+				  "title": {
+					"text": "則數"
+				  }
+				},
+				{
+				  "title": {
+					"text": ""
+				  },
+				  "opposite": true
+				}
+			  ],
+			  "series": [
+				{
+				  "data": [
+					{
+					  "y": 178
+					},
+					{
+					  "y": 142
+					},
+					{
+					  "y": 500
+					},
+					{
+					  "y": 71
+					},
+					{
+					  "y": 86
+					},
+					{
+					  "y": 462
+					},
+					{
+					  "y": 635
+					},
+					{
+					  "y": 267
+					},
+					{
+					  "y": 204
+					},
+					{
+					  "y": 351
+					}
+				  ],
+				  "name": "玉山銀行",
+				  "color": "#ec5145",
+				  "visible": true,
+				  "searchName": "玉山銀行"
+				},
+				{
+				 "data": [
+					  {},
+					  {},
+					  {},
+					  {},
+					  {},
+					  {},
+					  {},
+					  {
+						"y": 296
+					  },
+					  {
+						"y": 309
+					  },
+					  {
+						"y": 317
+					  }
+				  ],
+				  "name": "玉山銀行-7日均線-7日均線",
+				  "color": "#ec5145",
+				  "dashStyle": "ShortDot",
+				  "showInLegend": false,
+				  "visible": true,
+				  "searchName": "玉山銀行-7日均線"
+				}
+			  ],
+			  "exporting": {
+				"sourceWidth": 1400,
+				"buttons": {
+				  "contextButton": {
+					"menuItems": [
+					  {
+						"text": "下載PNG圖檔"
+					  },
+					  {
+						"text": "下載JPEG圖檔"
+					  }
+					]
+				  }
+				}
+			  },
+			  "navigation": {
+				"menuStyle": {
+				  "padding": "0px"
+				},
+				"menuItemStyle": {
+				  "padding": "5px"
+				}
+			  },
+			  "credits": {
+				"enabled": false
+			  },
+			  "plotOptions": {
+				"line": {
+				  "marker": {
+					"enabled": false
+				  }
+				},
+				"series": {
+				  "events": {},
+				  "dataLabels": {
+					"enabled": false
+				  }
+				}
+			  }
+			}
+        var chart = Highcharts.chart('container', lineChart);
+    </script>
+</body>
+</html>

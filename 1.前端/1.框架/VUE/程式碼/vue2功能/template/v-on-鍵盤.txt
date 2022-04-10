@@ -1,0 +1,21 @@
+<b-form-input 
+v-model="userPassword"
+@keyup.enter="login()"
+class="mb-2"
+type="password"
+size="md"
+placeholder="Enter password"
+aria-describedby="password">
+</b-form-input>
+
+https://ithelp.ithome.com.tw/articles/10206672
+<input type="text" value="先點我再按下Enter" @keyup.enter="pop" />
+.enter
+.tab
+.delete(它包含了刪除跟退格鍵)
+.esc
+.space
+.up
+.down
+.left
+.right

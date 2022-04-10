@@ -1,0 +1,2 @@
+TRUNCATE TABLE dbo.promotion_info;
+DELETE TOP (17) FROM [dbo].[promotion_info]

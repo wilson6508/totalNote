@@ -1,0 +1,40 @@
+在Vue.js中使用async / await
+https://www.itread01.com/question/N3ZzMHk=.html
+
+async mounted() {
+  const data = {  
+	model: { model_name: "delete_channel_info" },
+    parameter: { update_channel_info: selfObject },
+  },
+  await this.commonApi(data).then((response) => this.processRep(response));
+},
+
+methods: {
+	async commonApi(data) {
+	  return this.$store.dispatch("request", {
+		url: "member",
+		method: "POST",
+		headers: {
+		  Authorization: `Bearer ${this.getCookie("token")}`,
+		},
+		data: data,
+	  });
+	},
+	processRep(response) {
+	  if (!response.data.success) {
+		console.log("ERROR");
+	  } else {
+		console.log("OK");
+		this.items = [];
+		for (const item of response.data.data) {
+		  this.items.push({
+			account: item.account,
+			enable: item.enable,
+			createTime: item.createTime,
+			updateTime: item.updateTime,
+			_rowVariant: item.enable ? "success" : "danger",
+		  });
+		}
+	  }
+	},
+}

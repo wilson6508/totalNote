@@ -1,0 +1,15 @@
+Highcharts的一些基本設定
+https://www.itread01.com/content/1550143990.html
+
+popover()
+http://jsfiddle.net/9P64a/
+
+
+  // mounted() {
+  //   const test = document.createElement('script');
+  //   test.setAttribute('src', 'https://code.highcharts.com/highcharts.js');
+  //   document.head.appendChild(test);
+  //   const recaptchaScript = document.createElement('script');
+  //   recaptchaScript.setAttribute('src', 'https://code.highcharts.com/modules/offline-exporting.js');
+  //   document.head.appendChild(recaptchaScript);
+  // },

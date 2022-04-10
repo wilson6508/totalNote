@@ -1,0 +1,13 @@
+<style scoped src="bootstrap/dist/css/bootstrap.css"></style>
+<style scoped src="bootstrap-vue/dist/bootstrap-vue.css"></style>
+
+<style scoped src="./test.css></style>
+<style src="@/assets/plugins/fontawesome-free/css/all.min.css"></style>
+<style scoped src="@/assets/plugins/fontawesome-free/css/all.min.css"></style>
+
+<template>
+  <div id="app">
+    <router-view />
+  </div>
+</template>
+<style src="@/css/theme.min.css"></style>

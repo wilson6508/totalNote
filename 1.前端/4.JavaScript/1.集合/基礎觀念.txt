@@ -1,0 +1,4 @@
+JavaScript
+> 物件的key是string
+> Map 的key可以是型別，Map資料輸入的順序
+> Set 只用來保存key而沒有value

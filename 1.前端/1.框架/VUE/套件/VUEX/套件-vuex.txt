@@ -1,0 +1,54 @@
+https://eugenesu0515.github.io/Blog/2018/06/25/Vue%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%B4%B9%EF%BC%9Aaxios/
+
+https://blog.hinablue.me/2019-ithome-ironman-day-8/
+
+https://mengxiong10.github.io/vue2-datepicker/index.html
+
+https://github.com/juliandreas/vue-toggles
+
+https://vue-multi-select.tuturu.io/
+
+https://medium.com/itsems-frontend/vue-vuex1-state-mutations-364163b3acac
+
+VUEX:
+
+State:狀態儲存的物件，Vuex 使用 單一狀態樹 的方式來存放。
+Getters:取得狀態資料的方法。
+Mutations:更新狀態資料的方法。
+Actions:類似 Mutations，但是 Actions 是呼叫 Mutations，且可支援非同步呼叫。
+Modules:用於分割 Vuex 的區塊
+
+mapState:可以取得 state 裡面的資料。
+mapMutations:可以取得 mutations 裡面的方法。
+mapActions:可以取得 actions 裡面的方法。
+mapGetters:可以取得 getters 裡面的方法。
+
+commit:這個函式是呼叫 mutation 裡面的方法。
+dispatch:這個函式是呼叫 action 裡面的方法。
+rootState:這個物件是整個 Store 的 state 資料。
+state:這個物件是本地端（ Local state ）的資料。
+rootGetters:這個物件是整個 Store 的 getters 資料。
+
+export default:
+
+name: 這個元件實體的名稱。
+components: 載入其他的元件到這個元件實體內。
+mixins: 載入混合模式元件。
+props: 讀取外部傳入的屬性。
+data (): 設定預設值。
+inheritAttrs: 設定該元件是否繼承相關屬性，僅接受布林值。
+directives: 元件自身的自定義指令。
+filters: 元件自身定義的過濾器。
+computed: 設定計算屬性。
+methods: 設定元件內部方法。
+watch: 監聽工具。
+
+與生命週期有關的函數與呼叫順序：
+beforeCreate (): 元件建立之前。
+created (): 元件建立完成。
+beforeMount (): 元件被放入 DOM 結構樹之前。
+mounted (): 元件放入 DOM 結構樹之後。
+beforeUpdate (): 元件實體更新之前。
+updated (): 元件實體更新之後。
+beforeDestroy (): 元件被銷毀（從 DOM 結構樹移除）之前。
+destroyed (): 元件被銷毀（從 DOM 結構樹移除）之後。

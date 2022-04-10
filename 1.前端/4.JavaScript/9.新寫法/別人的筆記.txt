@@ -1,0 +1,11 @@
+別人的筆記
+https://pjchender.dev/
+http://120.115.2.90/modules/tad_book3/index.php?tbsn=33
+https://campus-xoops.tn.edu.tw/modules/tad_book3/html_all.php?tbsn=33
+
+console.log(~~3.14);
+console.log(~~-1.45);
+const x = 5.3;
+if (~x) {
+	console.log("QQ");
+}

@@ -1,0 +1,24 @@
+$('#popoverData').attr('data-content', relatedValueDescription());
+$('#popoverData').popover({html: true});
+
+function relatedValueDescription() {
+
+    const information = "<i class='fa fa-caret-right'></i>粉絲數：粉絲數係指Facebook粉絲專頁按讚數；Facebook關鍵意見領袖追蹤數；Instagram追蹤數；Youtube頻道訂閱數。"  +
+        "<br><i class='fa fa-caret-right'></i>粉絲成長率(一個月): [（查詢期間結尾#粉絲數）-（結尾回推一個月#粉絲數）/結尾回推一個月#粉絲數]*100。四捨五入到小數點第一位。" +
+        "<br><i class='fa fa-caret-right'></i>粉絲成長率(三個月): 三個月：[（查詢期間結尾#粉絲數）-（結尾回推三個月#粉絲數）/結尾回推三個月#粉絲數]*100。四捨五入到小數點第一位。" +
+        "<br><i class='fa fa-caret-right'></i>粉絲成長率補充說明: - 係指粉絲數於頻道顯示之數值變化，因應Facebook、Youtube相關政策調整，僅顯示概略數值。" +
+        "<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;- 因應Facebook粉絲專頁與關鍵意見領袖版型轉換，成長率短暫無結果為正常現象。" +
+        "<br><i class='fa fa-caret-right'></i>互動率: 預設=[(總主文數x1+總回應數x1+總按讚數x1+總分享數x1)/粉絲人數x1] x100。四捨五入至小數點第一位。使用者可自行設定加權；分母為粉絲人數(按讚/追蹤/訂閱數=粉絲人數)。" +
+        "<br><i class='fa fa-caret-right'></i>總主文數: 查詢期間該頻道之主文數。" +
+        "<br><i class='fa fa-caret-right'></i>平均被回應數: 查詢期間主文的總回應數/總主文數。" +
+        "<br><i class='fa fa-caret-right'></i>平均按讚數: 查詢期間主文的總按讚數/總主文數。" +
+        "<br><i class='fa fa-caret-right'></i>平均分享數: 查詢期間主文的總分享數/總主文數；Instagram、Youtube無分享數。";
+
+    return information;
+}
+
+<div>
+<a id="popoverData" data-placement="left" data-original-title="相關數值說明" data-content="Popover with data-trigger" rel="popover" data-trigger="hover" style="font-weight: bold;font-size: 16px; color: #007bff; position:absolute;right:22px;">
+相關數值說明
+</a>
+</div>

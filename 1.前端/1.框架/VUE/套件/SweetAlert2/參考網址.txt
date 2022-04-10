@@ -1,0 +1,5 @@
+SweetAlert two input
+https://stackoverflow.com/questions/31463649/sweetalert-prompt-with-two-input-fields/43111313
+
+Prevent SweetAlert to be closed on clicking outside (allowOutsideClick: false)
+https://stackoverflow.com/questions/47749095/prevent-sweetalert-to-be-closed-on-clicking-outside-the-popup-window

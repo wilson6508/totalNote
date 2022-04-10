@@ -1,0 +1,15 @@
+test01() {
+  const user = {
+	firstName: "Aaron",
+	lastName: "Chen",
+	detail: {
+	  height: 171,
+	  weight: 68,
+	},
+  };
+  console.log(this.getFullName(user));  // Aaron Chen
+},
+
+getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+},

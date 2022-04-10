@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第一個 Highcharts 圖表</title>
+</head>
+<body>
+    <div id="container" style="width: 50%;height:1400px;"></div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
+    <script>
+		const rankChart = {
+		  "chart": {
+			"type": "bar",
+			"margin": [
+			  100,
+			  20,
+			  50,
+			  300
+			],
+			"height": 1180
+		  },
+		  "title": {
+			"text": "頻道排行"
+		  },
+		  "tooltip": {
+			"headerFormat": "{point.key}<br>",
+			"pointFormat": "{series.name}:{point.y}",
+			"followPointer": true
+		  },
+		  "xAxis": {
+			"allowDecimals": false,
+			"categories": [
+			  "Facebook粉絲團<br>兆豐銀行",
+			  "Facebook粉絲團<br>玉山銀行 數位生活好康",
+			  "Facebook粉絲團<br>統一獅官方粉絲團",
+			  "Ptt<br>HelpBuy",
+			  "Facebook粉絲團<br>請支持流浪貓TNR計劃",
+			  "Facebook粉絲團<br>udn.com 聯合新聞網",
+			  "Ptt<br>Gossiping",
+			  "GooglePlayStore<br>兆豐銀行",
+			  "校園聊天-Dcard<br>工作",
+			  "App Store<br>兆豐銀行",
+			  "Ptt<br>Gossiping",
+			  "Youtube關鍵字搜尋<br>關鍵字搜尋",
+			  "Plurk搜尋<br>Plurk搜尋",
+			  "Facebook粉絲團<br>寶可孟的理財記事本",
+			  "Ptt<br>creditcard",
+			  "Instagram<br>Instagram關鍵字搜尋",
+			  "LINE TODAY<br>國內",
+			  "Youtube 頻道<br>睡大 Still_Sleepy",
+			  "Youtube 頻道<br>台灣花枝丸",
+			  "Facebook粉絲團<br>ezTravel 易遊網"
+			],
+			// trend添加labels應該是為了在網頁呈現上的美觀，註解labels可以避免下載圖檔報錯
+			<!-- "labels": { -->
+			  <!-- "style": { -->
+				<!-- "width": "300px", -->
+				<!-- "min-width": "300px" -->
+			  <!-- }, -->
+			  <!-- "align": "left", -->
+			  <!-- "useHTML": true, -->
+			  <!-- "x": "-300" -->
+			<!-- } -->
+		  },
+		  "yAxis": {
+			"title": {
+			  "text": "則數"
+			},
+			"stackLabels": {
+			  "enabled": true
+			}
+		  },
+		  "plotOptions": {
+			"series": {
+			  "stacking": "normal"
+			}
+		  },
+		  "legend": {
+			"y": 0,
+			"align": "right",
+			"verticalAlign": "top",
+			"borderWidth": 1,
+			"x": -30
+		  },
+		  "series": [
+			{
+			  "name": "聲量",
+			  "data": [
+				{
+				  "y": 29350
+				},
+				{
+				  "y": 20624
+				},
+				{
+				  "y": 3863
+				},
+				{
+				  "y": 2102
+				},
+				{
+				  "y": 1722
+				},
+				{
+				  "y": 1518
+				},
+				{
+				  "y": 1240
+				},
+				{
+				  "y": 1152
+				},
+				{
+				  "y": 1004
+				},
+				{
+				  "y": 983
+				},
+				{
+				  "y": 920
+				},
+				{
+				  "y": 772
+				},
+				{
+				  "y": 684
+				},
+				{
+				  "y": 616
+				},
+				{
+				  "y": 600
+				},
+				{
+				  "y": 590
+				},
+				{
+				  "y": 551
+				},
+				{
+				  "y": 535
+				},
+				{
+				  "y": 523
+				},
+				{
+				  "y": 498
+				}
+			  ]
+			}
+		  ],
+		  "exporting": {
+			"buttons": {
+			  "contextButton": {
+				"menuItems": [
+				  {
+					"text": "下載PNG圖檔",
+					onclick() {
+						this.exportChartLocal();
+					}
+				  },
+				  {
+					"text": "下載JPEG圖檔",
+				  }
+				]
+			  }
+			}
+		  },
+		  "navigation": {
+			"menuStyle": {
+			  "padding": "0px"
+			},
+			"menuItemStyle": {
+			  "padding": "5px"
+			}
+		  },
+		  "credits": {
+			"enabled": false
+		  }
+		};
+        var chart = Highcharts.chart('container', rankChart);
+    </script>
+</body>
+</html>

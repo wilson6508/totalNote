@@ -1,0 +1,2 @@
+const array = [ { name: "Tom", age: 18 }, { name: "Amy", age: 20 } ];
+const max = Math.max(...array.map((p) => p.age));

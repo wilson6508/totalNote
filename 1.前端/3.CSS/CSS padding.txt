@@ -1,0 +1,13 @@
+<!-- padding:上 右 下 左; -->
+<!-- padding:上下 左右; -->
+<!-- padding:上 左右 下; -->
+<!-- padding:四個邊同樣値; -->
+
+<!-- padding-top：   上方的內距 -->
+<!-- padding-right： 右方的內距 -->
+<!-- padding-bottom：下方的內距 -->
+<!-- padding-left：  左方的內距 -->
+
+<!-- padding:auto;　    //代表讓瀏覽器自己去設定。 -->
+<!-- padding:長度單位;　//就是給數字跟單位，單位可以是 em、px、pt 等値。 -->
+<!-- padding:%;　       //讓瀏覽器自己去設定，跟邊界元素有關。 -->

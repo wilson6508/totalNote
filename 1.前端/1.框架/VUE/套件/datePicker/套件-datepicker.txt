@@ -1,0 +1,53 @@
+https://mengxiong10.github.io/vue2-datepicker/index.html
+https://bestofvue.com/repo/mengxiong10-vue2-datepicker-vuejs-calendar
+
+npm install vue2-datepicker --save
+
+import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
+
+-------------------------------------------------------------------------
+
+    addShortcuts(month) {
+      this.shortcuts.push(
+		  {
+			text: `過去${month}個月`,
+			onClick() {
+			  return [
+				new Date(moment().subtract(month, "months")),
+				new Date(moment().endOf("month")),
+			  ];
+			},      
+		  }
+	  );
+    },
+	
+	shortcuts: [
+        {
+          text: "過去3個月",
+          onClick() {
+            return [
+              new Date(moment().subtract(3, "months")),
+              new Date(moment().endOf("month")),
+            ];
+          },
+        },
+        {
+          text: "過去6個月",
+          onClick() {
+            return [
+              new Date(moment().subtract(6, "months")),
+              new Date(moment().endOf("month")),
+            ];
+          },
+        },
+        {
+          text: "過去12個月",
+          onClick() {
+            return [
+              new Date(moment().subtract(1, "years")),
+              new Date(moment().endOf("month")),
+            ];
+          },
+        },
+      ],

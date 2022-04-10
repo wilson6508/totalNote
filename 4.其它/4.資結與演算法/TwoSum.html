@@ -1,0 +1,27 @@
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	
+	<body>
+	</body>
+
+	<script>
+		function demo (numArray, targetSum) {
+			const mySet = new Set();
+			for (const [index, item] of numArray.entries()) {
+				const check = targetSum - item;
+				if (numArray.includes(check)) {
+					const tempArr = [item, check].sort();
+					mySet.add(tempArr[0]);	
+				}
+			}
+			return [...mySet].map(e => [e, targetSum - e]);
+		}
+		console.log(demo([1, 6, 4, 5, 3, 3, 4], 8))
+		console.log(demo([40, 11, 19, 17, -12], 28))
+	</script>
+
+</html>

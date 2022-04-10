@@ -1,0 +1,8 @@
+.b-popover .popover-body {
+  background: #D4EFDF;
+}
+
+.b-popover .arrow:after {
+  border-bottom-color: #D4EFDF;
+  border-top-color: #D4EFDF;
+}

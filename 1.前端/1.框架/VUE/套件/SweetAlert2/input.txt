@@ -1,0 +1,54 @@
+    rejectTask() {
+      this.$swal
+        .fire({
+          title: "確定要駁回這筆申請?",
+          text: "",
+          html: '<input id="swal-input1" class="swal2-input" placeholder="駁回原因">',
+          icon: "warning",
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: "確定",
+          confirmButtonColor: "#007bff",
+          cancelButtonText: "取消",
+          cancelButtonColor: "gray",
+          preConfirm: () => {
+            if (this.isEmpty(document.getElementById("swal-input1").value)) {
+              this.$swal.showValidationMessage("駁回原因不可為空白");
+            }
+          },
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            const reason = document.getElementById("swal-input1").value;
+            for (const item of this.selected) {
+              item.status = "駁回";
+              item.reviewReason = reason;
+            }
+          this.$store
+            .dispatch("request", {
+              method: "POST",
+              headers: {
+                Authorization: "Bearer " + this.getCookie("duif"),
+                dufc: "Bearer " + this.getCookie("dufc"),
+              },
+              data: {
+                model: { model_name: "update_channel_adjust" },
+                parameter: { data_source_adjust_task_entity_list: this.selected },
+              },
+            })
+            .then((response) => {
+              if (response.data.response_info.error_code === 0) {
+                this.getAllDataSourceAdjustTask();
+                this.errorSwal("該申請已駁回", "", "success", "", true, -1);
+              } else {
+                this.errorSwal("駁回失敗，請稍後再進行。", "", "error", "", true, -1);
+              }
+            })
+            .catch(() => {
+              this.errorSwal("駁回失敗，請稍後再進行。", "", "error", "", true, -1);
+            });
+          }
+        });
+    },
+
+

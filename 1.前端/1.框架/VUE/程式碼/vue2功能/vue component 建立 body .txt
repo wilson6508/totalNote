@@ -1,0 +1,6 @@
+  beforeCreate() {
+    document.querySelector("body").setAttribute("style", "background-color:#D4E6F8");
+  },
+  beforeDestroy() {
+    document.querySelector("body").removeAttribute("style");
+  },

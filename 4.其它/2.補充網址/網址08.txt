@@ -1,0 +1,9 @@
+Chrome開發者工具
+https://dotblogs.com.tw/CodingInInDer/2018/06/23/115441
+https://iter01.com/81670.html
+https://5xruby.tw/posts/how-to-use-chrome-devtools
+https://www.tpisoftware.com/tpu/articleDetails/1650
+
+Chrome 網頁除錯功能
+https://hugh-program-learning-diary-js.medium.com/chrome-%E7%B6%B2%E9%A0%81%E9%99%A4%E9%8C%AF%E5%8A%9F%E8%83%BD%E5%A4%A7%E8%A7%A3%E5%AF%86-9b057688a5af
+https://ithelp.ithome.com.tw/articles/10157957

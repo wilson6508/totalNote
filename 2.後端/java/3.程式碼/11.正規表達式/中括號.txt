@@ -1,0 +1,30 @@
+package folder1;
+
+import java.io.IOException;
+
+public class Ex2 {
+
+    public static void main(String[] args) throws IOException {
+
+        String regex = "a[xyz]a";
+	String regex = "a[0-9a-zA-Z]a";
+	String regex = "a[^a-z]a";  // ^逼埃
+
+        String str01 = "aya";
+
+        if (str01.matches(regex)) {
+            System.out.println("才");
+        } else {
+            System.out.println("ぃ才");
+        }
+
+        String str02 = "axya";
+
+        if (str02.matches(regex)) {
+            System.out.println("才");
+        } else {
+            System.out.println("ぃ才");
+        }
+
+    }
+}

@@ -1,0 +1,25 @@
+<b-table
+id="my-table"
+:busy="isBusy"
+:items="items"
+:fields="fields"
+:striped="false"
+head-variant="light"
+responsive="lg"
+:per-page="pagesCount"
+:current-page="currentPage"
+:sort-by.sync="sortBy"
+:sort-desc.sync="sortDesc"
+>
+</b-table>
+isBusy: false,
+pagesCount: 10, // 分頁數
+currentPage: 1, // 目前分頁
+result: [],
+sortBy: "date",
+sortDesc: true,
+-----------------------------------------------------
+直接修改table
+https://muhimasri.com/blogs/create-an-editable-dynamic-table-with-bootstrap-vue/
+https://www.npmjs.com/package/bootstrap-vue-editable-table
+https://codepen.io/Hiws/pen/BaBZyQz

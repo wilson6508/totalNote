@@ -1,0 +1,30 @@
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+<button id="1" name="A" style="backgroundColor="#F5B041"">Pick me to cart</button><br><br>           
+<button id="2" name="B">Pick me to cart</button><br><br>   
+<button id="3" name="C">Pick me to cart</button><br><br>   
+<button id="4" name="D">Pick me to cart</button><br><br>   
+     
+
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	$( "button" ).on( "mouseover", function(event) {
+     this.style.backgroundColor="#CA6F1E";
+} );
+
+	$( "button" ).on( "mouseout", function(event) {
+     this.style.backgroundColor="#F5B041";
+} );
+        
+</script>
+</html>

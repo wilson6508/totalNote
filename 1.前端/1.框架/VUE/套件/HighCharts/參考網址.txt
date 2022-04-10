@@ -1,0 +1,23 @@
+PieChart 一些屬性
+https://www.tpisoftware.com/tpu/articleDetails/435
+
+Highcharts 事件屬性
+https://ithelp.ithome.com.tw/articles/10247862
+
+Highcharts 格式化屬性
+https://ithelp.ithome.com.tw/articles/10245718?sc=hot
+
+Highcharts 顏色屬性
+https://ithelp.ithome.com.tw/articles/10244723
+
+Highcharts codepen
+https://codepen.io/max-lee/pen/bGpmmjj
+
+Vue function in Highcharts
+https://github.com/highcharts/highcharts-vue/issues/110
+
+Highcharts Point Click Callback Function
+https://api.highcharts.com/highcharts/plotOptions.series.point.events.click
+
+Highcharts Series Click Callback Function
+https://api.highcharts.com/highcharts/plotOptions.series.events.click

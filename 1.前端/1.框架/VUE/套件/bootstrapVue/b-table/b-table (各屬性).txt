@@ -1,0 +1,27 @@
+<b-table
+	:striped="striped"                 // true: 灰白相間  		false: 無
+	:bordered="bordered"               // true: 所有框線  		false: 基本底線
+	:borderless="borderless"           // true: 沒有框線  		false: 基本底線
+	:outlined="outlined"               // true: 有外框線  		false: 無外框線
+	:small="small"                     // true: 列距小    		false: 列距正常
+	:hover="hover"                     // true: 滑鼠靠近反灰    false: 無
+	:dark="dark"                       // true: 黑背景          false: 正常背景
+	:fixed="fixed"                     // true: 固定行距        false: 不固定行距
+	:foot-clone="footClone"            // true: 有底col         false: 無
+	:no-border-collapse="noCollapse"   // (?)
+	:items="items"
+	:fields="fields"
+	:head-variant="headVariant"        // null light dark (家裡不行?)
+	:table-variant="tableVariant"      // primary secondary info danger warning success light dark
+	class="forCopyJiraTable"           // 用來改變col背景色
+>
+</b-table>
+	  
+<style>
+.forCopyJiraTable > thead > tr > th {
+  background-color: #fce5cd;  // 家裡
+}
+.forCopyJiraTable > div > table > thead > tr > th {
+  background-color: #fce5cd;  // 公司
+}
+</style>

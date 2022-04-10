@@ -1,0 +1,38 @@
+<template>
+  <div class="bgImg">
+    <div class="container" style="text-align: center">
+      <img class="col-9" src="@/assets/images/home/clock.png" /><br />
+      <font class="centered" size="6" face="Arial">
+        這個分享連結的內容已經看不到囉<br />
+        歡迎直接登入trend創造屬於您的分享連結!</font
+      >
+      <div style="margin-top: -5%">
+        <img src="@/assets/images/home/v155_259.png" /><br /><br />
+        <router-link to="/Explore">
+          <b-button
+            class="col-3"
+            size="lg"
+            style="width: 25%; background-color: #2874a6"
+            >回trend首頁</b-button
+          >
+        </router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.centered {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2874a6;
+  font-weight: bold;
+}
+.bgImg {
+  width: 100%;
+  height: 880px;
+  background: url("../assets/images/home/gradient.png");
+}
+</style>

@@ -1,0 +1,152 @@
+1. ES6 重點
+變數宣告：
+var 是宣告全域變數；
+let 是宣告只存活在 {} 中的變數；
+const 是是宣告常數（無法再修改，但是 [array]陣列及 {object} 物件可以塞值進去）
+解構賦值 (Destructuring assignment) 語法是一種 JavaScript 運算式，可以把陣列或物件中的資料解開擷取成為獨立變數。
+const user = {
+  name: "Tad",
+  age: 48,
+  address: "Tainan",
+};
+//解構（可以只抽出某幾個）
+const { name, age, address } = user;
+亦可直接將整個物件塞入：
+
+const user_data = {
+  user,
+  sex: "男",
+};
+ 
+
+箭頭函式運算式（arrow function expression）擁有比函式運算式還簡短的語法。它沒有自己的 this、arguments、super、new.target 等語法。本函式運算式適用於非方法的函式，但不能被用作建構式（constructor）。
+//一般用法
+document.getElementById("aLink1").addEventListener("click", function () {
+  console.log(this);
+});
+//因為沒有 this，所以要用 e 來抓取目前元件資訊
+document.getElementById("aLink2").addEventListener("click", (e) => {
+  console.log(e.target);
+});
+設定常數才能用箭頭函式
+
+//原始寫法(加入參數預設值，避免錯誤)
+const Add = function(a=0, b=0) {
+  return a + b
+}
+//箭頭函式
+const Add = (a=0, b=0) => {
+  return a + b
+}
+//若只有返回可以更簡化
+const Add = (a=0, b=0) => a + b
+//呼叫函式用法
+add(1, 3)
+另一個例子（將數字陣列轉為文字）
+
+const ArrtoStr = (arr = []) => {
+    const mapStr = arr.map((item) => item + '')
+    return mapStr
+}
+
+console.log(ArrtoStr([1, 3]));
+ 
+
+ES module
+//tools.js
+const Add = (a, b) => {
+  return a + b;
+};
+
+//一定要用 const 才能 export
+export Name = "Mike";
+export const Age = 12;
+//預設被匯出的
+export default Add;
+接收的部份：
+
+//一定要有 type="module"
+<script type="module">
+  //預設匯出的不需 {}，Add名稱可以任意改
+  import Add, { Name, Age } from "./tools.js";
+  console.log(Add(4, 2));
+  console.log(Name);
+  console.log(Age);
+</script>
+
+
+1-1 Array 陣列存取
+方法	描述
+concat()	連接兩個或更多的數組，並返回結果。
+join()	把數組的所有元素放入一個字符串。元素通過指定的分隔符進行分隔。
+pop()	刪除並返回數組的最後一個元素
+push(新元素, [新元素, ...])	向數組的末尾添加一個或更多元素，並返回新的長度。
+reverse()	顛倒數組中元素的順序。
+shift()	刪除並返回數組的第一個元素
+slice()	從某個已有的數組返回選定的元素
+sort()	對數組的元素進行排序
+splice(開始索引, 數量, [新元素, ...])	刪除元素，並向數組添加新元素。
+toSource()	返回該對象的源代碼。
+toString()	把數組轉換為字符串，並返回結果。
+toLocaleString()	把數組轉換為本地數組，並返回結果。
+unshift()	向數組的開頭添加一個或更多元素，並返回新的長度。
+valueOf()	返回數組對象的原始值
+
+
+1-2 String 對象方法
+方法	描述
+anchor()	創建 HTML 錨。
+big()	用大號字體顯示字符串。
+blink()	顯示閃動字符串。
+bold()	使用粗體顯示字符串。
+charAt()	返回在指定位置的字符。
+charCodeAt()	返回在指定的位置的字符的 Unicode 編碼。
+concat()	連接字符串。
+fixed()	以打字機文本顯示字符串。
+fontcolor()	使用指定的顏色來顯示字符串。
+fontsize()	使用指定的尺寸來顯示字符串。
+fromCharCode()	從字符編碼創建一個字符串。
+indexOf()	檢索字符串。
+italics()	使用斜體顯示字符串。
+lastIndexOf()	從後向前搜索字符串。
+link()	將字符串顯示為鏈接。
+localeCompare()	用本地特定的順序來比較兩個字符串。
+match()	找到一個或多個正則表達式的匹配。
+replace()	替換與正則表達式匹配的子串。
+search()	檢索與正則表達式相匹配的值。
+slice()	提取字符串的片斷，並在新的字符串中返回被提取的部分。
+small()	使用小字號來顯示字符串。
+split(分隔符號[, 返回的數組的最大長度])	把字符串分割為字符串數組。
+strike()	使用刪除線來顯示字符串。
+sub()	把字符串顯示為下標。
+substr(起始[, 長度])	從起始索引號提取字符串中指定數目的字符。
+substring()	提取字符串中兩個指定的索引號之間的字符。
+sup()	把字符串顯示為上標。
+toLocaleLowerCase()	把字符串轉換為小寫。
+toLocaleUpperCase()	把字符串轉換為大寫。
+toLowerCase()	把字符串轉換為小寫。
+toUpperCase()	把字符串轉換為大寫。
+toSource()	代表對象的源代碼。
+toString()	返回字符串。
+valueOf()	返回某個字符串對象的原始值。
+
+
+1-3 setTimeout 倒數計時
+要使用 setTimeout()，必須在卸載時去 clearTimeout()才行
+<script>
+export default {
+  setup() {
+    let timer = null;
+
+    onMounted(() => {
+      timer = setTimeout(() => {
+        router.go(-1);
+      }, 3000);
+    });
+
+    onUnmounted(() => {
+      clearTimeout(timer);
+    });
+  },
+};
+</script>

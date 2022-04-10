@@ -1,0 +1,19 @@
+this.webSelected.sort((a, b) => { return a.order > b.order; });
+
+---------------------------------------------------------------------
+
+array = array.sort(this.compare);
+compare(a, b) {
+  const aa2 = parseInt(a.stockId.charAt(2));
+  const ba2 = parseInt(b.stockId.charAt(2));
+  if (aa2 !== ba2) {
+	return aa2 - ba2;
+  } else {
+	const aa3 = parseInt(a.stockId.charAt(3));
+	const ba3 = parseInt(b.stockId.charAt(3));
+	return aa3 - ba3;
+  }
+},
+
+---------------------------------------------------------------------
+

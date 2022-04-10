@@ -1,0 +1,7 @@
+var searchSourceObject = JSON.parse(this.shareResultSearchSource);
+console.log(searchSourceObject);
+		  
+for (const i in searchSourceObject) {	  // 要遍歷的物件
+    console.log(i); 					  // 該物件的屬性名稱
+    console.log(searchSourceObject[i]);   // 該屬性名稱的值
+}

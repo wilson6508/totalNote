@@ -1,0 +1,19 @@
+$("input[name=source_filter]")
+$("[name='source_filter']")
+
+$("[name='source_filter']").each(function(index, element) {
+    console.log(index);
+    console.log(element.value);
+    console.log(element.type);
+    console.log(element.name);
+    console.log(element.className);
+	console.log($(this).attr("data-search-field"));
+	console.log($(this).prop("checked"));
+	element.checked = true;
+});
+
+
+const getCheckBox = document.getElementsByName("source_filter");
+getCheckBox.forEach(function(element, index) {
+    console.log(element.value);
+})

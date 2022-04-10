@@ -1,0 +1,8 @@
+AXIOS API (優先看)
+https://hackmd.io/@FortesHuang/SycpsQ08B
+
+Using Axios to Consume APIs (官方)
+https://v2.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html?redirect=true
+
+How to return a response from axios in Vue (stackoverflow)
+https://stackoverflow.com/questions/55071308/how-to-return-a-response-from-axios-in-vue

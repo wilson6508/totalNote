@@ -1,0 +1,41 @@
+$("#id")
+回傳單個元件
+
+$(".className")
+回傳Array
+
+$(document)
+選取整個文檔對象
+
+$(this).attr(key)
+獲取節點屬性名的值，相當於getAttribute(key)方法
+
+<div id="id1" class="widget" diywidgetid="${template.diyWidgetId}"></div>
+var value = $("#id1").attr("diywidgetid");
+獲取節點屬性的值
+
+$(this).attr(key, value)
+設定節點屬性的值，相當於setAttribute(key, value)方法
+
+$(this).val();
+獲取某個元素節點的value值，相當於$(this).attr("value");
+
+$(this).val(value);
+設定某個元素節點的value值，相當於$(this).attr(“value”,value);
+
+<input id="id1" value="1" type="text"></input>
+var value = $("#id1").val(); 
+獲取元素節點的value值
+
+$(function(){ ... });
+其作用和 $(document).ready()一樣 ，用意在DOM載入後執行ready()方法。
+
+Popover Example
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_popover&stacked=h
+
+W3.CSS Sidebar
+https://www.w3schools.com/w3css/w3css_sidebar.asp
+
+JSP標準標記庫
+http://tw.gitbook.net/jsp/jsp_standard_tag_library.html
+

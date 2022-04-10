@@ -1,0 +1,8 @@
+﻿SQL SERVER 忘記SA密碼
+https://www.youtube.com/watch?v=GKrUI5ruFHw
+
+[SQL] 使用者 'sa' 登入失敗。原因: 帳戶已停用。
+http://todomato.blogspot.com/2016/03/sql-sa.html
+
+SQL改為sa使用者登入
+https://www.itread01.com/content/1549271000.html

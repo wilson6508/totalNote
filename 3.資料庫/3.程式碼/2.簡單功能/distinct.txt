@@ -1,0 +1,10 @@
+SELECT user_type, COUNT(distinct user_email) AS 使用者數量 FROM dbo.user_profile GROUP BY user_type;
+
+select COUNT(s_area_id) as 總共 from data_source_info;
+select COUNT(distinct(s_id)) as 總共 from data_source_info;
+
+select creator, COUNT(distinct doc_id) as 點過幾份文件 
+from techdoc_log 
+where act='021' 
+AND create_date BETWEEN '2012/04/01' AND '2012/06/30'
+group by creator;

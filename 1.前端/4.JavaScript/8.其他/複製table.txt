@@ -1,0 +1,65 @@
+法1 (使用此法)
+copyTable(tableId) {
+  window.getSelection().removeAllRanges();
+  const table = document.getElementById(tableId);
+  // table.style.border = "none";
+  // table.style.outline = "none";
+  // table.style.boxShadow = "none";
+  // table.style.background = "transparent";  
+  const range = document.createRange();
+  range.selectNode(table);
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+},
+---------------------------------------------------------------------
+法2
+let content = "";
+content += "\t";
+content += "主題\t";
+content += "聲量數\n";
+content += "1\t";
+content += "玉山銀行\t";
+content += "681\n";
+this.copyContent(content);
+
+demo(colArr, rowArrArr) {
+	let content = "";
+	for (let i = 0 ; i < colArr.length - 1 ; i++) {
+		content += "`${colArr[i]}`\t";
+	}
+	content += "`${colArr.at(-1)}`\n";
+	for (let j = 0 ; j < rowArrArr.length ; j++) {
+		const rowArr = rowArrArr[j];
+		for (let k = 0 ; k < rowArr.length - 1; k++) {
+			content += "`${rowArr[k]}`\t";
+		}
+		content += "`${rowArr.at(-1)}`\n";
+	}
+}
+---------------------------------------------------------------------
+法3
+const table = document.getElementById("tableId");
+const str = table.outerHTML.replace(/<[^>]+>/g, "\t"); // 去除html標籤
+const arr = str.split("\t");
+this.copyContent(arr);
+---------------------------------------------------------------------
+法4
+https://stackoverflow.com/questions/61895994/copy-table-to-clipboard-in-vue-js
+copyToClipboard(tableId) {
+  var containerNode = document.getElementById(tableId);
+  var textArea = document.createElement("textarea");
+  textArea.value = containerNode.outerHTML;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  document.body.removeChild(textArea);
+  this.$swal({
+	title: "複製成功",
+	text: "",
+	icon: "success",
+	showCancelButton: false,
+  });
+},

@@ -1,0 +1,11 @@
+<template #cell(enable)="row">
+  <div v-html="transEnable(row.item.enable)"></div>
+</template>
+
+transEnable(enable) {
+  if (enable) {
+	return `<h5><span class="badge bg-danger">${enable}</span></h5>`;
+  } else {
+	return `<h5><span class="badge bg-success">${enable}</span></h5>`;
+  }
+},

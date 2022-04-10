@@ -1,0 +1,18 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <br />
+    <button v-on="{ mousedown: doThis, mouseup: doThat }">OK</button>
+    <!-- mouseover  mouseout -->
+  </div>
+</template>
+
+<script>
+export default {
+  setup() {
+    let doThis = () => {console.log("doThis")};
+    let doThat = () => {console.log("doThat")};
+    return { doThis, doThat };
+  },
+};
+</script>

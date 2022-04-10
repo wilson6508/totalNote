@@ -1,0 +1,25 @@
+clean build
+-Dfile.encoding=UTF-8
+-Penv=test
+
+
+VUE_APP_RD3_TEST1_TREND_API_URL=https://rd3-test3.opview.com.tw
+VUE_APP_RD3_TEST1_TREND_API_URL=http:localhost:7778
+VUE_APP_RD3_TEST1_TREND_API_URL=http:localhost:8081
+VUE_APP_TREND_PENV=rd3Test1
+
+VUE_APP_TREND_B_TEST_API_URL=https://trendb-test.opview.com.tw
+VUE_APP_TREND_B_TEST_API_URL=http:localhost:8081
+VUE_APP_TREND_PENV=trendBTest
+
+
+keywordAPI insight正式
+http://insight-api.elandsoft.com/OpViewTrendAPI/Trend
+
+
+C:\Windows\System32\drivers\etc
+
+DB
+trend 172.18.31.31
+insight 10.20.20.1
+不能連 172.20.30.51  insight

@@ -1,0 +1,81 @@
+<!-- https://sweetalert2.github.io/ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<button onclick="basic01()">基礎功能01</button>
+<button onclick="display01()">顯示前後</button>
+<button onclick="type01()">輸入功能01</button>
+<button onclick="copy01('https://www.google.com/')">複製功能01</button>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
+<script>
+function basic01() {
+	Swal.fire(
+		"查詢作業失敗", 							//標題 
+		"您所輸入的序號不存在或是系統被玩壞了!",    //訊息內容(可省略)
+		"error" 									//圖示(可省略) success/info/warning/error/question
+	);
+}
+function display01() {
+	Swal.fire({
+			width: "1000px",
+			title: "標題",
+			onBeforeOpen: () => {
+				console.log('將開啟SweetAlert視窗'); // Deprecated, use willOpen instead
+			},
+			onOpen: () => {
+				console.log('已開啟SweetAlert視窗'); // Deprecated, use didOpen instead
+			},
+			onClose: () => { 
+				console.log('將關閉SweetAlert視窗'); // Deprecated, use willClose instead
+			},
+			onAfterClose : () => { 
+				console.log('已關閉SweetAlert視窗'); // Deprecated, use didClose instead
+			},
+			
+	});
+}
+function type01() {
+	Swal.fire({
+			title: "請輸入內容:",
+			confirmButtonText: "確定",
+			showCloseButton: true,
+			input: "text",
+		}
+	).then((result) => {
+		if (result.isConfirmed) {
+            Swal.fire(`${result.value}`);
+        }
+    });	
+}
+function copy01(url) {
+	Swal.fire({
+			title: "您的分享連結網址",
+			confirmButtonText: "複製網址",
+			cancelButtonText: "取消",
+			showCancelButton: true,
+			showCloseButton: true, // 叉叉
+			html: `<a href=${url} target="_blank">${url}</a>`,
+		}
+	).then((result) => {
+		if (result.value) {
+		    const dummy = document.createElement("input");
+            document.body.appendChild(dummy);
+            dummy.value = url;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            Swal.fire("", "複製成功", "success");
+        } else {
+			Swal.fire("您按了叉叉或取消");
+        }
+    });
+}
+</script>
+</html>

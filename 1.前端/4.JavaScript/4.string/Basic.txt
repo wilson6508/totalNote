@@ -1,0 +1,15 @@
+const str = "ABCDE";
+
+console.log(str.substring(1, 2)); 		// B    // 從 index = 1 的地方，取到 endIndex - 1 的地方。
+console.log(str.substr(1, 2));    		// BC   // 從 index = 1 的地方，取長度 2。
+console.log(str.slice(-3, str.length)); // CDE  // 取字串末3碼
+
+substring() 中的參數如果 startIndex > endIndex 則兩者會直接互換。
+substring() 當 index 為負值時，會直接當作 0 處理。
+
+test() {
+  let str = "BBBB";
+  str = str.padStart(8, "A");
+  console.log(str); // AAAABBBB
+},
+// str.padEnd(Number, 'String')

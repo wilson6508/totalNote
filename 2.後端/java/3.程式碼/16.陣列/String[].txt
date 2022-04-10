@@ -1,0 +1,20 @@
+public static void main(String[] args) {
+	String[] strArr = {"AAA", "BBB"};
+	System.out.println(strArr.length);
+	for (String str : strArr) {
+		System.out.println(str);
+	}
+}
+
+public static void main(String[] args) {
+	String[][] strArrArr = {
+			{"AAA", "BBB"},
+			{"CCC", "DDD"}
+	};
+	for (String[] strArr : strArrArr) {
+		System.out.println(strArr.length);
+		for (String str : strArr) {
+			System.out.println(str);
+		}
+	}
+}

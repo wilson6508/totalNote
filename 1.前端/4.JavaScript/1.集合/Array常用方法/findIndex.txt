@@ -1,0 +1,7 @@
+https://vimsky.com/zh-tw/examples/usage/javascript-array-prototype-findindex-function.html
+
+deleteItem(item) {
+  const sc = (element) => element.id === item.id;
+  const index = this.items.findIndex(sc);
+  this.items.splice(index, 1);
+},

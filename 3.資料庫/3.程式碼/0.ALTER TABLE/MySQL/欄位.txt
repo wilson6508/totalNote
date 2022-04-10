@@ -1,0 +1,14 @@
+新增欄位
+ALTER TABLE tw_name_mapping ADD price float NULL;
+UPDATE tw_name_mapping SET price = 0;
+--------------------------------------------------------------------------------------------------------
+修改欄位
+ALTER TABLE tw_name_mapping MODIFY price float NOT NULL;
+ALTER TABLE table_name MODIFY column_name new_column_datatype [constraints]
+--------------------------------------------------------------------------------------------------------
+修改欄位名稱
+ALTER TABLE tw_name_mapping CHANGE price now_price float NOT NULL;
+ALTER TABLE table_name CHANGE curr_column_name new_column_name new_column_datatype [constraints]
+--------------------------------------------------------------------------------------------------------
+刪除欄位
+ALTER TABLE tw_name_mapping DROP COLUMN price;

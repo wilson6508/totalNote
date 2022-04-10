@@ -1,0 +1,23 @@
+@Transactional
+void deleteByExpiredTimeBefore(Timestamp currentTime);
+
+@Transactional
+List<AutoReportScheduleConfigEntity> deleteAllByServiceId(int serviceId);
+
+@Transactional
+void deleteByScheduleIdIn(List<Integer> scheduleIdList);
+
+----------------------------------------------------------------------------------------------------------------
+在Spring Boot中使用JpaRepository的deleteById(ID id)方法删除数据时，
+要使用existsById(ID id)方法判断数据是否存在。
+删除一个id不存在的数据会抛出org.springframework.dao.EmptyResultDataAccessException异常
+在使用其他方法时，例如：deleteAllByName(name)，不进行判断也可以删除，不会抛出异常。
+
+@Modifying
+@Transactional
+void deleteByExpiredTimeBefore(Timestamp currentTime);
+
+@Query 注解用于使用 JPQL 执行数据库操作
+如果数据库操作是修改数据而非查询数据，则需要再额外使用 @Modifying
+注解提示 JPA 该操作是修改操作。
+----------------------------------------------------------------------------------------------------------------

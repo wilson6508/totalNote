@@ -1,0 +1,6 @@
+Visual Studio IntelliCode
+Beautify
+Bracket Pair Colorizer
+Code Spell Checker
+Auto Rename Tag
+Auto Close Tag

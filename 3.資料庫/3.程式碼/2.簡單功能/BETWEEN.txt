@@ -1,0 +1,5 @@
+SELECT COUNT(*) AS 數量
+FROM dbo.auto_report_task 
+WHERE update_time 
+BETWEEN '2021-10-01 00:00:00.000' 
+AND '2021-11-01 00:00:00.000';

@@ -1,0 +1,17 @@
+App.vue
+<style>
+@import url(https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp);
+</style>
+
+普通vue
+<span class="material-icons-outlined">keyboard_arrow_up</span>
+<i class="material-icons">donut_small</i>
+
+查詢可使用的icon
+https://fonts.google.com/icons
+
+動態icon
+<i class="material-icons-outlined" v-text="iconName"></i>
+
+大小
+<span class="material-icons-outlined" style="font-size: 60px">play_circle</span>

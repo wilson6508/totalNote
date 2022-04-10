@@ -1,0 +1,6 @@
+merge into dbo.weather_info2
+using (select '2020-10-12' as date, '台北' as city) as source   					--[SourceTable]
+on (dbo.weather_info2.date = source.date AND dbo.weather_info2.city = source.city)  --關聯
+when matched then UPDATE SET high = 15, low = 15
+when not matched then INSERT (date, city, sunrise, sunset, high, low, aqi, fx, fl_max, fl_min, type, notice, update_time) 
+values('2020-10-11', '台北', '6:00', '18:00', 29, 20, 20.0, '南風', 5, 3, '晴', '你有心情', '2020-10-10 17:00');

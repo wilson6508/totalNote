@@ -1,0 +1,47 @@
+<template>
+<div>
+<b-container class="mt-5" style="width: 400px">
+<vue-multi-select :options="options" :selectOptions="getContentLabelOptions" v-model="selectedItems" :btnLabel="btnLabel" @input="limiter" class="changeHeight"/>
+</b-container>
+</div>
+</template>
+
+<style>
+.changeHeight .btn-select {
+  height: 50px;
+}
+</style>
+
+<script>
+import { mapGetters } from "vuex";
+import VueMultiSelect from "vue-multi-select";
+import "vue-multi-select/dist/lib/vue-multi-select.css";
+
+export default {
+  components: {
+    VueMultiSelect,
+  },
+  computed: {
+    ...mapGetters({
+      getContentLabelOptions: "getContentLabelOptions",
+    }),
+  },
+  data() {
+    return {
+      options: {
+        multi: true,
+        cssSelected: (option) => (option.selected ? { "background-color": "#84C1FF" } : ""),
+      },
+      selectedItems: [],
+      btnLabel(selectedItems) {
+        return selectedItems.length === 0 ? "請選擇內容標籤" : selectedItems.join();
+      },
+      limiter(e) {
+        if (e.length > 5) {
+          e.pop();
+        }
+      },
+    };
+  },
+};
+</script>

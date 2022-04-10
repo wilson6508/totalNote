@@ -1,0 +1,14 @@
+單例模式 Singleton
+https://skyyen999.gitbooks.io/-study-design-pattern-in-java/content/singleton.html
+
+[Java] Synchronized
+https://www.jackforfun.com/java-synchronized
+
+GSON使用筆記（1） -- 序列化時排除欄位的幾種方式
+https://www.itread01.com/content/1547152385.html
+
+JAVA使用Gson排除特定欄位
+https://www.itread01.com/content/1544668037.html
+
+GSON getDeclaredType
+https://www.codota.com/code/java/methods/com.google.gson.FieldAttributes/getDeclaredType

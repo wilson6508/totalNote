@@ -1,0 +1,8 @@
+// 複製物件
+const obj = {};
+obj.name = "Tom";
+obj.age = 18;
+const copyObj = { ...obj, weight: 67 };
+copyObj.age = 67;
+console.log(obj);
+console.log(copyObj);

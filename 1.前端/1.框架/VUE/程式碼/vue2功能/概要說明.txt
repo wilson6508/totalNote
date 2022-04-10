@@ -1,0 +1,7 @@
+屬性綁定v-bind
+:class
+
+事件綁定v-on
+@click
+
+表單綁定v-model，動態取得input、 textarea、 select的值

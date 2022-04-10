@@ -1,0 +1,29 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <!-- <p>{{ num }}</p> -->
+    <br />
+    <button @click="test01()">修改</button>
+  </div>
+</template>
+
+<script>
+import { reactive, computed } from "vue";
+
+export default {
+  setup() {
+    const user = reactive({
+      name: "Mike",
+      age: 12,
+      tel: "09XX-XXX-XXX",
+      concatData: computed(() => {
+        return `名稱: ${user.name}, 年齡:${user.age}, 電話: ${user.tel}`;
+      }),
+    });
+    let test01 = () => {
+      console.log(user.concatData);
+    };
+    return { user, test01 };
+  },
+};
+</script>

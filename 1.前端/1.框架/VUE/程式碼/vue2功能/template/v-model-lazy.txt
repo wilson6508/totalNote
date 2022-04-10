@@ -1,0 +1,2 @@
+<input v-model.lazy="inputs" /><br />
+{{ inputs }}

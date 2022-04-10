@@ -1,0 +1,42 @@
+    function parentControlChild() {
+        $("input[name=source_filter][value=forum]").click(function() {
+            $("input[name=source_filter][value^=bbs]").prop("checked", $(this).prop("checked"));
+        });
+        
+        $("input[name=source_filter][value=social]").click(function() {
+            $("input[name=source_filter][value^=facebook]").prop("checked", $(this).prop("checked"));
+        });
+        
+        $("input[name=source_filter][value=news]").click(function() {
+            $("input[name=source_filter][value=news_reply]").prop("checked", $(this).prop("checked"));
+        });
+
+        $("#sourceAllSelect").click(function () {
+            $("input[name=source_filter]").prop("checked", $("#sourceAllSelect input").prop("checked"));
+        })
+    }
+
+    function childControlParent() {
+        $("input[name=source_filter]").click(function () {
+
+            const str = $(this).prop("value");
+                if (str.startsWith('bbs')) {
+                    const allForumCount = $("input[name=source_filter][value^=bbs]").length;
+                    const checkAllForumCount = $("input[name=source_filter][value^=bbs]:checked").length;
+                    $("input[name=source_filter][value=forum]").prop("checked", allForumCount == checkAllForumCount);
+                } else if (str.startsWith('facebook')) {
+                    const allSocialCount = $("input[name=source_filter][value^=facebook]").length;
+                    const checkAllSocialCount = $("input[name=source_filter][value^=facebook]:checked").length;
+                    $("input[name=source_filter][value=social]").prop("checked", allSocialCount == checkAllSocialCount);
+                } else if (str.startsWith('news')) {
+                    const allNewsCount = $("input[name=source_filter][value=news_reply]").length;
+                    const checkAllNewsCount = $("input[name=source_filter][value=news_reply]:checked").length;
+                    $("input[name=source_filter][value=news]").prop("checked", allNewsCount == checkAllNewsCount);
+                }
+
+            var allAmount = $("input[name=source_filter]").length;
+            var checkedAmount = $("input[name=source_filter]:checked").length;
+            $("#sourceAllSelect input").prop("checked", allAmount == checkedAmount);
+
+        });
+    }

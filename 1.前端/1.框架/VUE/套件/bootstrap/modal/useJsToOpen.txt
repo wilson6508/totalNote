@@ -1,0 +1,5 @@
+import { Modal } from "bootstrap";
+demo() {
+  const myModal = new Modal(document.getElementById("aptx4869"));
+  myModal.show();
+}

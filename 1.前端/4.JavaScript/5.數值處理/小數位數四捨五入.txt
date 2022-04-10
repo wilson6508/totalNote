@@ -1,0 +1,4 @@
+    function transToDecimal(value, position) {          // position取到小數點後第幾位
+        const tenPow = Math.pow(10, position);
+        return Math.round(value * tenPow) / tenPow;     // 四捨五入
+    }

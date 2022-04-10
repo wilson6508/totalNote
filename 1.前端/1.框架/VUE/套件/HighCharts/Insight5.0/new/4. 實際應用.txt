@@ -1,0 +1,104 @@
+<template>
+  <div>
+    <b-container>
+      <Highcharts :options="barChart"></Highcharts>
+    </b-container>
+    <b-button @click="exportFig({ id: 'trendBarChart', choose: 'full' })">full</b-button>
+    <b-button @click="exportFig({ id: 'trendBarChart', choose: 'png' })">png</b-button>
+    <b-button @click="exportFig({ id: 'trendBarChart', choose: 'jpeg' })">jpeg</b-button>
+  </div>
+</template>
+
+<script>
+import { Chart } from "highcharts-vue";
+import Highcharts from "highcharts";
+import exportingInit from "highcharts/modules/exporting";
+import offlineExporting from "highcharts/modules/offline-exporting";
+exportingInit(Highcharts);
+offlineExporting(Highcharts);
+
+Highcharts.setOptions({
+  yAxis: {
+    labels: {
+      formatter() {
+        return Highcharts.numberFormat(this.value, 0, ".", ",");
+      },
+    },
+  },
+  lang: {
+    thousandsSep: ",",
+    resetZoom: "重置縮放比例",
+  },
+  credits: {
+    enabled: false,
+  },
+  exporting: {
+    buttons: false,
+  },
+});
+
+export default {
+  components: {
+    Highcharts: Chart,
+  },
+  data() {
+    return {
+      barChart: {
+        id: "trendBarChart",
+        chart: {
+          type: "bar",
+        },
+        title: {
+          text: "聲量統計-長條圖",
+        },
+        xAxis: {
+          categories: ["疫情", "公投", "民進黨"],
+        },
+        yAxis: {
+          title: {
+            text: "則數",
+          },
+        },
+        series: [
+          {
+            data: [
+              { y: 995, color: "#7cb5ec" },
+              { y: 832, color: "#434348" },
+              { y: 721, color: "#90ed7d" },
+            ],
+            showInLegend: false,
+          },
+        ],
+        tooltip: {
+          headerFormat: "<b>{point.key}</b><br>",
+          pointFormat: "共{point.y}則",
+        },
+        legend: {
+          y: 0.0,
+          align: "right",
+        },
+        plotOptions: {
+          bar: {
+            dataLabels: {
+              enabled: false, // 顯示數據
+            },
+          },
+        },
+        exporting: {
+          sourceWidth: 700,
+        },
+      },
+    };
+  },
+  methods: {
+    exportFig(fig) {
+      const chart = Highcharts.charts.filter((e) => e !== undefined).find((e) => e.userOptions.id === fig.id);
+      if (fig.choose === "full") {
+        chart.fullscreen.toggle();
+      } else {
+        chart.exportChartLocal({ type: `image/${fig.choose}` });
+      }
+    },
+  },
+};
+</script>

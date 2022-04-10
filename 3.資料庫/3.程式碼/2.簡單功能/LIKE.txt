@@ -1,0 +1,7 @@
+SELECT * FROM Store_Information WHERE store_name LIKE '%AN%';
+
+SELECT * FROM Store_Information WHERE store_name LIKE '%les';
+
+SELECT * FROM Store_Information WHERE store_name LIKE 'Lo%';
+
+SELECT * FROM dbo.vw_user_profile WHERE google_name LIKE '%洪%' OR facebook_name LIKE '%洪%';

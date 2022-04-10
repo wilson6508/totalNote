@@ -1,0 +1,3 @@
+https://www.npmjs.com/package/vue-feather-icons
+https://www.npmjs.com/package/vue-feather
+https://www.npmjs.com/package/feather-icons-vue?activeTab=readme (安裝的)

@@ -1,0 +1,2 @@
+https://jigsawye.com/2017/08/30/vuex-module-namespacing
+https://stackoverflow.com/questions/47792212/what-exactly-is-namespacing-of-modules-in-vuex

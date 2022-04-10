@@ -1,0 +1,34 @@
+package json : 
+"dependencies": {
+	"axios": "^0.21.1",
+	"babel-polyfill": "^6.26.0",
+	"bootstrap": "^5.1.0",
+	"bootstrap-vue": "^2.21.2",
+	"compression-webpack-plugin": "^6.1.1",
+	"core-js": "^3.10.0",
+	"moment": "^2.29.1",
+	"vue": "^2.6.14",
+	"vue-clipboard2": "^0.3.2",
+	"vue-cookies": "^1.7.4",
+	"vue-moment": "^4.1.0",
+	"vue-multi-select": "^4.6.0",
+	"vue-router": "^3.5.1",
+	"vue-select": "^3.13.0",
+	"vue-sidebar-menu": "^4.8.1",
+	"vue2-datepicker": "^3.9.1",
+	"vue-sweetalert2": "^5.0.2",
+	"vuex": "^3.6.2"
+},
+
+main.js
+import "vue2-datepicker/index.css";
+import "vue2-datepicker/locale/zh-cn";
+
+.vue
+<script>
+import DatePicker from "vue2-datepicker";
+export default {
+components: {
+  DatePicker,
+},
+<date-picker v-model="extraData" placeholder="請選擇擴增送出日" range></date-picker>

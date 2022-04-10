@@ -1,0 +1,10 @@
+﻿<b-form-input v-model="share" ref="focusTarget"></b-form-input>
+  watch: {
+    modalShow() {
+      if (this.modalShow) {
+        setTimeout(() => {
+          this.$refs.focusTarget.focus();
+        });
+      }
+    },
+  },

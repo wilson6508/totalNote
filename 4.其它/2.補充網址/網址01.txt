@@ -1,0 +1,32 @@
+spring 定時任務
+https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/312672/
+
+col-md-1.5 in bootstrap
+https://stackoverflow.com/questions/28750907/how-to-customize-bootstrap-column-widths
+https://stackoverflow.com/questions/30026855/can-i-give-the-col-md-1-5-in-bootstrap/30026949
+
+removeEventListener()
+https://www.geeksforgeeks.org/javascript-removeeventlistener-method-with-examples/
+https://www.w3schools.com/jsref/met_element_removeeventlistener.asp
+
+querySelector()
+https://www.w3schools.com/jsref/met_document_queryselector.asp
+
+SweetAlert html querySelector
+https://stackoverflow.com/questions/54685303/custom-swal-button-not-firing-their-specific-function
+
+Kuro Hsu
+https://book.vue.tw/appendix/es6.html
+https://router.vuejs.org/guide/essentials/dynamic-matching.html#reacting-to-params-changes
+
+Async 和 Await
+https://www.oxxostudio.tw/articles/201908/js-async-await.html
+https://wcc723.github.io/development/2020/10/16/async-await/
+
+icon
+https://fontawesome.com/icons?d=gallery&p=2
+https://material.io/resources/icons/?style=baseline
+https://medium.com/@racingf1/font-awesome-4-%E5%BC%95%E7%94%A8-icon-%E6%95%99%E5%AD%B8-e408fa9e8e8
+https://pjchender.blogspot.com/2017/12/5-fontawesome-5.html
+https://www.runoob.com/font-awesome/fontawesome-tutorial.html
+https://www.oxxostudio.tw/articles/201406/css-icon-font.html

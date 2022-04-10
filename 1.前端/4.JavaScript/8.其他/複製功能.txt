@@ -1,0 +1,35 @@
+    test06(copyArray) {
+      let str = "";
+      for(const element of copyArray) {
+        for (const i in element) {
+          str += this.test07(element[i]);
+        }
+        str += "\n";
+      }
+      var dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.value = str;
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);         
+    },
+    test07(abc) {
+      let str = String(abc);
+      const x = 15 - this.countChinese(str);
+      for(let i = 1 ; i <= x ; i++) {
+         str += " ";
+      }
+      return str;
+    },
+    countChinese(word) {
+      var count = 0;
+      for (var i = 0; i < word.length; i++) {
+        var ascNum = word.charCodeAt(i);
+        if (!(ascNum >= 32 && ascNum <= 126)) {
+          count += 2;
+        } else {
+          count ++;
+        }
+      }
+      return count;
+    }, 

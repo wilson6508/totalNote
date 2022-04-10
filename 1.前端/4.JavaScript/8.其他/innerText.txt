@@ -1,0 +1,8 @@
+function myFunction() {
+  var x = document.getElementById("myBtn").innerText;
+  document.getElementById("demo").innerHTML = x;  
+}
+
+test01() {
+  document.getElementById("id1").innerHTML = "science";
+},

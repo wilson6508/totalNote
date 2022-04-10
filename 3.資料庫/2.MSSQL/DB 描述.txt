@@ -1,0 +1,15 @@
+EXEC sp_addextendedproperty    'MS_Description', '人員資訊', 'SCHEMA', 'dbo', 'table', 'test_history',  NULL,NULL
+
+
+(語法複製以下內容，AA位置是要填入的資訊)
+
+
+新增描述
+EXEC sp_addextendedproperty    'MS_Description', '員工代碼', 'SCHEMA', 'dbo', 'table', 'test_history', 'COLUMN','service_account';
+													 AA                                     AA                          AA
+修改描述
+EXEC sp_updateextendedproperty 'MS_Description', '員工代碼', 'SCHEMA', 'dbo', 'table', 'test_history', 'COLUMN','service_account';
+
+刪除描述
+EXEC sp_dropextendedproperty   'MS_Description',             'SCHEMA', 'dbo', 'table', 'test_history', 'COLUMN','service_account';
+

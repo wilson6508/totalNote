@@ -1,0 +1,50 @@
+      pieChart: {
+        id: "trendPieChart",
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: "pie",
+        },
+        title: {
+          text: "聲量統計-圓餅圖",
+        },
+        tooltip: {
+          headerFormat: "<b>{point.key}</b><br>",
+          pointFormat: "共<b>{point.percentage:.1f}%</b>",
+        },
+        accessibility: {
+          point: {
+            valueSuffix: "%",
+          },
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: "pointer",
+            dataLabels: {
+              enabled: true,
+              format: "<b>{point.name}</b><br><b>{point.percentage:.1f}%</b>",
+              // distance: "-40%",
+            },
+          },
+        },
+        series: [
+          {
+            name: "",
+            colorByPoint: true,
+            data: [
+              { name: "疫情", y: 1223, color: "#7cb5ec" },
+              { name: "公投", y: 1132, color: "#434348" },
+              { name: "民進黨", y: 1021, color: "#90ed7d" },
+            ],
+          },
+        ],
+        credits: {
+          enabled: false
+        },
+        exporting: {
+          sourceWidth: 500,
+          buttons: false
+        },
+      },

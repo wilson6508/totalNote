@@ -1,0 +1,6 @@
+    test01() {
+      const testAbc = this.sideBarInfo.map((element) => ({
+         qqq: element.model,
+         jjj: element.icon
+      }))
+    }

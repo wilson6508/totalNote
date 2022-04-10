@@ -1,0 +1,46 @@
+get參數
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+var promotionCode = url.searchParams.get("promotionCode");
+----------------------------------------------------------------------------------------------------------------------------
+get全部參數
+const url = new URL(location.href);
+const params = url.searchParams;
+for (const pair of url.searchParams.entries()) {
+  console.log(${pair[0]} : ${pair[1]})
+}
+params.has("abc")
+----------------------------------------------------------------------------------------------------------------------------
+get進階參數
+let githubURL = new URL('https://github.com/search?q=vue');
+githubURL.href;         // "https://github.com/search?q=vue"
+githubURL.hostname;     // "github.com"
+githubURL.pathname;     // "/search"
+githubURL.protocol;     // "https:"
+githubURL.search;       // "?q=vue"
+----------------------------------------------------------------------------------------------------------------------------
+set參數
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+url.pathname = "ShareResult";
+url.search = "?promotionCode=" + result["data"]["data"];
+window.open(url);
+----------------------------------------------------------------------------------------------------------------------------
+Vue.js開新分頁
+const { id, pType, contentNo, sName, sAreaName } = article;
+const routeData = this.$router.resolve({
+  name: "Discussion",
+  query: { id, pType, contentNo, sName, sAreaName }
+});
+window.open(routeData.href, "_blank");
+----------------------------------------------------------------------------------------------------------------------------
+window.location.href = `${window.location.origin}/LogIn?target=/trend${to.path}`;
+
+searchResult(code) {
+  window.open(`/trend/CAResult/${code}`, "_blank");
+}
+test123() {
+  window.close();
+},
+----------------------------------------------------------------------------------------------------------------------------
+

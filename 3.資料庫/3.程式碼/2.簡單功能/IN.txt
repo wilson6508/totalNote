@@ -1,0 +1,2 @@
+SELECT * FROM auto_report_history as entity WHERE entity.id IN (900, 901);
+SELECT * from dbo.vw_user_profile WHERE type_id IN (1, 2);

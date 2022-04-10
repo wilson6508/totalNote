@@ -1,0 +1,43 @@
+SELECT ROW_NUMBER() OVER (ORDER BY dbo.user_info.id) id, 
+
+dbo.user_info.id AS user_id, 
+dbo.user_info.account, 
+dbo.user_third_party_mapping.type_id, 
+dbo.facebook_info.facebook_id, 
+dbo.facebook_info.facebook_name, 
+dbo.facebook_info.facebook_email, 
+dbo.google_info.google_id, 
+dbo.google_info.google_name, 
+dbo.google_info.google_email,
+dbo.apple_info.apple_id, 
+dbo.apple_info.apple_name, 
+dbo.apple_info.apple_email,
+dbo.user_auth.is_enable, 
+dbo.user_auth.usage_amount, 
+dbo.user_auth.usage_amount_limit, 
+dbo.user_auth.source_type_group_id, 
+dbo.user_auth.cycle_reset_type, 
+dbo.user_auth.enable_share_link,
+dbo.user_auth.promotion_expired_days
+
+FROM dbo.user_info 
+INNER JOIN dbo.user_auth 
+ON dbo.user_info.id = dbo.user_auth.user_id 
+
+INNER JOIN dbo.user_third_party_mapping 
+ON dbo.user_info.id = dbo.user_third_party_mapping.user_id 
+
+INNER JOIN dbo.third_party_type 
+ON dbo.user_third_party_mapping.type_id = dbo.third_party_type.id 
+
+LEFT JOIN dbo.google_info 
+ON dbo.user_third_party_mapping.third_party_id = dbo.google_info.id 
+AND dbo.user_third_party_mapping.type_id = 1 
+
+LEFT JOIN dbo.facebook_info 
+ON dbo.user_third_party_mapping.third_party_id = dbo.facebook_info.id 
+AND dbo.user_third_party_mapping.type_id = 2 
+
+LEFT JOIN dbo.apple_info 
+ON dbo.user_third_party_mapping.third_party_id = dbo.apple_info.id 
+AND dbo.user_third_party_mapping.type_id = 3 

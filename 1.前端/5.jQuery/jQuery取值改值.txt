@@ -1,0 +1,20 @@
+$("[name='source_filter']").prop("checked", true);				// checkbox全部勾選
+
+
+const str = $('#id1 span').text();  							// id1底下的span
+$('#sourceAllSelect span').text('取消全選');
+
+
+const boolean = $('#sourceAllSelect input').prop("checked")     // id1底下的input checkbox
+$('#sourceAllSelect input').prop("checked", false);
+
+
+const value = $('#id1').prop('value');
+$('#id1').prop('value', 'KKKK');
+
+
+const test = $('.checkbox-1').prop('class'));
+const test = $('.checkbox-1').prop('type')
+const test = $('.checkbox-1').prop('checked'));
+
+const count = $("input[name=source_filter]:checked").length;   // checkbox勾選數量

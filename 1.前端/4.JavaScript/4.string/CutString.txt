@@ -1,0 +1,49 @@
+﻿cutString(string, maxLength) {
+  let index = 0;
+  let lengthLimit = 0;
+  for (let i = 0 ; i < string.length ; i++) {
+	const asciiCode = string.charCodeAt(i);
+	if (!(asciiCode >= 32 && asciiCode <= 126)) {
+	  lengthLimit = lengthLimit + 2;
+	} else {
+	  lengthLimit++;
+	}
+	if (lengthLimit > maxLength) {
+		index = i;
+		break;
+	}
+  }
+  if (index > 0) {
+    return string.substring(0, index) + "...";
+  } else {
+    return string;
+  } 
+},
+
+/**
+ * 切割字串
+ * 
+ * @param string 字串
+ * @param maxLength 長度
+ */
+cutString(string, maxLength) {
+  let chineseCount = 0;
+  let otherCount = 0;
+  let sum = 0;
+  for (let i = 0 ; i < string.length ; i++) {
+	const asciiCode = string.charCodeAt(i);
+	if (!(asciiCode >= 32 && asciiCode <= 126)) {
+	  chineseCount++;
+	} else {
+	  otherCount++;
+	}
+	sum = chineseCount + otherCount;
+  }
+  if (sum > maxLength) {
+    return string.substring(0, maxLength) + "...";
+  } else if (chineseCount > Math.round(maxLength / 2) + 1) {
+	return string.substring(0, Math.round(maxLength / 2) + 1) + "...";
+  } else {
+    return string;
+  } 
+},

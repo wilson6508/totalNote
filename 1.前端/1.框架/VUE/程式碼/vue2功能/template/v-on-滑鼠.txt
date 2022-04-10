@@ -1,0 +1,14 @@
+<h1 @mousedown="test456()">QQQ</h1>
+<h1 @mouseup="test456()">QQQ</h1>
+<h1 @mouseover="test456()">QQQ</h1>
+<h1 @mouseout="test456()">QQQ</h1>
+
+https://ithelp.ithome.com.tw/articles/10206672
+<button @click.left="pop">按我</button>
+left
+right
+middle
+
+@雙擊事件
+https://codepen.io/robertourias/pen/LxVNZX
+https://www.itread01.com/content/1532666408.html

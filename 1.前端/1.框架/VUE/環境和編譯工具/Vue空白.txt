@@ -1,0 +1,138 @@
+router設定進入頁面
+
+const routes = [{
+  path: "/Login",
+  name: "Login",
+  component: Login,
+  meta: {
+    title: "登入頁面"
+  },
+}];
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  switch (to.path) {
+    case "/":
+      next("/Login");
+      break;
+    default:
+      next();
+  }
+});
+
+----------------------------------------------------------------
+引入bootstrap  參考文件 : https://bootstrap-vue.org/docs
+1. npm install vue bootstrap bootstrap-vue
+2. 在 plugins 的 bootstrapPlugins.js
+import Vue from 'vue';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+3. main.js
+import "@/plugins/bootstrapPlugins";
+----------------------------------------------------------------
+引入sweetalert2  參考文件 : https://www.npmjs.com/package/vue-sweetalert2
+1. npm install -S vue-sweetalert2
+2. 在 mixins 的 Tool.js
+import Vue from "vue";
+import VueSweetalert2 from "vue-sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
+
+const options = {
+  confirmButtonText: "確定",
+  confirmButtonColor: '#007bff',
+  showConfirmButton: true,
+  cancelButtonText: "取消",
+  cancelButtonColor: 'gray',
+  showCancelButton: true,
+  showCloseButton: true,
+};
+Vue.use(VueSweetalert2, options);
+
+sweetAlert(title, text, icon) {
+  this.$swal.fire({
+	title: title,
+	text: text,
+	icon: icon, // (warning, error, success, info, question)
+  });
+},
+
+3. main.js
+import Tool from "@/mixins/Tool";
+
+Vue.mixin(Tool);
+----------------------------------------------------------------
+引入vueCookies  參考文件 : https://www.npmjs.com/package/vue-cookies
+1. npm install vue-cookies --save
+2. 在 mixins 的 Tool.js
+import VueCookies from "vue-cookies";
+Vue.use(VueCookies);
+const cookies = require("vue-cookies");
+
+setCookie(cookieName, cookieValue) {
+  cookies.set(cookieName, cookieValue, 3600);
+},
+getCookie(cookieName) {
+  return cookies.get(cookieName);
+},
+removeCookie(cookieName) {
+  cookies.remove(cookieName);
+},
+----------------------------------------------------------------
+引入axios  參考文件 : https://www.npmjs.com/package/axios
+1. npm install axios 
+2. 在 store 的 index.js
+import Axios from "axios";
+
+  actions: {
+    request({
+      commit
+    }, requestConfig) {
+      requestConfig.baseURL = Tool.methods.getWebServerApiUrl();
+      requestConfig.timeout = 1200000;
+      return new Promise((resolve, reject) => {
+        Axios(requestConfig).then(result => {
+          resolve(result);
+        }).catch(xhr => {
+          reject(xhr);
+        });
+      });
+    },
+  },
+----------------------------------------------------------------
+引入vue-sidebar-menu 參考文件 : https://www.npmjs.com/package/vue-sidebar-menu
+
+<SidebarMenu
+:menu="menu"
+:theme="'white-theme'"
+:width="'250px'"
+:collapsed="true"
+:disableHover="true"
+@toggle-collapse="collapseState = !collapseState">
+</SidebarMenu>
+
+import { SidebarMenu } from "vue-sidebar-menu";
+import "vue-sidebar-menu/dist/vue-sidebar-menu.css";
+
+components: {
+	SidebarMenu,
+},
+
+mounted() {
+	this.menu = [
+	  {
+		header: true,
+		title: "Trend 管理站台",
+		hiddenOnCollapse: true,
+	  },
+	  {
+		href: "/Manage/AccountList",
+		title: "服務帳號",
+		icon: "fa fa-user",
+	  },
+	];
+},
+----------------------------------------------------------------
+
+
+
+

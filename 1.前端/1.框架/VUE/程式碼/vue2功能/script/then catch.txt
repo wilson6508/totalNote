@@ -1,0 +1,16 @@
+sync 同步　:　一次只做一件事，不會有兩個任務同時進行。
+async 非同步　:　每個任務各做各的，不用等其他任務完成，再進行下一個任務。
+https://ithelp.ithome.com.tw/articles/10209328
+
+.then() 方法：當成功從 resolve() 獲得結果時 :
+狀態由 Pending 轉為 Fulfilled — then() 方法就會被調用。
+(補充：then() 方法回傳的是一個「新的 promise」，因此得以往下互相串接)
+
+catch() 方法：當從 reject() 獲得錯誤訊息時 :
+狀態由 Pending 轉為 Rejected — catch() 方法就會被調用來處理錯誤。
+
+https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/%E5%BF%83%E5%BE%97-%E8%AA%8D%E8%AD%98%E5%90%8C%E6%AD%A5%E8%88%87%E9%9D%9E%E5%90%8C%E6%AD%A5-callback-promise-async-await-640ea491ea64
+
+https://chunchun0401.medium.com/axios-e0c139c77833
+https://litotom.com/java-thread-runnable/
+https://litotom.com/java-threading-basic/

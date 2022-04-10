@@ -1,0 +1,74 @@
+<template>
+<div>
+<b-container class="mt-5" style="width: 400px;">
+	
+    <vue-multi-select 
+	:options="options" 
+	:selectOptions="selectOptions" 
+	v-model="selectedItems" 
+	:btnLabel="btnLabel" 
+	@input="limiter"/>
+	
+</b-container>
+</div>
+</template>
+
+<style>
+.btn-select {
+  height: 100px
+}
+</style>
+
+<script>
+import VueMultiSelect from "vue-multi-select";
+import "vue-multi-select/dist/lib/vue-multi-select.css";
+
+export default {
+  components: {
+    VueMultiSelect,
+  },
+  data() {
+    return {
+      options: {
+        multi: true,
+        labelName: "label",
+        cssSelected: (option) => (option.selected ? { "background-color": "#84C1FF" } : ""),
+      },
+      selectOptions: [
+        {
+          key: "targetValue",
+          label: "Target Value",
+          editAble: false,
+        },
+        {
+          key: "bitReply",
+          label: "回文收錄",
+          editAble: true,
+        },
+        {
+          key: "replyType",
+          label: "回文類型",
+          editAble: true,
+        },
+      ],
+      selectedItems: [],
+      btnLabel(selectedItems) {
+        if (selectedItems.length === 0) {
+          return "請選擇內容標籤";
+        } else {
+          let str = "";
+          for (const item of selectedItems) {
+            str += item.label + ", ";
+          }
+          return str;
+        }
+      },
+      limiter(e) {
+        if (e.length > 2) {
+          e.pop();
+        }
+      },
+    };
+  },
+};
+</script>

@@ -1,0 +1,56 @@
+https://www.sitepoint.com/shorthand-javascript-techniques/
+https://pjchender.dev/javascript/js-tips#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99
+--------------------------------------------------------------------------------
+let variable2;
+if (variable1 !== null || variable1 !== undefined || variable1 !== '') {
+     variable2 = variable1;
+} else {
+	variable2 = 'new';
+}
+
+const variable2 = variable1 || 'new';
+--------------------------------------------------------------------------------
+const dogName = adventurer.dog?.name;  若dog屬性不存在, dogName等於undefined
+
+const dogName = adventurer.dog?.name ?? 'Daniel';
+console.log(dogName); // 'Daniel'
+--------------------------------------------------------------------------------
+const odd = [1, 3, 5];
+const nums = [2, 4, 6].concat(odd);
+
+const nums = [2, 4, 6, ...odd];
+const nums = [2, ...odd, 4 , 6];
+--------------------------------------------------------------------------------
+const arr = [1, 2, 3, 4];
+const arr2 = arr.slice();
+
+const arr2 = [...arr];
+--------------------------------------------------------------------------------
+const { a, b, ...z } = { a: 1, b: 2, c: 3, d: 4 };
+--------------------------------------------------------------------------------
+let fname = { firstName : 'Black' };
+let lname = { lastName : 'Panther'}
+let full_names = Object.assign(fname, lname);
+
+let full_names = {...fname, ...lname};
+--------------------------------------------------------------------------------
+Math.floor(4.9) === 4  //true
+
+~~4.9 === 4  //true
+--------------------------------------------------------------------------------
+const num1 = parseInt("100");
+const num2 =  parseFloat("100.01");
+
+const num1 = +"100"; // converts to int data type
+const num2 =  +"100.01"; // converts to float data type
+--------------------------------------------------------------------------------
+const fruits = ['mango', 'peach', 'banana'];
+for (let fruit of fruits)
+for (let index in fruits)
+
+
+
+
+
+
+

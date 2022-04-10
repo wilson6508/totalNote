@@ -1,0 +1,31 @@
+const mySet = new Set();
+mySet.add(1);
+mySet.add(5).add('some text');
+
+mySet.has(1);
+mySet.size;
+mySet.delete(5);
+
+for (let item of mySet) {
+ console.log(item);
+}
+for (let item of mySet.keys()) {
+ console.log(item);
+}
+for (let item of mySet.values()) {
+ console.log(item);
+}
+for (let [key, value] of mySet.entries()) {
+ console.log(key);
+}
+------------------------------------------------------------
+https://guahsu.io/2017/06/JavaScript-Duplicates-Array/
+const sourceIdSet = new Set();
+sourceIdSet.add("test01");
+sourceIdSet.add("test02");
+const array01 = Array.from(sourceIdSet);
+const array02 = [...sourceIdSet];
+
+const oldArr = [1,1,2,2];
+const newArr = [...new Set(oldArr)];
+------------------------------------------------------------

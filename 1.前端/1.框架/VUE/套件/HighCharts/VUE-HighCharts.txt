@@ -1,0 +1,50 @@
+npm install highcharts
+npm install highcharts-vue
+
+https://yanwei-liu.medium.com/1%E5%88%86%E9%90%98%E4%B8%8A%E6%89%8Bhighchart-%E5%89%8D%E7%AB%AF%E8%A6%96%E8%A6%BA%E5%8C%96%E5%9C%96%E8%A1%A8%E5%B7%A5%E5%85%B7-5d676f4e73f5
+
+<template>
+  <div>
+    <Highcharts :options="chartOptions"></Highcharts>
+  </div>
+</template>
+
+<script>
+import { Chart } from "highcharts-vue";
+import Highcharts from "highcharts";
+import exportingInit from "highcharts/modules/exporting";
+exportingInit(Highcharts);
+
+export default {
+  components: {
+    Highcharts: Chart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        chart: { type: "column" },
+        title: { text: "公司員工年齡分佈" },
+        xAxis: {
+          categories: [
+            "18-24歲",
+            "25-29歲",
+            "30-34歲",
+            "35-39歲",
+            "40-44歲",
+            "45-49歲",
+            "50-54歲",
+            "55歲+"
+          ]
+        },
+        yAxis: {
+          title: { text: "人數" }
+        },
+        series: [{
+          name: "XX公司員工",
+          data: [12, 18, 22, 25, 32, 35, 26, 18]
+        }]
+      }
+    };
+  }
+};
+</script>

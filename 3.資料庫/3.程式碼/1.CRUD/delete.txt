@@ -1,0 +1,1 @@
+DELETE FROM dbo.user_information where id=1;

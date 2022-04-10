@@ -1,0 +1,37 @@
+模板指令
+v-text / v-html / v-if / v-show / v-for / v-on / v-bind
+
+    data: {        //數據
+        message: 'vue入門模板學習',
+        i: 0,
+        price: 19999
+    },
+    methods: {    //方法
+        speak: function(){
+            alert("hello");
+        },
+        add: function(){
+            this.i++;
+        },
+   },
+    computed:{    //計算屬性（方法）
+        strFn: function(){
+            if(this.i<=5){
+                return "1";
+            } else if(this.i<=10){
+                return "2";
+            } else {
+                return "3";
+            }
+        }
+    },
+    filters: {    //過濾屬性（也可寫成全局）
+        filterDollarSign(price) {
+            return '$' + price;
+        }
+    },
+    watch: {    //監聽屬性
+        i: function(newValue, oldValue){
+            console.log(newValue, oldValue);  //新值, 舊值
+        }
+    }

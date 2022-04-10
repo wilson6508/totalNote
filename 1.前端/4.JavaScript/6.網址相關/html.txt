@@ -1,0 +1,16 @@
+<router-link :to="{ name: 'SourceDataRealTimeInfo', query: {data: 123}}" target="_blank">
+  <button>123</button>
+</router-link>
+---------------------------------------------------------------------------------------------
+<template #cell(url)="row">
+	<div class="fontFormat">
+	<a :href="`${row.item.url}`" target="_blank">{{ row.item.url }}</a>
+	</div>
+</template>
+---------------------------------------------------------------------------------------------
+<a :href="`${homeLocation}/trend/CAPage/Overview`" class="cta-btn" target="_blank">
+	<span>前往【綜合分析報表總覽】</span>
+</a>
+this.homeLocation = window.location.origin;
+---------------------------------------------------------------------------------------------
+

@@ -1,0 +1,7 @@
+<h1 :style="color2">123</h1>
+
+data() {
+	return {
+	  color2: "color: red",
+	};
+},

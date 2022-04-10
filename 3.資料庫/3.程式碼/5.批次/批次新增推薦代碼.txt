@@ -1,0 +1,37 @@
+package com.eland.scheduler;
+
+import com.eland.dao.trend.UserInfoRepository;
+import com.eland.pojo.entity.trend.UserInfoEntity;
+import com.eland.util.InsightUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Component
+public class DeletePromotionInfoTask {
+
+    @Autowired
+    UserInfoRepository userInfoRepository;
+
+    @Autowired
+    InsightUtil insightUtil;
+
+    @Scheduled(cron = "0 47 10 * * ?")
+    public void dayTimerCron() {
+
+        for (int i=1; i<=22; i++) {
+            if (userInfoRepository.findById(i).isPresent()) {
+                UserInfoEntity userInfoEntity = userInfoRepository.findById(i).get();
+                String str = insightUtil.generatePromotionCode(5);
+                while (userInfoRepository.findByPromotionCode(str).isPresent()) {
+                    str = insightUtil.generatePromotionCode(5);
+                }
+                // userInfoEntity.setPromotionCode(null);
+                userInfoEntity.setPromotionCode(str);
+                userInfoRepository.save(userInfoEntity);
+            }
+        }
+
+    }
+
+}

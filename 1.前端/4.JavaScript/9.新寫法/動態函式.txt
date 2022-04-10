@@ -1,0 +1,88 @@
+<b-button @click="dynamicMethod('apple', 'banana')">demo</b-button>
+dynamicMethod(...methodNameArr) {
+  const methodArr = methodNameArr.map((methodName) => this.getMethod(methodName));
+  methodArr.forEach((method) => method("apple", "AAAA"));
+},
+getMethod(methodName) {
+  let method;
+  switch (methodName) {
+	case "apple": {
+	  method = this.apple;
+	  break;
+	}
+	case "banana": {
+	  method = this.banana;
+	  break;
+	}
+  }
+  return method;
+},
+apple(val) {
+  console.log(val + "Apple");
+},
+banana(val, info) {
+  console.log(val + info);
+},
+----------------------------------------------------------------------------------
+<b-button @click="getTimeRange('button1')(test)">button1</b-button>
+<b-button @click="demo()">buttonDemo</b-button>
+getTimeRange: (dateType) => (value) => {
+  console.log(dateType);
+  value();
+},
+test() {
+  console.log("test");
+},
+demo() {
+  this.getTimeRange("demo")(this.test);
+},
+----------------------------------------------------------------------------------
+<b-button @click="demo()">demo</b-button>
+apple() {
+  console.log("apple");
+},
+banana() {
+  console.log("banana");
+},
+chooseMethod(methodName) {
+  let method;
+  switch (methodName) {
+	case "apple": {
+	  method = this.apple;
+	  break;
+	}
+	case "banana": {
+	  method = this.banana;
+	  break;
+	}
+  }
+  return method;
+},
+demo() {
+  const first = () => console.log("first");
+  const method = this.chooseMethod("apple");
+  this.combineTwoMethod(first)(method);
+},
+combineTwoMethod: (first) => (second) => {
+  first();
+  second();
+},
+---------------------
+<b-button @click="controller('day', 'apple')">demo</b-button>
+controller(dateType, methodName) {
+  const method = this.getMethod(methodName);
+  switch (dateType) {
+	case "day": {
+	  method("day");
+	  break;
+	}
+	case "week": {
+	  method("week");
+	  break;
+	}
+  }
+},
+apple(val) {
+  console.log(val + "apple");
+},
+----------------------------------------------------------------------------------

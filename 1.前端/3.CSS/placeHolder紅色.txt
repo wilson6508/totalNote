@@ -1,0 +1,10 @@
+<b-form-input class="prRed" v-model="aaa" :placeholder="bbb"></b-form-input>
+
+<style lang="scss" scoped>
+.prRed {
+  &::placeholder {
+    color: red;
+  }
+}
+</style>
+

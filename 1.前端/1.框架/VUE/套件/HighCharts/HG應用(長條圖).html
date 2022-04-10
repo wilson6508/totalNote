@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第一個 Highcharts 圖表</title>
+</head>
+<body>
+    <div id="container" style="width: 50%;height:400px;"></div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
+    <script>
+		const barChart = {
+            chart: {
+                type: 'bar'      						// 指定圖表的類型，默認是折線圖（line）
+            },
+            title: {
+                text: '我的第一個圖表' 					// 標題
+            },
+            xAxis: {
+                categories: ['蘋果', '香蕉', '橙子'] 	// x軸分類
+            },
+            yAxis: {
+                title: {
+                    text: '吃水果個數'    				// y軸標題
+                }
+            },
+            series: [{                					// 數據列
+                name: '小明',          					// 數據名
+                data: [3, 0, 4]       					// 數值
+            }, {
+                name: '小紅',
+                data: [5, 7, 3]
+            }]
+        };
+        const pieChart = {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: '圓餅圖abcd'
+            },
+            series: [{
+				data:[
+				  {
+					"name": "中立則數",
+					"y": 1442385,
+					"color": "#0375ad"
+				  },
+				  {
+					"name": "正面則數",
+					"y": 251060,
+					"color": "#85bf29"
+				  },
+				  {
+					"name": "負面則數",
+					"y": 797362,
+					"color": "#ec5145"
+				  }
+				]
+			}],
+			credits: {
+				enabled: false  										 // Highcharts.com字樣
+			},
+			"plotOptions": {
+				"pie": {
+				  "dataLabels": {
+					"format": "{point.name}<br>{point.percentage:.1f}%"  // 顯示區塊百分比
+				  }
+				},
+				"series": {
+				  "events": {}
+				}
+			},
+			exporting: {
+				buttons: {
+				  contextButton: {
+					menuItems: [
+						{
+							text: '下載PNG圖檔',
+							onclick() {
+								this.exportChartLocal();
+							}
+						},
+						{
+							text: '下載JPEG圖檔',
+							onclick() {
+								this.exportChartLocal({type: 'image/jpeg'});
+							}
+						}
+					]
+				  }
+				}
+			},
+        };
+		const columnChart = {
+		  "chart": {
+			"type": "column"
+		  },
+		  "title": {
+			"text": "長條圖abc"
+		  },
+		  "tooltip": {
+			"headerFormat": "",
+			"pointFormat": "<b>{point.date}-{series.name}</b><br>共{point.y}則"
+		  },
+		  "xAxis": {
+			"categories": [
+			  "2020/05",
+			  "2020/06",
+			  "2020/07",
+			  "2020/08",
+			  "2020/09",
+			  "2020/10",
+			  "2020/11",
+			  "2020/12",
+			  "2021/01",
+			  "2021/02",
+			  "2021/03",
+			  "2021/04"
+			]
+		  },
+		  "yAxis": [
+			{
+			  "title": {
+				"text": "則數"
+			  }
+			},
+			{
+			  "title": {
+				"text": ""
+			  },
+			  "opposite": true
+			}
+		  ],
+		  "plotOptions": {},
+		  "series": [
+			{
+			  "name": "玉山銀行",
+			  "data": [
+				{
+				  "y": 11224,
+				  "date": "2020/05"
+				},
+				{
+				  "y": 4137,
+				  "date": "2020/06"
+				},
+				{
+				  "y": 5376,
+				  "date": "2020/07"
+				},
+				{
+				  "y": 3514,
+				  "date": "2020/08"
+				},
+				{
+				  "y": 3314,
+				  "date": "2020/09"
+				},
+				{
+				  "y": 4438,
+				  "date": "2020/10"
+				},
+				{
+				  "y": 4920,
+				  "date": "2020/11"
+				},
+				{
+				  "y": 3012,
+				  "date": "2020/12"
+				},
+				{
+				  "y": 3569,
+				  "date": "2021/01"
+				},
+				{
+				  "y": 3938,
+				  "date": "2021/02"
+				},
+				{
+				  "y": 4320,
+				  "date": "2021/03"
+				},
+				{
+				  "y": 3889,
+				  "date": "2021/04"
+				}
+			  ],
+			  "color": "#ec5145"
+			}
+		  ],
+		  "exporting": {
+			"sourceWidth": 1400,
+			"buttons": {
+			  "contextButton": {
+				"menuItems": [
+				  {
+					"text": "下載PNG圖檔"
+				  },
+				  {
+					"text": "下載JPEG圖檔"
+				  }
+				]
+			  }
+			}
+		  },
+		  "navigation": {
+			"menuStyle": {
+			  "padding": "0px"
+			},
+			"menuItemStyle": {
+			  "padding": "5px"
+			}
+		  },
+		  "credits": {
+			"enabled": false
+		  }
+		};
+		const stackChart = {
+		  "chart": {
+			"type": "column"
+		  },
+		  "title": {
+			"text": ""
+		  },
+		  "xAxis": {
+			"categories": [
+			  "玉山銀行",
+			  "兆豐銀行"
+			]
+		  },
+		  "yAxis": {
+			"title": {
+			  "text": "百分比"
+			}
+		  },
+		  "plotOptions": {
+			"column": {
+			  "stacking": "percent",
+			  "dataLabels": {
+				"enabled": true,
+				"color": "#00000",
+				"format": "{point.percentage:.1f}%"
+			  }
+			},
+			"series": {
+			  "events": {}
+			}
+		  },
+		  "legend": {
+			"legend": {
+			  "y": 0,
+			  "align": "right",
+			  "verticalAlign": "top",
+			  "borderWidth": 1
+			}
+		  },
+		  "series": [
+			{
+			  "name": "討論區",
+			  "data": [
+				9650,
+				3008
+			  ],
+			  "color": "#ec5145"
+			},
+			{
+			  "name": "社群網站",
+			  "data": [
+				34479,
+				40584
+			  ],
+			  "color": "#f18a2f"
+			},
+			{
+			  "name": "評論",
+			  "data": [
+				2268,
+				2766
+			  ],
+			  "color": "#85bf29"
+			},
+			{
+			  "name": "問答網站",
+			  "data": [
+				0,
+				0
+			  ],
+			  "color": "#00b8c8"
+			},
+			{
+			  "name": "新聞",
+			  "data": [
+				9135,
+				10219
+			  ],
+			  "color": "#0375ad"
+			},
+			{
+			  "name": "部落格",
+			  "data": [
+				502,
+				346
+			  ],
+			  "color": "#B15BFF"
+			}
+		  ],
+		  "exporting": {
+			"sourceWidth": 1400,
+			"buttons": {
+			  "contextButton": {
+				"menuItems": [
+				  {
+					"text": "下載PNG圖檔",
+				  },
+				  {
+					"text": "下載JPEG圖檔",
+				  }
+				]
+			  }
+			}
+		  },
+		  "navigation": {
+			"menuStyle": {
+			  "padding": "0px"
+			},
+			"menuItemStyle": {
+			  "padding": "5px"
+			}
+		  },
+		  "credits": {
+			"enabled": false
+		  }
+		};
+        var chart = Highcharts.chart('container', stackChart);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿SELECT TOP 1 * FROM dbo.user_profile ORDER BY id DESC; // MySQL 不能用 TOP 

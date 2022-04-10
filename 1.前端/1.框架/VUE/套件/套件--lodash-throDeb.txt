@@ -1,0 +1,43 @@
+npm install lodash
+throttle(節流): 從最初一次觸發開始，在 t秒後執行函數。中間無論觸發多少次都不會執行。
+debounce(防抖): 從最後一次觸發開始，在 t秒後執行函數。因為是最後一次觸發，所以會把中間的觸發蓋掉。
+<template>
+  <div>
+    <b-button @click="unmodifiedMethod()">Click this button as fast as you can!</b-button>
+    <b-button @click="throttleMethod()">Click this button as fast as you can!</b-button>
+    <b-button @click="debounceMethod()">Click this button as fast as you can!</b-button>
+  </div>
+</template>
+<script>
+import _ from "lodash";
+export default {
+  methods: {
+    unmodifiedMethod: () => {
+      console.log("Button clicked!");           // 連點5次 > console 5次
+    },
+    throttleMethod: _.throttle(() => {          
+      console.log("Throttle button clicked!");  // 連點5次 > console 1次 > 間隔2秒 > 再console 1次
+    }, 2000),
+    debounceMethod: _.debounce(() => {
+      console.log("Debounce button clicked!");  // 連點5次 > 間隔2秒     > console 1次
+    }, 2000),
+	// https://blog.csdn.net/qq_21567385/article/details/109108552
+	keyWordRecord: _.throttle(function() {
+      console.log(this.keyWordArray);
+    }, 2000),
+	// https://stackoverflow.com/questions/67209270/vue-how-to-use-lodash-debounce
+	// import { throttle } from "lodash";
+	keyWordRecord: throttle(function() {
+      console.log(this.keyWordEditMode);
+    }, 2000),
+  },
+};
+</script>
+
+安裝參考
+https://www.digitalocean.com/community/tutorials/vuejs-lodash-throttle-debounce
+
+中文解釋
+https://medium.com/@steven234/throttle%E8%B7%9F-debounce%E6%9C%89%E4%BB%80%E9%BA%BC%E5%8D%80%E5%88%A5-e0b1979b1b4f
+https://medium.com/@alexian853/debounce-throttle-%E9%82%A3%E4%BA%9B%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC%E6%87%89%E8%A9%B2%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%B0%8F%E4%BA%8B-%E4%B8%80-76a73a8cbc39
+https://pjchender.dev/javascript/js-snippets#debounce-and-throttle-example

@@ -1,0 +1,22 @@
+-------------------------------------------------法1-------------------------------------------------
+var queryJson = "";
+resultArray.map((item, index) => {
+    if (index === 0) {
+        queryJson += "[" + JSON.stringify(item) + ",";
+    } else if (index === resultArray.length - 1) {
+       queryJson += JSON.stringify(item) + "]";
+    } else {
+        queryJson += JSON.stringify(item) + ",";
+    }
+});
+-------------------------------------------------法2-------------------------------------------------
+var queryJson = "[";
+resultArray.map((element) => {
+	queryJson += JSON.stringify(element) + ",";
+})
+for (const data of resultArray) {
+	queryJson += JSON.stringify(data) + ",";
+}
+queryJson += "]";
+-------------------------------------------------法3-------------------------------------------------
+JSON.parse(resultArray);

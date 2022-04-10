@@ -1,0 +1,108 @@
+
+https://blog.tonycube.com/2015/10/java-java8-3-stream.html
+(flatMap count max min sequential parallel)
+
+介面基礎
+https://matthung0807.blogspot.com/2018/09/java-8-javautilfunction-functional.html
+
+-------------------------------------------------------------------------------------------------------
+
+IntStream.range(0, 10).forEach(i -> System.out.println(i));
+IntStream.range(0, 10).forEach(System.out::println);
+
+List<String> names = Stream.of("Tony", "Tom", "Jonn").collect(Collectors.toList());
+List<String> names2 = Arrays.asList("Tony", "Tom", "Jonn");
+System.out.println(names.toString());  //[Tony, Tom, Jonn]
+System.out.println(names2.toString()); //[Tony, Tom, Jonn]
+
+Set<String> names = Stream.of("Tony", "Tony", "Tony", "Tom", "Jonn").collect(Collectors.toSet());
+System.out.println(names.toString());  //[Tony, Tom, Jonn]
+
+-------------------------------------------------------------------------------------------------------
+
+map 輸入輸出：T -> R
+
+String result = productList.stream().map(p -> p.name).collect(Collectors.joining(",", "[", "]")); // 定位符號、前置字元、後置字元
+List<String> names2 = Stream.of("tony", "tom", "john").map(name -> name.toUpperCase()).collect(toList());
+List<String> names2 = Stream.of("tony", "tom", "john").map(String::toUpperCase).collect(toList());
+System.out.println(names2.toString());
+
+List<String> nL = Arrays.asList("Jim", "John", "Jeff");
+Function<String, String> funVal = s -> "Hello : ".concat(s) +" ";
+nL.stream().map(funVal) .forEach(System.out::print);
+
+keywordAnalysisDataList = keyWordBeanList.stream()
+						  .map(e -> new KeywordAnalysisData(e.getTerm(), e.getScore()))
+						  .collect(toList());
+
+keywordAnalysisDataList = keyWordBeanList.stream()
+						  .sorted(Comparator.comparing(KeyWordBean::getTf).reversed())
+						  .map(e -> new KeywordAnalysisData(e.getTerm(), e.getTf()))
+						  .collect(toList());
+
+-------------------------------------------------------------------------------------------------------
+
+filter 輸入輸出：T -> boolean
+
+List<String> names2 = Stream.of("Tony", "Tom", "John", "Andy").filter(name -> name.startsWith("T")).collect(Collectors.toList());
+System.out.println(names2.toString());
+
+-------------------------------------------------------------------------------------------------------
+
+sorted
+
+List<Integer> sortedAsc = Stream.of(120,24,59,63,11,74).sorted().collect(toList());
+System.out.println("sorted asc: " + sortedAsc);
+
+List<Integer> sortedDesc = Stream.of(120,24,59,63,11,74).sorted((n1,n2) -> n2.compareTo(n1)).collect(toList());
+System.out.println("sorted desc: " + sortedDesc);
+
+List<Integer> sortedDesc = Stream.of(120,24,59,63,11,74).sorted(Comparator.reverseOrder()).collect(toList());
+System.out.println("sorted desc: " + sortedDesc);
+
+List<Emp> emp = Arrays.asList(
+				new Emp("John", "Smith"),
+				new Emp("Peter", "Sam"),
+				new Emp("Thomas", "Wale"));
+				
+emp.stream().sorted(Comparator.comparing(Emp::getfName).reversed().thenComparing(Emp::getlName)).collect(Collectors.toList());
+
+List<NbaGame> totals = nbaGames.stream().sorted(Comparator.comparing(e -> {
+	double one = Double.parseDouble(e.getBlueTotals());
+	double two = Double.parseDouble(e.getGreenTotals());
+	return -Math.abs(one-two);
+})).collect(toList());
+
+-------------------------------------------------------------------------------------------------------
+
+peek 
+
+Stream<User> userStream = Stream.of(new User("Alice"), new User("Bob"), new User("Chuck"));
+userStream.peek(u -> u.setName(u.getName().toLowerCase())).forEach(System.out::println);
+
+// 我們可以使用map() ，但是peek()更為方便，因為我們不想替換元素。
+
+-------------------------------------------------------------------------------------------------------
+
+count
+
+List<String> listVal = Arrays.asList("Joe", "Paul", "Alice", "Tom");
+long c = listVal.stream().filter(x -> x.length() > 3).count();
+System.out.println(c);
+
+-------------------------------------------------------------------------------------------------------
+
+flatMap
+
+List<Integer> list1 = Arrays.asList(10, 20);
+List<Integer> list2 = Arrays.asList(15, 30);
+Stream.of(list1, list2).flatMap(list -> list.stream()).forEach(s -> System.out.print(s + " "));
+
+-------------------------------------------------------------------------------------------------------
+
+max
+
+List<Integer> nums = Arrays.asList(10, 20, 8);
+System.out.println(nums.stream().max(Comparator.comparing(a -> a)).get());
+
+-------------------------------------------------------------------------------------------------------

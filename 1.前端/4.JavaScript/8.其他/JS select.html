@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+    <input type="text" />
+    <button>OK</button>
+    <script>
+    window.onload = function() {
+        var oinpt = document.getElementsByTagName("input")[0];
+        var obtn = document.getElementsByTagName("button")[0];
+        obtn.onclick = function() {
+            oinpt.select();
+        }
+    }
+    </script>
+</body>
+
+</html>

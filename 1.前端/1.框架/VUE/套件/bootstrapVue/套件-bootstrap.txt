@@ -1,0 +1,30 @@
+https://bootstrap-vue.org/docs
+
+npm install vue bootstrap bootstrap-vue
+
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+
+------------------------------------------------------------
+
+https://getbootstrap.com/docs/5.0/components/badge/
+
+https://bootstrap-vue.org/docs/components/button
+https://bootstrap-vue.org/docs/components/badge
+https://bootstrap-vue.org/docs/components/tooltip
+
+https://bootstrap-vue.org/docs/components/form-select
+https://bootstrap-vue.org/docs/components/form-input
+https://bootstrap-vue.org/docs/components/form-radio
+https://bootstrap-vue.org/docs/components/form-checkbox
+
+https://bootstrap-vue.org/docs/components/sidebar
+https://bootstrap-vue.org/docs/components/navbar
+https://bootstrap-vue.org/docs/components/nav
+
+https://bootstrap-vue.org/docs/components/dropdown
+https://bootstrap-vue.org/docs/components/popover
+https://bootstrap-vue.org/docs/components/modal

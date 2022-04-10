@@ -1,0 +1,32 @@
+<div class="forCopyJiraTable">
+<b-table
+  responsive
+  :items="displayItems"
+  :fields="fields"
+  :per-page="perPage"
+  :striped="false"
+  head-variant="light"
+  :select-mode="selectMode"
+  ref="selectableTable"
+  selectable
+  @row-selected="onRowSelected"
+  sticky-header="580px"
+  :no-border-collapse="true"
+  :small="true"
+>
+</b-table>
+</div>
+
+<style>
+
+/* b-table the background-color of column */
+.forCopyJiraTable > div > table > thead > tr > th {
+  background-color: #fce5cd;
+}
+
+/* b-table the background-color of selected row */
+.table.b-table > tbody > .table-active > td {
+  background-color: #dcf0d2 !important;
+}
+
+</style>

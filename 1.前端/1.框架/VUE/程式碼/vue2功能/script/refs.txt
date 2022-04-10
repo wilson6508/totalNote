@@ -1,0 +1,6 @@
+<button @click="vonTest()">Test</button>
+<div v-text="color2" ref="div1"></div>
+
+vonTest() {
+    this.$refs.div1.innerText = 123;
+},

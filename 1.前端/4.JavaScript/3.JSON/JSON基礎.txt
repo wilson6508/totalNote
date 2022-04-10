@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/*
+ 
+ var point = new Object();
+ point.x=3;
+ point.x=4;
+ point.get=function(){
+	 alert(this.x+","+this.y);
+ };
+ 
+*/
+
+var point = {
+	"x":3,
+	"y":4,
+	"get":function(){
+		alert(this.x+","+this.y);
+	}
+};
+
+//point.get();
+//alert(point.x);
+//console.log(point);
+
+var str=JSON.stringify(point);
+//console.log(str);
+//console.log(str.indexOf(7));
+var obj=JSON.parse(str);
+console.log(obj);
+//alert(obj.x);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

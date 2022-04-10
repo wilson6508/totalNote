@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<input type="checkbox" class="checkbox-1" />
+<button onclick="test01()">test01</button>
+<input type="text" value="abc" id="id1"/>
+<button onclick="test02()">test02</button>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+function test01() {
+	console.log($('.checkbox-1').prop('type'));
+	console.log($('.checkbox-1').prop('class'));
+	console.log($('.checkbox-1').prop('checked'));
+}
+function test02() {
+	console.log($('#id1').prop('value'));
+	$('#id1').prop('value', 'KKKK');
+	console.log($('#id1').prop('value'));
+}
+</script>
+</html>

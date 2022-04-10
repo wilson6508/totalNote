@@ -1,0 +1,1 @@
+SELECT user_type, COUNT(distinct user_email) AS 使用者數量 FROM dbo.user_profile GROUP BY user_type;

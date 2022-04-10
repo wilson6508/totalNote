@@ -1,0 +1,3 @@
+資料型別 Symbol
+https://ithelp.ithome.com.tw/articles/10220499
+https://www.fooish.com/javascript/ES6/Symbol.html

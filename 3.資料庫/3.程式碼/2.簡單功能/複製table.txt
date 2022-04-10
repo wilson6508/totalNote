@@ -1,0 +1,4 @@
+https://rickfaye.blogspot.com/2018/09/mssql-table.html
+https://dotblogs.com.tw/mis0800/2014/02/09/143889
+
+insert into table_dev select * from table_normal (where condition)

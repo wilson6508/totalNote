@@ -1,0 +1,20 @@
+parseInt("abc")            // 傳回NaN
+parseInt("123abc")         // 傳回 123
+parseInt("abc123")         // 傳回 NaN
+parseInt("      123abc")   // 傳回 123
+
+parseFloat("20");            //傳回20
+parseFloat("30.00");         //傳回30
+parseFloat("10.68");         //傳回10.68
+parseFloat("12 22 32");      //傳回12
+parseFloat("        80   "); //傳回80
+parseFloat("378abc");        //傳回378
+parseFloat("abc378");        //傳回NaN
+
+Number(true);               //傳回1
+Number(false);              //傳回0
+Number(new Date());         //傳回1970/1/1到現在的毫秒數
+Number("123");              //傳回123
+Number("123 456");          //傳回NaN
+
+Number.isInteger(days) // Boolean

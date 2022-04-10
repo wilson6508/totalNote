@@ -1,0 +1,14 @@
+
+<div v-for="(item, index) in items" :key="index"></div>
+
+<div v-for="(value, key) in object" :key="key"></div>
+
+<h1 v-for="i in numberArray" :key="i">{{ i }}</h1>
+
+<h1 v-for="(item, index) in itemArray" :key="index">
+	{{ index }} : {{ item }}
+</h1>
+
+<h1 v-for="(item, index) in itemArray" :key="index">
+	<div v-if="index===1">{{ index }} : {{ item }}</div>
+</h1>
