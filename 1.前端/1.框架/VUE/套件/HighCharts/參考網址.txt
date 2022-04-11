@@ -1,4 +1,4 @@
-PieChart 一些屬性
+﻿PieChart 一些屬性
 https://www.tpisoftware.com/tpu/articleDetails/435
 
 Highcharts 事件屬性
@@ -21,3 +21,6 @@ https://api.highcharts.com/highcharts/plotOptions.series.point.events.click
 
 Highcharts Series Click Callback Function
 https://api.highcharts.com/highcharts/plotOptions.series.events.click
+
+Highcharts的一些基本設定
+https://www.itread01.com/content/1550143990.html
