@@ -32,6 +32,7 @@ alt + 4
 VScode (vscode icon)
 clg
 https://www.ucamc.com/e-learning/computer-skills/317-vscode-windows-%E7%89%88%E6%9C%AC%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%8D%B5
+https://iter01.com/651963.html
 全域搜尋                : Ctrl + Shift + f
 自動排版                : Alt + Shift + f
 複製到下一行: Ctrl + d  : Alt + Shift + ↑/↓ (反白可多行)
