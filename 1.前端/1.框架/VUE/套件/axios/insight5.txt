@@ -1,0 +1,11 @@
+    async aaa() {
+      const postBody = this.getPostBody("welcome");
+      const result = await this.getApiResult("standard", postBody, "載入資料失敗");
+      if (result !== null) {
+        this.table = result;
+      }
+    },
+    async kkk() {
+      const result = await this.postApi("http://127.0.0.1:9000/helloWorld", {});
+      this.table = result;
+    },

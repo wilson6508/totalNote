@@ -1,0 +1,69 @@
+<template>
+  <div>
+    <b-button @click="getApiResult">OK</b-button>
+    <b-button @click="getExcel">NO</b-button>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    async getApiResult() {
+      const apiUrl = "http://127.0.0.1:8086/crawlerApi/normal";
+      const postBody = {
+        moduleName: "sport_crawl_spreads",
+        parameter: "nba;tomorrow",
+      };
+      const result = await this.postNormalApi(apiUrl, postBody);
+      console.log(result);
+    },
+    async postNormalApi(url, params) {
+      let result = null;
+      await axios
+        .post(url, params)
+        .then((response) => {
+          result = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      return result;
+    },
+    async getExcel() {
+      const apiUrl = "http://127.0.0.1:8086/crawlerApi/normal";
+      const postBody = {
+        moduleName: "test_test_one",
+        parameter: "abc",
+      };
+      const result = await this.downloadExcelApi(apiUrl, postBody);
+      const blob = new Blob([result]);
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "test2222.xlsx");
+      document.body.appendChild(link);
+      link.click();
+      window.URL.revokeObjectURL(url);
+    },
+    async downloadExcelApi(url, params) {
+      let result = null;
+      await axios
+        .post(url, params, {
+          responseType: "blob",
+        })
+        .then((response) => {
+          result = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      return result;
+    },
+  },
+};
+</script>

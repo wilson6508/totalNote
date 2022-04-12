@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Button :buttonName="'abcd'" :propsTest="'KKK'"></Button>
-    <EmitTest @clickCounts="test456()"></EmitTest>
+    <EmitTest @clickCounts="test456"></EmitTest>
   </div>
 </template>
 
@@ -27,8 +27,9 @@ export default {
       this.$refs.div1.innerText = 123;
       // console.log(this.$refs.div1);
     },
-    test456() {
-      console.log(777);
+    test456(boolean, value) {
+      console.log(boolean);
+	  console.log(value);
     },
   },
   updated() {

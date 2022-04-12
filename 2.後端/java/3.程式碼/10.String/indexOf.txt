@@ -1,0 +1,19 @@
+package B1;
+
+public class B1a {
+
+	public static void main(String[] args) {
+
+		String a = "我是誰";
+		
+		String b1 = "是誰";
+		String b2 = "誰是";
+		String b3 = "我";
+		
+		System.out.println(a.indexOf(b1));	//  1
+		System.out.println(a.indexOf(b2));	// -1	
+		System.out.println(a.indexOf(b3));      //  0
+
+	}
+
+}

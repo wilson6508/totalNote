@@ -1,0 +1,19 @@
+package B1;
+
+public class B1g {
+
+	public static void main(String[] args) {
+					
+		String str1="JAVA";
+		String str2="JAVA";			
+		String str3=""+str1;
+				
+		System.out.println(str1==str2);			//true
+		System.out.println(str1.equals(str3));		//true
+		System.out.println(str1.compareTo(str3));	//0
+				
+		System.out.println(str1==str3);			//false
+		System.out.println(str1.equals(str3+"K"));	//false
+		System.out.println(str1.compareTo(str3+"K"));	//-1
+	}
+}

@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     clickCount() {
-      this.$emit("clickCounts");
+      this.$emit("clickCounts", true, 5566);
     },
   },
 };

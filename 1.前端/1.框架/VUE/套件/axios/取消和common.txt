@@ -1,0 +1,108 @@
+------------------------------取消請求------------------------------
+(data裡宣告一個cancelAxios: null,)
+axiosPostApi(searchInfo) {
+  const CancelToken = Axios.CancelToken;
+  Axios({
+	baseURL: ApiUrl.methods.getApiURL(),
+	url: "search",
+	method: "POST",
+	timeout: 1200000,
+	headers: {
+	  Authorization: `Bearer ${this.getCookie("nuif")}`,
+	},
+	data: searchInfo,
+	cancelToken: new CancelToken((c) => {
+	  this.cancelAxios = c;
+	}),
+  })
+	.then((result) => {
+	  if (result.data.responseInfo.errorCode === 0) {
+		this.$emit("result", result.data.result);
+	  } else {
+		this.$emit("result", null);
+	  }
+	})
+	.catch((xhr) => {
+	  this.$emit("result", null);
+	});
+},
+async cancel() {
+  const check = await this.checkSwal("確定要取消查詢?", "warning");
+  if (check) {
+	const cancel = this.cancelAxios;
+	cancel();
+  }
+},
+------------------------------新寫法------------------------------
+import axios from "axios";
+// axios.defaults.baseURL = "http://localhost:3000/";
+// axios.defaults.timeout = 1200000
+export default {
+    methods: {
+		async postNormalApi(url, params) {
+		  let result = null;
+			await axios
+			  .post(url, params)
+			  .then((response) => {
+				result = response.data;
+			  })
+			  .catch((error) => {
+				console.log(error);
+			  });
+			return result;
+		},
+        async downloadExcelApi(url, params) {
+			let result = null;
+				await axios
+				.post(url, params, {
+					responseType: "blob"
+				})
+				.then((response) => {
+					resolve(response.data)
+				})
+				.catch((error) => {
+					console.log(error);
+				})
+			return result;
+        },
+    }
+}
+------------------------------舊寫法------------------------------
+postApi(url, params) {
+  return new Promise((resolve, reject) => {
+	axios
+	  .post(url, params)
+	  .then((response) => {
+		resolve(response);
+	  })
+	  .catch((error) => {
+		reject(error);
+	  });
+  });
+},
+postDownloadApi(url, params) {
+	return new Promise((resolve, reject) => {
+		axios.post(url, params, {
+				responseType: "blob"
+			})
+			.then((response) => {
+				resolve(response.data)
+			})
+			.catch((error) => {
+				reject(error)
+			})
+	})
+},
+async getApiResult(url, params) {
+  let result = null;
+  await this.postApi(url, params)
+	.then((response) => {
+	  result = response.data;
+	})
+	.catch(() => {
+	  console.log("error");
+	});
+  return result;
+},
+
+

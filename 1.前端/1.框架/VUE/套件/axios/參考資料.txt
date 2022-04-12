@@ -6,3 +6,15 @@ https://v2.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html?redirect=true
 
 How to return a response from axios in Vue (stackoverflow)
 https://stackoverflow.com/questions/55071308/how-to-return-a-response-from-axios-in-vue
+
+前後端資料互動—Ajax 、Fetch 和 Axios 優缺點及比較
+https://www.gushiciku.cn/pl/ghz2/zh-tw
+
+Fetch練習(GET和POST請求)
+https://ithelp.ithome.com.tw/articles/10252941
+
+JavaScript Fetch API 使用教學
+https://www.oxxostudio.tw/articles/201908/js-fetch.html
+
+一次發送多個請求 & Config
+https://ithelp.ithome.com.tw/articles/10212120

@@ -19,11 +19,14 @@ for (Map.Entry<String, Integer> m : m1.entrySet()) {
 for(String key : m1.keySet()) {
     System.out.println(key);
 	System.out.println(m1.get(key));
+	System.out.printf("key:%s value:%d\n",str,m.get(str));
 }
+// Set<String> set = m1.keySet();
 
 for (int x : m1.values()) {
     System.out.println(x);
 }
+// List<Integer> list = new ArrayList<>(m1.values());
 ---------------------------------------------------------------------------------
 boolean boo = m1.isEmpty();
 boolean boo = m1.containsKey("f");
