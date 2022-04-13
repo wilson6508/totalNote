@@ -12,3 +12,12 @@ https://www.itread01.com/content/1544668037.html
 
 GSON getDeclaredType
 https://www.codota.com/code/java/methods/com.google.gson.FieldAttributes/getDeclaredType
+
+CSS calc(100% / 6)
+https://ithelp.ithome.com.tw/articles/10130065
+
+Storybook¤å¥ó
+https://storybook.js.org/tutorials/intro-to-storybook/react/zh-TW/get-started/
+
+Java¦r¨å
+https://openhome.cc/Gossip/Java/index.html

@@ -1,0 +1,18 @@
+package test01;
+
+import java.util.*;
+
+public class Ex7 {
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("Hello", "World");
+        words.stream()
+                .flatMap(line -> Arrays.stream(line.split(""))) // 代表切除空字串，所以每切一次就讓每個字換行。
+                .distinct()                                           // 把不一樣字母分割出來。
+                .forEach(System.out::println);
+        // flatMap參考網址  https://mycollegenotebook.medium.com/java-stream-%E7%AD%86%E8%A8%98-%E4%B8%8A-34df0e282fc8
+        System.out.println("==============================");
+        Set<String> set = new LinkedHashSet<>();
+        words.forEach(e -> set.addAll(Arrays.asList(e.split(""))));
+        set.forEach(System.out::println);
+    }
+}

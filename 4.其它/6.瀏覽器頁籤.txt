@@ -1,0 +1,54 @@
+IntelliJ IDEA 快捷鍵
+https://www.itread01.com/content/1536493230.html
+
+Vue中父傳子、子傳父
+https://www.itread01.com/content/1545354219.html
+
+流程圖符號說明
+http://www2.lssh.tp.edu.tw/~hlf/class-1/lang-c/flow/flow-chat.htm
+
+Google Fonts Icon
+https://fonts.google.com/icons
+
+Font Awesome Icon
+https://fontawesome.com/icons?d=gallery
+
+前端基礎：CSS selector
+https://hugh-program-learning-diary-js.medium.com/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A4%8E-css-selector-4b62158fd3db
+
+JS Array 常用methods
+https://www.casper.tw/development/2020/10/04/js-array-methods/
+https://www.casper.tw/javascript/2017/06/29/es6-native-array/
+
+Vue 3.0
+http://120.115.2.90/modules/tad_book3/index.php?tbsn=33
+https://campus-xoops.tn.edu.tw/modules/tad_book3/html_all.php?tbsn=33
+
+JavaScript 數值與算數
+https://pjchender.dev/javascript/js-number-math/
+
+HTML 段落
+https://www.itread01.com/study/html-paragraphs.html
+
+JSON editor
+https://jsonformatter.org/
+https://jsoneditoronline.org/
+
+JWT token
+https://jwt.io/
+
+文字比對
+https://mail.google.com/mail/u/0/?tab=rm&ogbl#chat/space/AAAAmUHFoug
+
+GitHub
+https://github.com/wilson6508/blog
+https://prium.github.io/falcon/v3.7.0/index.html
+
+Bootstrap 5
+https://getbootstrap.com/docs/5.1/components/buttons/
+https://bootstrap5.hexschool.com/docs/5.1/components/buttons/
+
+
+
+
+

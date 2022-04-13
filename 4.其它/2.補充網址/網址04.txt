@@ -1,9 +1,0 @@
-﻿批量修改
-UPDATE dbo.user_auth SET promotion_expired_days = 7 WHERE promotion_expired_days = 1;
-
-Google字體樣式
-https://www.google.com/search?q=Roboto-Medium&rlz=1C1GCEB_enTW919TW920&oq=Roboto-Medium&aqs=chrome..69i57j69i59j0j0i30l5j0i10i30j0i30.655j0j7&sourceid=chrome&ie=UTF-8
-https://fonts.google.com/specimen/Roboto?preview.text_type=custom
-
-蘋果登入按鈕樣式
-https://appleid.apple.com/signinwithapple/button
