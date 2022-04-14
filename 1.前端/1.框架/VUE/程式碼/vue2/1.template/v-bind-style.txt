@@ -1,3 +1,7 @@
+:style="hourBlock ? '' : 'width: 100%'"
+:class="['nav-link', { active: item.gap === 'day' }]"
+
+
 <h1 :style="color2">123</h1>
 
 data() {

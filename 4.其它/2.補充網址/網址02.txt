@@ -16,3 +16,27 @@ https://ithelp.ithome.com.tw/users/20112011/ironman/2030?page=1
 https://smlpoints.com/guide-vue-how-to-change-body-style.html
 https://smlpoints.com/notes-vue-button-filter-data-structure.html
 https://ithelp.ithome.com.tw/users/20108224/ironman/1796?page=2
+
+單例模式 Singleton
+https://skyyen999.gitbooks.io/-study-design-pattern-in-java/content/singleton.html
+
+[Java] Synchronized
+https://www.jackforfun.com/java-synchronized
+
+GSON使用筆記（1） -- 序列化時排除欄位的幾種方式
+https://www.itread01.com/content/1547152385.html
+
+JAVA使用Gson排除特定欄位
+https://www.itread01.com/content/1544668037.html
+
+GSON getDeclaredType
+https://www.codota.com/code/java/methods/com.google.gson.FieldAttributes/getDeclaredType
+
+CSS calc(100% / 6)
+https://ithelp.ithome.com.tw/articles/10130065
+
+Storybook文件
+https://storybook.js.org/tutorials/intro-to-storybook/react/zh-TW/get-started/
+
+Java字典
+https://openhome.cc/Gossip/Java/index.html

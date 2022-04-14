@@ -1,0 +1,17 @@
+console.time();
+Math.pow(2, 10);
+console.timeEnd();
+// default: 0.005ms
+
+console.time('花費的時間');
+Math.pow(2, 10);
+console.timeEnd('花費的時間');
+// 花費的時間: 0.004ms
+----------------------------------------------------------
+const demo = (exeTimes) => {
+  console.time("It took");
+  for (let i = 0; i < exeTimes; i++) {
+    yourMehtod();
+  }
+  console.timeEnd("It took");
+};

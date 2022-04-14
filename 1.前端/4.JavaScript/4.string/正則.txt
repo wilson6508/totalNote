@@ -1,0 +1,24 @@
+const pattern = /can/;
+const pattern = new RegExp("can");
+
+const str = "i Can can a can.";
+/can/.test(str);      // true                   // 含有can的字串  
+str.match(/can/g);    // ['can', 'can']         // g為全域匹配
+str.match(/can/ig);   // ['Can', 'can', 'can']  // i為不區分大小寫	
+
+str.replace("can", "KKK");     // 'i Can KKK a can.'
+str.replace(/can/, "KKK");     // 'i Can KKK a can.'
+str.replaceAll("can", "KKK");  // 'i Can KKK a KKK.'
+str.replace(/can/g, "KKK");    // 'i Can KKK a KKK.'
+str.replace(/can/ig, "KKK");   // 'i KKK KKK a KKK.'
+
+const temp = "can";
+const regx = new RegExp(temp, "gi");
+str.replace(regx, "KKK");      // 'i KKK KKK a KKK.'
+
+d為[0-9] D為[^0-9] w為 [A-Za-z0-9_] W為[^A-Za-z0-9_]
+/^d/.test(str);       // false  // ^開頭, 
+/d$/.test(str);       // false  // $結尾
+
+https://ithelp.ithome.com.tw/articles/10205643
+https://pjchender.dev/javascript/js-regex/

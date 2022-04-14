@@ -1,4 +1,4 @@
-  Map<String, Object> result 
+Map<String, Object> result 
 = resources.entrySet()
   .stream()
   .filter(e -> keys.contains(e.getKey()))
@@ -7,11 +7,13 @@
 
 return this.subjects
 	   .entrySet()
-           .stream()
-           .collect(Collectors.toMap(e -> getArtistryCopy(e.getKey()), Map.Entry::getValue, (val1, val2) -> yourMergeResultHere, LinkedHashMap::new));
-		   
+       .stream()
+       .collect(Collectors.toMap(e -> getArtistryCopy(e.getKey()), Map.Entry::getValue, (val1, val2) -> yourMergeResultHere, LinkedHashMap::new));
+		  
+		  
 // Java8 Collectors.toMap的坑
 // https://www.itread01.com/content/1544340809.html
+
 
 // Collect stream of EntrySet to LinkedHashMap
 // https://stackoverflow.com/questions/52975256/collect-stream-of-entryset-to-linkedhashmap		   
