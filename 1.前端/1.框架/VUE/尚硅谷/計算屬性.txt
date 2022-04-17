@@ -1,0 +1,7 @@
+﻿str,slice(0, 3);
+
+methods
+data 發生改變 > Vue重新檢視模板 > 把改變的參數重新調用 > {{ function() }} 也重新調用
+
+computed
+get調用時機: 1.初次讀取 2.依賴數據發生變化

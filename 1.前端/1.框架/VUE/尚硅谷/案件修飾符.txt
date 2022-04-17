@@ -1,0 +1,20 @@
+https://www.bilibili.com/video/BV1Zy4y1K7SH?p=16&spm_id_from=pageDriver
+@keyup="showInfo"
+showInfo(e) {
+  if (e.keyCode !== 13) return     // 按鍵代碼 13
+  console.log(e.key)               // 按鍵名稱 Enter
+  console.log(e.target.value)
+}
+
+// Vue 給的
+@keyup.enter="showInfo"
+@keydown.tab="showInfo"
+delete, esc, space, up, down, left, right 
+
+// Vue 沒給的
+@keyup.caps-lock="showInfo"
+系統修飾鍵: ctrl, alt, shift, meta > 都用@keydown.???
+(@keyup 看影片14:00)
+
+
+@keyup.ctrl.y

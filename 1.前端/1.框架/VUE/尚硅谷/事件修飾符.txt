@@ -1,0 +1,34 @@
+https://www.bilibili.com/video/BV1Zy4y1K7SH?p=15&spm_id_from=pageDriver
+可以多個 @click.stop.prevent
+===阻止默認事件===
+原生: 
+showInfo(e) {
+  e.preventDefault();
+  alert('同學你好');
+}
+VUE:
+@click.prevent="demo"
+
+===阻止冒泡事件===
+原生: 
+showInfo(e) {
+  e.stopPropagation();
+  alert('同學你好');
+}
+VUE:
+@click.stop="demo"
+
+===事件只觸發一次===
+@click.once="demo"
+
+===事件捕獲===
+影片07:42
+@click.capture="demo"
+
+===event.target為當前元素才觸發===
+@click.self="demo"
+
+
+@wheel  > 滑鼠滾輪滾動
+@scroll > 卷軸滾動
+@wheel.passive : 影片18:00

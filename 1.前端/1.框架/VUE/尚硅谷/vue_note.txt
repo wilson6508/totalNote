@@ -51,6 +51,9 @@ my-component.vue
 9. @click="showInfo(66, $event)"  
    showInfo(number, event){
       console.log(number, event);
-   }
-   
-   
+   } 
+10. <style>
+    * {
+	  margin-top: 20px;
+	}
+    </style>
