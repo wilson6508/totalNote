@@ -1,0 +1,35 @@
+1. let number = 18; let person = {};
+2. Object.defineProperty(person, 'age', {
+		value: 18,
+		enumerable: true,   // 屬性是否可以枚舉, 默認值為false
+		writable: true,     // 屬性是否可被修改, 默認值為false
+		configurable: true, // 屬性是否可被刪除, 默認值為false
+		
+		// 讀取person的age屬性時，get函數(getter)會被調用
+		get() {
+			// console.log('有人讀取age屬性了');
+			return number;
+		}
+		
+		// 修改person的age屬性時，set函數(setter)會被調用, 且會收到修改的具體值
+		set(value) {
+			// console.log('有人修改了age屬性, 且值是', value);
+			number = value;
+		}
+   });
+3. 數據代理: 通過一個物件代理另一個物件屬性的操作(讀/寫)   
+   let obj = {x:100}
+   let obj2 = {y:200}
+   
+   Object.defineProperty(obj2, 'x', {
+		get(){
+			return obj.x
+		},
+		set(value){
+			obj.x = value
+		}
+   })
+   
+   obj2.x
+   obj2.x = 5566
+4. 

@@ -1,0 +1,56 @@
+vue實現: 數據 > 虛擬DOM(Diff比較) > 頁面真實DOM
+---------------------------------------------------
+風格指南 & Awesome vue
+https://awesomejs.dev/for/vue/
+https://awesomejs.dev/for/react/
+---------------------------------------------------
+cmd
+Vue
+Vue.config
+document.querySelector('input').value
+---------------------------------------------------
+props: {
+  status: {
+    type: String,
+    required: true,
+    validator: function (value) {
+      return [
+        'syncing',
+        'synced',
+        'version-conflict',
+        'error'
+      ].indexOf(value) !== -1
+    }
+  }
+}
+---------------------------------------------------
+MyComponent.vue
+my-component.vue
+---------------------------------------------------
+{{  }} 裡面寫的東西為JS表達式或JS語句
+-. name.toUpperCase()
+0. Date.now()
+1. a
+2. a+b
+3. demo(1)
+4. x === y ? 'a' : 'b'
+5. if(){}
+6. for(){}
+---------------------------------------------------
+1. 想使用Vue > 建立Vue實例
+2. Vue實例和容器一對一對應
+3. 單向綁定(v-bind): 數據只能從data流向頁面
+4. 雙向綁定(v-model): 用於表單，預設v-model:value
+5. MVVM => M(Model): data中的數據, V(View): 模板代碼, VM(ViewMOdel): Vue實例
+6. const vm = new Vue({}); vm的屬性都可以在模板上呈現
+7. Vue.config.productionTip = false; // 關閉Vue生成時的提示
+8. @click="showInfo" 
+   showInfo(event){
+      console.log(event.target.innerText);
+   }
+9. @click="showInfo(66, $event)"  
+   showInfo(number, event){
+      console.log(number, event);
+   }
+   
+   
