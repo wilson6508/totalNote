@@ -27,7 +27,7 @@ export default {
     }, 2000),
 	// https://stackoverflow.com/questions/67209270/vue-how-to-use-lodash-debounce
 	// import { throttle } from "lodash";
-	keyWordRecord: throttle(function() {
+	keyWordRecord: throttle(async function() {
       console.log(this.keyWordEditMode);
     }, 2000),
   },

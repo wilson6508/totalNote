@@ -11,6 +11,8 @@ Map<String, String> myMap = new HashMap<String, String>() {{
         put("c", "d");
     }};
 ---------------------------------------------------------------------------------
+myMap.forEach((k, v) -> System.out.println(k + "為" + v));
+
 for (Map.Entry<String, Integer> m : m1.entrySet()) {
     System.out.println(m.getKey());
     System.out.println(m.getValue());

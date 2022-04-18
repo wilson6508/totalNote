@@ -52,5 +52,8 @@ or
 Foo[] array = new Foo[list.size()];
 list.toArray(array); // fill the array
 
+java ArrayList push, pop, shift and unshift
+https://stackoverflow.com/questions/8452672/java-howto-arraylist-push-pop-shift-and-unshift
+
 
 
