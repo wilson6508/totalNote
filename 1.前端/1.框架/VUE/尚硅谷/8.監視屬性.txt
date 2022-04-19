@@ -1,0 +1,33 @@
+@click="isHot = !Hot;x++"
+data: {
+ window,	
+}
+
+watch: {
+  isHot: {
+    immediate: true, // 初始化調用handler
+    handler(newVal, oldVal) {
+	  console.log(newVal, oldVal);
+	}
+  },
+  'number.a': {
+    handler() {
+	  ...
+	}
+  },
+  // watch多級結構所有屬性的變化
+  numbers: {
+    deep: true,
+	handler() {
+	  ...
+	}
+  }
+}
+
+// 還不確定要watch誰
+vm.$watch('isHot', {
+    immediate: true, // 初始化調用handler
+    handler(newVal, oldVal) {
+	  console.log(newVal, oldVal);
+	}
+})
