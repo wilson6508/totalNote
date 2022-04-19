@@ -1,0 +1,8 @@
+Promise 全介紹
+https://www.casper.tw/development/2020/02/16/all-new-promise/
+
+Async and Await
+https://pjchender.dev/javascript/js-async-await/
+
+Promise 的使用
+https://pjchender.dev/javascript/js-promise/

@@ -1,9 +1,0 @@
-const array = Array.from(new Array(5), (item, index) => index + 1);
-
-test() {
-  const start = 5;
-  const step = 1;
-  this.arr2 = Array.from(new Array(5), (item, index) => {
-	return { name: start, age: step };
-  });
-},

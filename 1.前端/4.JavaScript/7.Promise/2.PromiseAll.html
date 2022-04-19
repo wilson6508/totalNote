@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>PromiseAll</title>
+</head>
+<body>
+	<div>
+		<button>PromiseAll</button>
+	</div>
+</body>
+<script>
+doubleAndAdd(1, 2).then((value) => {
+  console.log(value);
+});
+
+async function doubleAndAdd(a, b) {
+  const [aAfterDouble, bAfterDouble] = await Promise.all([
+    doubleAfterOneSecond(a),
+    doubleAfterOneSecond(b),
+  ]);
+  console.log(aAfterDouble, bAfterDouble);
+  return aAfterDouble + bAfterDouble;
+}
+
+function doubleAfterOneSecond(params) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(params * 2);
+    }, 1000);
+  });
+}
+</script>
+</html>

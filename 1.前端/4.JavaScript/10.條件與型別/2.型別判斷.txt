@@ -1,0 +1,16 @@
+https://pjchender.dev/javascript/js-snippets#%E5%9E%8B%E5%88%A5%E5%88%A4%E6%96%B7
+
+typeof true; // 'boolean'
+typeof 'foobar'; // 'string'
+typeof 123; // 'number'
+typeof NaN; // 'number'
+typeof {}; // 'object'
+typeof []; // 'object'
+typeof undefined; // 'undefined'
+typeof window.alert; // 'function'
+typeof null; // 'object'
+
+let arr = [];
+Array.isArray(arr);
+
+typeof v === 'function'

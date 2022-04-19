@@ -1,0 +1,15 @@
+https://pjchender.dev/javascript/js-tips/#%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9Btype-transform--type-coercion
+
+===轉數值===
+const inputValue = '4';
+const val = Number(inputValue);
+const val = parseInt(inputValue, 10);
+
+===轉字串===
+let reviewScore = 9;
+const totalScore = String(reviewScore);
+
+===轉布林===
+const age = 0;
+const hasAge = !!age;
+const hasAge = Boolean(age);

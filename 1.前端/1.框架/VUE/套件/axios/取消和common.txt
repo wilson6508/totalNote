@@ -23,7 +23,9 @@ axiosPostApi(searchInfo) {
 	  }
 	})
 	.catch((xhr) => {
-	  this.$emit("result", null);
+	  if (!Axios.isCancel(xhr)) {
+        this.$emit("result", null);
+      }
 	});
 },
 async cancel() {

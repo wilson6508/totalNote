@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>Promise迴圈</title>
+</head>
+<body>
+	<div>
+		<button>Promise迴圈</button>
+	</div>
+</body>
+<script>
+const sleep = (ms) => {
+  return new Promise((resolve, reject) => {
+	console.log(`[sleep-${ms}] invoke`);
+    setTimeout(() => {
+	  console.log(`[sleep-${ms}] resolve`);
+      resolve(ms);
+    }, ms);
+  });
+};
+<!-- 以下為自行理解，目前測試認為沒問題 -->
+<!-- Promise.all也可用.then -->
+async function demo() {
+	const arr = [3000, 2000, 4000, 1000];
+	const [...args] = await Promise.all(arr.map(e => sleep(e)));
+	console.log(args);
+	<!-- await sleep(2000); -->
+	<!-- console.log("HAHA"); -->
+}
+demo();
+</script>
+</html>

@@ -1,0 +1,38 @@
+const array = Array(5);							                 // [empty × 5]
+const array = [...Array(5)]          							 // [undefined, undefined, undefined, undefined, undefined]
+
+const array = Array(5).fill(true);                               // [true, true, true, true, true]
+const array = Array.from(Array(5), (item, index) => index + 1);  // [1, 2, 3, 4, 5]
+const array = [...Array(5).keys()];                              // [0, 1, 2, 3, 4]
+const array = [...Array(5).keys()].map(e => e + 1);              // [1, 2, 3, 4, 5]
+
+const name = "Tome";
+const age = 18;
+const array = Array.from(Array(5), (item, index) => ({name, age}));
+const array = Array.from(Array(5), (item, index) => { return {name, age} });
+// 
+[
+    {
+        "name": "Tome",
+        "age": 18
+    },
+    {
+        "name": "Tome",
+        "age": 18
+    },
+    {
+        "name": "Tome",
+        "age": 18
+    },
+    {
+        "name": "Tome",
+        "age": 18
+    },
+    {
+        "name": "Tome",
+        "age": 18
+    }
+]
+
+
+

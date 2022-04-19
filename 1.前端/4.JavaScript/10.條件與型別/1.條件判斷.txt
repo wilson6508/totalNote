@@ -1,0 +1,9 @@
+https://pjchender.dev/javascript/js-operator/
+
+if (undefined, null, 0, NaN, "") > false
+
+!!undefined
+!!null
+!!0
+!!NaN
+!!""
