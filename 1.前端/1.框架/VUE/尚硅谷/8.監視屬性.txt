@@ -4,6 +4,9 @@ data: {
 }
 
 watch: {
+  isHot(newVal, oldVal) {
+	console.log(newVal, oldVal);
+  },
   isHot: {
     immediate: true, // 初始化調用handler
     handler(newVal, oldVal) {
@@ -30,4 +33,8 @@ vm.$watch('isHot', {
     handler(newVal, oldVal) {
 	  console.log(newVal, oldVal);
 	}
+})
+
+vm.$watch('isHot', function(newVal, oldVal) {
+	console.log(newVal, oldVal);
 })

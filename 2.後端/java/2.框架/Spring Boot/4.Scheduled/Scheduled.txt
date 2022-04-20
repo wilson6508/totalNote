@@ -90,4 +90,11 @@ public class ResetUsageAmountTask {
         usageAmountService.resetUsageAmount(3);
         System.out.println("success reset usage amount from year.");
     }
+	
+	// 一個方法可以配置兩個執行時間
+	@Scheduled(cron = "20 57 14 ? * *")
+    @Scheduled(cron = "30 57 14 ? * *")
+    public void monthlyTask() {
+        System.out.println("QQQ");
+    }
 }
