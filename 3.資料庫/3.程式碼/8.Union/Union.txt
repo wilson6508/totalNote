@@ -1,0 +1,2 @@
+SELECT * FROM usa_price_log WHERE id = 16 UNION
+SELECT * FROM usa_price_log WHERE id = 17;

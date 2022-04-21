@@ -14,3 +14,6 @@ let arr = [];
 Array.isArray(arr);
 
 typeof v === 'function'
+
+
+JavaScript中，除了undefined以外，所有原始類型都可以看成是物件。

@@ -15,6 +15,8 @@ List<String> list = new ArrayList<String>() {{
         List<String> temp = Arrays.asList("AA", "AA");
         List<String> list = new ArrayList<>(temp);
 
+        int[] temp = {1,2,3,4,5};
+        List<Integer> list = Arrays.stream(temp).boxed().collect(Collectors.toList());
 -add-
 List<VwUserProfileEntity> queryList = new ArrayList<>();							
 queryList.add(VwUserProfileEntity 物件);

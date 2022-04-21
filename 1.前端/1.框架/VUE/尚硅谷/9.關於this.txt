@@ -1,0 +1,19 @@
+1. computed 能做到的, watch都可以做到
+2. watch能做到的, computed不一定能做到, 例如: watch能進行異步操作
+-------------------------------------------------------------------------------------------------
+watch: {
+  firstName(val) {
+	setTimeout(() => {
+		console.log(this);  // vm 因為箭頭函示沒有this,往外找到firstName,firstName的this是vm 
+		this.fullName = val + "-" + this.lastName;
+	}, 1000)
+	setTimeout(function(){
+		console.log(this);  // window 因為定時器本來就是window調用的
+		this.fullName = val + "-" + this.lastName;
+	}, 1000)
+  }
+}
+
+想要this指向vm或是this指向組件實例對象
+1. 被Vue管理的函數,寫成普通函數
+2. 不被Vue管理的函數(定時器, ajax, Promise), 寫成箭頭函數

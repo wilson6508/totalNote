@@ -17,3 +17,5 @@ compare(a, b) {
 
 ---------------------------------------------------------------------
 
+https://pjchender.dev/js30/js30-day17
+const sortedBands = bands.sort((a, b) => (a > b ? 1 : -1));
