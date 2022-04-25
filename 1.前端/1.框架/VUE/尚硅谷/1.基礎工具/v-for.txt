@@ -1,0 +1,4 @@
+<div v-for="(value, key) in user" :key="key">  // in 可改 of
+
+<li v-for="(char, index) in str" :key="index"> // 可以遍歷字串
+<li v-for="(number, index) of 5" :key="index"> // 可以遍歷次數

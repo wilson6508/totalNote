@@ -1,6 +1,35 @@
 document.getElementById('demo').className = 'basic happy';
-
 const index = Math.floor(Math.random()*3);  // 0,1,2 隨機
-
-:class="classArr" // classArr: ["test01", "test02", "test02"]
+---------------------------------------------------------------------
+<style>
+.test01{...}
+.test02{...}
+.test03{...}
+</style>
+:class="classArr" // classArr: ["test01", "test02", "test03"]
 :class="classObj" // classObj: { test01: false, test02: true}
+---------------------------------------------------------------------
+style="font-size: 40px;"
+---------------------------------------------------------------------
+:style="{fontSize: fsize+'px'}"
+fsize: 40
+---------------------------------------------------------------------
+:style="styleObj"
+styleObj: {
+  fontSize: '40px',
+  color: 'red',
+  backgroundColor: 'orange'
+}
+:style="[styleObj, styleObj2]"
+---------------------------------------------------------------------
+:style="styleArr"
+styleArr: [
+	{
+	  fontSize: '40px',
+	  color: 'red',
+	},
+	{
+	  backgroundColor: 'orange'
+	}
+]
+---------------------------------------------------------------------

@@ -1,0 +1,20 @@
+0. v-show > style = "display: none;"
+
+1. v-show 比 v-if 效能優
+
+2. v-if v-else-if v-else 比 v-if v-if v-if 效能優
+
+4.
+如果h2有CSS的話，
+使用template不破壞原有結構，template只能用v-if，不能用v-show
+使用div需要重新改寫CSS指向h2
+
+<template v-if=" n=== 1 ">
+  <h2>ABC</h2>
+  <h2>DEF</h2>
+</template>
+
+<div v-if=" n=== 1 ">
+  <h2>ABC</h2>
+  <h2>DEF</h2>
+</div>
