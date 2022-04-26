@@ -1,4 +1,30 @@
-<div v-for="(value, key) in user" :key="key">  // in 可改 of
+// in 可改 of
+<div v-for="(item, index) in array" :key="index">  // 可以遍歷陣列
+<div v-for="(value, key) in user" :key="key">      // 可以遍歷物件
+<li v-for="(char, index) in str" :key="index">     // 可以遍歷字串
+<li v-for="(number, index) of 5" :key="index">     // 可以遍歷次數
+---------------------------------------------------------------------------
+key是虛擬DOM中的標記，當數據發生變化時，
+Vue會根據"新數據"產生"新的虛擬DOM"，
+隨後進行"新虛擬DOM"跟"舊虛擬DOM"差異比較
 
-<li v-for="(char, index) in str" :key="index"> // 可以遍歷字串
-<li v-for="(number, index) of 5" :key="index"> // 可以遍歷次數
+舊虛擬DOM找到與新虛擬DOM相同的key
+虛擬DOM中內容沒變 > 直接使用之前已經生成的真實DOM
+虛擬DOM中內容改變了 > 生成新的真實DOM, 然後替換掉頁面原先的真實DOM
+
+舊虛擬DOM沒有找到與新虛擬DOM相同的key
+> 創建新的真實DOM，之後渲染到頁面。
+---------------------------------------------------------------------------
+用index作為key可能會引發的問題:
+1. 若對數據進行: 逆添加、逆刪除等破壞順序的操作:
+   會產生沒必要的真實DOM更新 > 頁面效果沒有問題，但效率低。
+2. 若結構中包含輸入類的DOM:
+   會產生錯誤的DOM更新 > 頁面效果產生問題
+
+最好使用id、手機、身分證號作為key
+如果不進行逆添加、逆刪除等破壞順序的操作，而且僅用於渲染列表展示，可以用index作為key。
+
+
+
+
+

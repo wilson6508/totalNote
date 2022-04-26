@@ -1,1 +1,2 @@
-19. 計算屬性 https://www.bilibili.com/video/BV1Zy4y1K7SH?p=19&spm_id_from=pageDriver
+19. 計算屬性  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=19&spm_id_from=pageDriver
+30. v-for key https://www.bilibili.com/video/BV1Zy4y1K7SH?p=30&spm_id_from=pageDriver
