@@ -1,0 +1,71 @@
+stackColumn: {
+        id: "sourceAnalyticsStackColumn",
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "來源統計-聲量分布"
+        },
+        xAxis: {
+          categories: [
+            "玉山銀行",
+            "兆豐銀行"
+          ]
+        },
+        yAxis: {
+          title: {
+            text: "百分比",
+            // align: "high",
+            // rotation: 0,
+          },
+        },
+        series: [
+          {
+            name: "討論區",
+            data: [
+              7479,
+              2393
+            ],
+            color: "#ec5145"
+          },
+          {
+            name: "社群網站",
+            data: [
+              43407,
+              33364
+            ],
+            color: "#f18a2f"
+          },
+          {
+            name: "新聞",
+            data: [
+              11520,
+              10434
+            ],
+            color: "#0375ad"
+          },
+        ],
+        tooltip: {
+          headerFormat: "<b>{point.x}</b><br>",
+          // pointFormat: "{point.date}<br>共{point.y}則"
+        },
+        plotOptions: {
+          column: {
+            stacking: "percent",
+            dataLabels: {
+              enabled: true,
+              color: "#00000",
+              format: "{point.percentage:.1f}%"
+            }
+          }
+        },
+        // legend: {
+        //   y: 0,
+        //   align: "right",
+        //   verticalAlign: "top",
+        //   borderWidth: 1
+        // },
+        exporting: {
+          sourceWidth: 1400,
+        },
+      },
