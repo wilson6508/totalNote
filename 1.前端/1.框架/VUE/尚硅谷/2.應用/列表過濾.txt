@@ -1,0 +1,11 @@
+array.filter 不會更改原陣列，會返回一個新陣列
+
+"abcd".indexOf("a") === 0;
+"abcd".indexOf("") === 0;
+
+vscode摺疊註解
+//#region
+/*
+...
+*/
+//#endregion
