@@ -1,0 +1,49 @@
+monthColumnChart: {
+id: "trendMonthColumnChart",
+chart: {
+  type: "column",
+},
+title: {
+  text: "聲量統計-直方圖"
+},
+xAxis: {
+  categories: [
+	"2021/03",
+	"2021/04",
+	"2021/05",
+	"2021/06",
+	"2021/07",
+	"2021/08",
+	"2021/09",
+	"2021/10",
+	"2021/11",
+	"2021/12",
+	"2022/01",
+	"2022/02"
+  ]
+},
+yAxis: {
+  title: {
+	text: "則數"
+  },
+},
+series: [
+  { name: "玉山銀行", color: "#ec5145", data: [{ date: "2021/03", y: 4311 }, { date: "2021/04", y: 3886 }] },
+  { name: "兆豐銀行", color: "#f18a2f", data: [{ date: "2021/03", y: 1412 }, { date: "2021/04", y: 3180 }] },
+],
+tooltip: {
+  headerFormat: "<b>{series.name}</b><br>",
+  pointFormat: "{point.date}<br>共{point.y}則"
+},
+plotOptions: {
+  column: {
+	dataLabels: {
+	  enabled: true // 顯示數據
+	}
+  },
+  // pointWidth: 200
+},
+exporting: {
+  sourceWidth: 1400,
+},
+      },

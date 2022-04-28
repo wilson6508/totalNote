@@ -24,3 +24,7 @@ https://api.highcharts.com/highcharts/plotOptions.series.events.click
 
 Highcharts的一些基本設定
 https://www.itread01.com/content/1550143990.html
+
+Highcharts提示框設定(tooltip)(很清楚)
+https://ithelp.ithome.com.tw/articles/10241091
+https://ithelp.ithome.com.tw/users/20125431/ironman/3458

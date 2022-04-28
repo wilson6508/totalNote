@@ -1,0 +1,81 @@
+{
+id: "sourceAnalyticsWebBarChart",
+chart: {
+type: "bar",
+height: 480, // 一個項目80
+spacingRight: 150,
+// spacingLeft: 350, // 單主題200, 多主題350
+// borderWidth: 1,
+},
+title: {
+text: "共出現於120個網站。主文806則，回文115則，總計921則。",
+x: 50,
+},
+xAxis: {
+categories: [
+"Facebook粉絲團",
+"Ptt",
+"Facebook公開社團",
+"Youtube 頻道",
+"校園聊天-Dcard",
+"校園聊天-test",
+],
+labels: {
+align: "right",
+// x: -350, // 單主題-200, 多主題-350
+useHTML: true,
+formatter() {
+  if (this.isLast) {
+	return `<span style="width:150px; display:inline-block;">其他網站統計</span>`;
+  }
+  const topic = vm.cutString("玉山銀行兆豐銀行遠東測試", 15);
+  const bgColor = "black";
+  const badge = vm.singleTopicMode ? "" : `<span class="badge me-4" style="background-color: ${bgColor}; color: white;">${topic}</span>`;
+  const img = `<img class="me-3" src="/assets/img/icons/ranking/icon_${this.pos + 1}.png" >`;
+  const value = vm.cutString(this.value, 20);
+  const span = `<span style="color:#8aa12b; width:150px; display:inline-block;">${value}</span>`;
+  return badge + img + span;
+}
+}
+},
+yAxis: {
+title: {
+text: "主回文則數",
+},
+stackLabels: {
+enabled: true,
+}
+},
+series: [
+{
+name: "回文",
+data: [71, 3, 0, 7, 9, 71],
+color: "#b8ce54",
+},
+{
+name: "主文",
+data: [100, 48, 45, 41, 16, 100],
+color: "#1a5591",
+},
+],
+tooltip: {
+headerFormat: "<b>{point.key}</b><br>",
+// shared: true,
+followPointer: true,
+},
+legend: {
+reversed: true,
+align: "right",
+verticalAlign: "top",
+borderWidth: 1,
+x: -50,
+},
+plotOptions: {
+series: {
+stacking: "normal"
+}
+},
+exporting: {
+sourceWidth: 1400,
+},
+},
