@@ -1,0 +1,11 @@
+arr.push === Array.prototype.push // true
+vm._data.arr.push  === Array.prototype.push // false
+
+push     >  改變原陣列  >  return 新陣列length
+pop      >  改變原陣列  >  return 刪除的東西
+shift    >  改變原陣列  >  return 新陣列length 
+unshift  >  改變原陣列  >  return 刪除的東西
+splice   >  改變原陣列  >  return [刪除的東西]
+
+sort     >  改變原陣列
+reverse  >  改變原陣列

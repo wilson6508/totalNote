@@ -1,0 +1,3 @@
+010. MVVM      https://www.bilibili.com/video/BV1Zy4y1K7SH?p=10
+019. 計算屬性  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=19
+030. v-for key https://www.bilibili.com/video/BV1Zy4y1K7SH?p=30

@@ -1,4 +1,6 @@
 array.filter 不會更改原陣列，會返回一個新陣列
+
+array.reverse 改變原陣列
 array.sort 改變原陣列
 array.sort((a, b) => {
   return a - b; (升序)
