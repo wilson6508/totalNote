@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+</body>
+<script>
+	var plusOne = function(nums) {
+		let maxVal = nums[0]
+		let current = nums[0]
+		for (let i = 1; i < nums.length; i++) {
+			current += nums[i]
+			if (nums[i] > current) {
+				current = nums[i]
+			}
+			if (maxVal < current) {
+				maxVal = current
+			}
+		}
+		console.log(maxVal);
+		return maxVal;
+	};
+	plusOne([-1])
+	plusOne([-1,-2])
+	plusOne([5,4,-1,7,8])
+	plusOne([-2,1,-3,4,-1,2,1,-5,4])
+	
+<!-- https://ithelp.ithome.com.tw/articles/10213270 -->
+<!-- 時間複雜度 : O(N)  -->
+<!-- 空間複雜度 : O(1) -->
+</script>
+</html>
