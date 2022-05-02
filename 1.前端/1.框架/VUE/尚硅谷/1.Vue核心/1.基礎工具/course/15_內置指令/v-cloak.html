@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>v-cloak指令</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!--Vue接管之後會將v-cloak屬性移除-->
+        <h2 v-cloak>學校名稱: {{ name }}</h2>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+        setTimeout(() => {
+            const vm = new Vue({
+                el: '#root',
+                data: {
+                    name: '尚硅谷',
+                }
+            })
+        }, 3000)
+    </script>
+</body>
+
+</html>

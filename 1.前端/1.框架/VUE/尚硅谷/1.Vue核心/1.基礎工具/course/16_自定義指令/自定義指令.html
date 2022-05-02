@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>自定義指令</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>{{ name }}</h2>
+        <h2>當前的n值是: <span v-text="n"></span></h2>
+        <h2>n乘以10為: <span v-big="n"></span></h2>
+        <button @click="n++">OK</button>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: '尚硅谷',
+                n: 1,
+            },
+            directives: {
+                // 調用時機: 1.指令與元素成功綁定 2.指令所在模板被重新解析
+                big(element, binding) {
+                    console.log('觸發big');
+                    // console.log(element instanceof HTMLElement); // true
+                    // console.dir(element);                        // 列入element的所有屬性
+                    element.innerText = binding.value * 10;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

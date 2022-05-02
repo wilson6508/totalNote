@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>模擬數據監測</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let data = {
+            name: '尚硅谷',
+            address: '北京',
+        };
+
+        // 創建一個監視的實例對象，用於監視data中的屬性變化
+        const obs = new Observer(data);
+        // console.log(obs);
+        let vm = {};
+        vm._data = data = obs;
+
+        function Observer(obj) {
+            const keys = Object.keys(obj);
+            keys.forEach((k) => {
+                Object.defineProperty(this, k, { // this為Observer
+                    get() {
+                        return obj[k];
+                    },
+                    set(val) {
+                        console.log(`${k}被改了,我要去解析模板,生成新虛擬DOM,進行新舊虛擬DOM比較...`);
+                        obj[k] = val;
+                    },
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>

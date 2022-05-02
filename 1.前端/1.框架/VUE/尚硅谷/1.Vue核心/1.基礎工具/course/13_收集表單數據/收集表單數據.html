@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>收集表單數據</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <form @submit.prevent="demo">
+            <label for="firstInput">帳號: </label>
+            <input id="firstInput" type="text" v-model.trim="account"><br><br>
+            密碼: <input type="password" v-model="password"><br><br>
+            年齡: <input type="number" v-model.number="age"><br><br>
+            性別:
+            男<input type="radio" name="sex" v-model="sex" value="male">
+            女<input type="radio" name="sex" v-model="sex" value="female"><br><br>
+            愛好:
+            <input type="checkbox" v-model="hobbies" value="study">學習
+            <input type="checkbox" v-model="hobbies" value="game">打遊戲
+            <input type="checkbox" v-model="hobbies" value="eat">吃飯
+            <br><br>
+            所屬校區
+            <select v-model="city">
+                <option value="">請選擇校區</option>
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="shenzhen">深圳</option>
+                <option value="wuahn">武漢</option>
+            </select>
+            <br><br>
+            其他信息
+            <textarea v-model.lazy="other"></textarea><br><br>
+            <input type="checkbox" v-model="agree">閱讀並接受<a href="">《用戶協議》</a><br><br>
+            <!--收集checked-->
+            <button>提交</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                account: '',
+                password: '',
+                age: '',
+                sex: 'male',
+                hobbies: [],  // []: v-model收集[value], '': v-model收集checked
+                city: '',
+                other: '',
+                agree: false,
+            },
+            methods: {
+                demo() {
+                    console.log(this._data);
+                    console.log(JSON.stringify(this._data));
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>
