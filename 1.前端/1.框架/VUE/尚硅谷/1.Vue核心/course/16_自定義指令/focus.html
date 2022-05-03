@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>focus demo</title>
+    <style>
+        .demo {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" autofocus>
+    <button id="btn">OK</button>
+    <script type="text/javascript">
+        const btn = document.getElementById('btn')
+        btn.onclick = () => {
+            const input = document.createElement('input')
+            input.className = 'demo'
+            input.value = 99
+            input.onclick = () => { console.log(5566) }
+            console.log(input.parentElement);
+            document.body.appendChild(input)
+            console.log(input.parentElement);
+            input.focus()
+            input.parentElement.style.backgroundColor = 'skyblue'
+        }
+    </script>
+</body>
+
+</html>

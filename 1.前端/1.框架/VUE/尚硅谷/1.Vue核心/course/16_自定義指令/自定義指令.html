@@ -13,9 +13,17 @@
         <h2>當前的n值是: <span v-text="n"></span></h2>
         <h2>n乘以10為: <span v-big="n"></span></h2>
         <button @click="n++">OK</button>
+        <hr>
+        <input type="text" v-fbind="n">
     </div>
     <script type="text/javascript">
         Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+        Vue.directive('fbind2', {
+            big(element, binding) { },
+            inserted(element, binding) { },
+            update(element, binding) { },
+        })
+        Vue.directive('big', function (element, binding) { })
         const vm = new Vue({
             el: '#root',
             data: {
@@ -29,6 +37,25 @@
                     // console.log(element instanceof HTMLElement); // true
                     // console.dir(element);                        // 列入element的所有屬性
                     element.innerText = binding.value * 10;
+                },
+                // v-big-number (kebab-case命名) (小駝峰 camelCase命名)
+                'big-number': function (element, binding) {
+
+                },
+                fbind: {
+                    // 令與元素成功綁定時(一上來)
+                    bind(element, binding) {
+                        element.value = binding.value
+                    },
+                    // 指令所在元素被插入頁面時
+                    inserted(element, binding) {
+                        element.focus()
+                        // element.setAttribute('xxx', 'aaa')
+                    },
+                    // 指令所在模板被重新解析時
+                    update(element, binding) {
+                        element.value = binding.value
+                    },
                 }
             },
         })
