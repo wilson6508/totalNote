@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>透明度</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2 :style="{opacity}">測試文字</h2>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示。
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                opacity: 1,
+            },
+            methods: {
+                change() {
+                    setInterval(() => {
+                        this.opacity -= 0.01;
+                        if (this.opacity < 0) {
+                            this.opacity = 1;
+                        }
+                    }, 16)
+                },
+            },
+            // Vue完成模板解析後，將真實DOM放入頁面後(掛載完畢)調用mounted
+            mounted() {
+                this.change();
+            },
+        })
+
+        // 法2
+        // window.onload = () => {
+        //     vm.change();
+        // }
+
+        // 法1
+        // setInterval(() => {
+        //     vm.opacity -= 0.01;
+        //     if (vm.opacity < 0) {
+        //         vm.opacity = 1;
+        //     }
+        // }, 16)
+    </script>
+</body>
+
+</html>
