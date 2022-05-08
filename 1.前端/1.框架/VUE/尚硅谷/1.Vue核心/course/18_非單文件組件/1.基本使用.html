@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>基本使用</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!--
+        Emmet 語法
+        div + tab
+        school + > + tab
+        康師父,雷神
+    -->
+    <div id="root">
+        <h2>123</h2>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        // 1. 定義組件(創建組件)
+        // const school = Vue.extend({
+        //     template: ``,
+        //     data() {
+        //         return {}
+        //     },
+        // });
+
+        // 2. 局部註冊組件
+        // 單詞: 首字母大小寫都可
+        // 多詞: my-school or MySchool (腳手架)
+        // const vm = new Vue({
+        //     el: '#root',
+        //     components: {
+        //         school: school,
+        //     },
+        // })
+
+        // 2. 全局註冊組件
+        // Vue.component('school', school);
+
+        // 3. 使用組件
+        // <school></school>
+
+    </script>
+</body>
+
+</html>

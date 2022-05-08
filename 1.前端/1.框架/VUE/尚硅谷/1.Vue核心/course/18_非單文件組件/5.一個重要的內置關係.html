@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>一個重要的內置關係</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script type="text/javascript">
+        // 定義一個構造函數
+        // function Demo() {
+        //     this.a = 1;
+        //     this.b = 2;
+        // }
+        // console.log(Demo.prototype); // 顯示原型屬性
+        // // 創建一個Demo的實例對象
+        // const demo = new Demo();
+        // console.log(demo.__proto__); // 隱示原型屬性
+        // // 這裡的顯示原型屬性and隱示原型屬性 > 都指向原型對象
+        // Demo.prototype.x = 99;
+        // console.log(demo.__proto__.x);
+        // console.log(demo.x);
+        // console.log(demo);
+
+        //////////////////////////////////////////////////////////////
+
+        Vue.config.productionTip = false;
+
+        const school = Vue.extend({
+            name: 'school',
+            template: `
+                <div>
+                    <h2>學校名稱: {{ name }}</h2>
+                    <h2>學校地址: {{ address }}</h2>
+                </div>
+            `,
+            data() {
+                return {
+                    name: '尚硅谷',
+                    address: '北京'
+                }
+            },
+        });
+
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                msg: '你好'
+            }
+        });
+
+        // VueComponent.prototype.__proto__ === Vue.prototype
+        // console.log(school.prototype.__proto__ === Vue.prototype);
+
+        // console.log(Vue);
+        // console.log(typeof Vue);
+        // console.dir(Vue);
+
+        // 實例的隱示原型屬性 > 指向自己締造者的原型對象
+        // console.log(vm.__proto__.__proto__); // Object的原型對象
+
+        // 結論: 讓組件實例對象(vc)，可以訪問到Vue原型上的屬性、方法。
+    </script>
+</body>
+
+</html>

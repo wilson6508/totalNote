@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>基本使用</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <school></school>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+        const school = Vue.extend({
+            name: 'school',
+            template: `
+                <div>
+                    <h2>學校名稱: {{ name }}</h2>
+                    <h2>學校地址: {{ address }}</h2>
+                </div>
+            `,
+            data() {
+                return {
+                    name: '尚硅谷',
+                    address: '北京'
+                }
+            },
+        });
+
+        console.log('@', school);
+        console.log(typeof school);
+        // school組件本質是一個名為VueComponent的構造函數，且不是程序員定義的，是Vue.extend生成的。
+        // 撰寫<school />或是<school></school>，Vue解析時會創建school組件的實例對象，也就是
+        // Vue幫我們執行: new VueComponent(options)。
+
+        // 重要: 每次調用Vue.extend，返回的都是一個全新的VueComponent。
+
+        const vm = new Vue({
+            el: '#root',
+            components: {
+                school
+            },
+        });
+    </script>
+</body>
+
+</html>
