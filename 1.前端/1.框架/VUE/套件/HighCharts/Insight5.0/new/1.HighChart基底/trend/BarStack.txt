@@ -1,0 +1,187 @@
+{
+  "chart": {
+    "type": "bar",
+    "margin": [
+      100,
+      20,
+      50,
+      300
+    ],
+    "height": 1180
+  },
+  "title": {
+    "text": "網站排行"
+  },
+  "tooltip": {
+    "headerFormat": "{point.key}<br>",
+    "pointFormat": "{series.name}:{point.y}",
+    "followPointer": true
+  },
+  "xAxis": {
+    "allowDecimals": false,
+    "categories": [
+      "Facebook粉絲團",
+      "Ptt",
+      "Facebook公開社團",
+      "Youtube 頻道",
+      "校園聊天-Dcard",
+      "Google 評論",
+      "Youtube關鍵字搜尋",
+      "PChome股市",
+      "yahoo新聞",
+      "Plurk搜尋",
+      "Hinet",
+      "Facebook關鍵意見領袖",
+      "LINE TODAY",
+      "Taiwan News Agency 台灣新聞通訊社",
+      "GooglePlayStore",
+      "中時新聞網",
+      "工商時報",
+      "pchome新聞",
+      "富聯網",
+      "CMoney 追訊"
+    ],
+    "labels": {
+      "formatter": {
+        "_custom": {
+          "type": "function",
+          "display": "<span>f</span> formatter(()",
+          "_reviveId": 3
+        }
+      },
+      "style": {
+        "width": "300px",
+        "min-width": "300px"
+      },
+      "align": "left",
+      "useHTML": true,
+      "x": "-300"
+    }
+  },
+  "yAxis": {
+    "title": {
+      "text": "則數"
+    },
+    "stackLabels": {
+      "enabled": true
+    }
+  },
+  "plotOptions": {
+    "series": {
+      "stacking": "normal"
+    }
+  },
+  "legend": {
+    "y": 0,
+    "align": "right",
+    "verticalAlign": "top",
+    "borderWidth": 1,
+    "x": -30
+  },
+  "series": [
+    {
+      "name": "聲量",
+      "data": [
+        {
+          "y": 32974
+        },
+        {
+          "y": 5020
+        },
+        {
+          "y": 4301
+        },
+        {
+          "y": 3015
+        },
+        {
+          "y": 2072
+        },
+        {
+          "y": 1716
+        },
+        {
+          "y": 1009
+        },
+        {
+          "y": 915
+        },
+        {
+          "y": 794
+        },
+        {
+          "y": 792
+        },
+        {
+          "y": 632
+        },
+        {
+          "y": 627
+        },
+        {
+          "y": 584
+        },
+        {
+          "y": 580
+        },
+        {
+          "y": 558
+        },
+        {
+          "y": 460
+        },
+        {
+          "y": 448
+        },
+        {
+          "y": 416
+        },
+        {
+          "y": 411
+        },
+        {
+          "y": 383
+        }
+      ]
+    }
+  ],
+  "exporting": {
+    "buttons": {
+      "contextButton": {
+        "menuItems": [
+          {
+            "text": "下載PNG圖檔",
+            "onclick": {
+              "_custom": {
+                "type": "function",
+                "display": "<span>f</span> onclick(()",
+                "_reviveId": 4
+              }
+            }
+          },
+          {
+            "text": "下載JPEG圖檔",
+            "onclick": {
+              "_custom": {
+                "type": "function",
+                "display": "<span>f</span> onclick(()",
+                "_reviveId": 5
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "navigation": {
+    "menuStyle": {
+      "padding": "0px"
+    },
+    "menuItemStyle": {
+      "padding": "5px"
+    }
+  },
+  "credits": {
+    "enabled": false
+  }
+}

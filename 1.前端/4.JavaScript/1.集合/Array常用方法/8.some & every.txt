@@ -1,0 +1,11 @@
+some與every非常接近，都是回傳true or false，差異為
+every() 為全部符合，
+some()  為部分符合。
+
+this.distMainInfo.noMention = statisticsSource.text.every((item) => {
+  return item.errorCode === "1.7";
+});
+
+var ans = people.some(function(item, index, array){
+  return item.age > 10;
+});
