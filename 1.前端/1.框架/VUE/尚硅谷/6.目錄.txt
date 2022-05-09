@@ -1,6 +1,7 @@
-010. MVVM         https://www.bilibili.com/video/BV1Zy4y1K7SH?p=10
+﻿010. MVVM         https://www.bilibili.com/video/BV1Zy4y1K7SH?p=10
 019. 計算屬性     https://www.bilibili.com/video/BV1Zy4y1K7SH?p=19
 030. v-for key    https://www.bilibili.com/video/BV1Zy4y1K7SH?p=30
 037. Vue監視總結  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=37
 049. 生命週期     https://www.bilibili.com/video/BV1Zy4y1K7SH?p=49
 059. 組件內置關係 https://www.bilibili.com/video/BV1Zy4y1K7SH?p=59
+061. 腳手架       https://www.bilibili.com/video/BV1Zy4y1K7SH?p=61

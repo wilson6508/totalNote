@@ -1,0 +1,7 @@
+cd Desktop
+
+mkdir demo   // 建立資料夾
+
+cls          // clear
+
+ctrl+c (2次) // 終止批次工作
