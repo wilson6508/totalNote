@@ -1,0 +1,94 @@
+{
+  "chart": {
+    "type": "column"
+  },
+  "title": {
+    "text": "來源統計-聲量分布"
+  },
+  "series": [
+    {
+      "name": "部落格",
+      "data": [
+        14,
+        15
+      ],
+      "color": "#72c66b"
+    },
+    {
+      "name": "討論區",
+      "data": [
+        90,
+        208
+      ],
+      "color": "#fed528"
+    },
+    {
+      "name": "評論",
+      "data": [
+        44,
+        79
+      ],
+      "color": "#ff7417"
+    },
+    {
+      "name": "新聞",
+      "data": [
+        159,
+        275
+      ],
+      "color": "#12d5ff"
+    },
+    {
+      "name": "問答網站",
+      "data": [
+        0,
+        0
+      ],
+      "color": "#806699"
+    },
+    {
+      "name": "社群網站",
+      "data": [
+        323,
+        1247
+      ],
+      "color": "#e2211d"
+    }
+  ],
+  "xAxis": {
+    "categories": [
+      "玉山銀行",
+      "台新銀行"
+    ]
+  },
+  "yAxis": [
+    {
+      "title": {
+        "text": "百分比"
+      }
+    }
+  ],
+  "plotOptions": {
+    "column": {
+      "stacking": "percent",
+      "dataLabels": {
+        "enabled": true,
+        "color": "#00000",
+        "format": "{point.percentage:.1f}%"
+      },
+      "events": {
+        "click": {
+          "_custom": {
+            "type": "function",
+            "display": "<span>f</span> click(thi)",
+            "_reviveId": 1
+          }
+        }
+      }
+    }
+  },
+  "id": "dist-chart-0",
+  "exporting": {
+    "sourceWidth": 1400
+  }
+}

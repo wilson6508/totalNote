@@ -1,0 +1,14 @@
+  chart.plotOptions = {
+	series: {
+	  dataLabels: {
+		enabled: true
+	  },
+	  events: {
+		click: (event) => {
+		  console.log(this);
+		  console.log(event.point.category);
+		  console.log(event.point.series.name);
+		}
+	  }
+	}
+  };

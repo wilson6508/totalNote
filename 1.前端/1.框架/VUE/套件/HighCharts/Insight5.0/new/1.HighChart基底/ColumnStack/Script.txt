@@ -69,3 +69,12 @@ stackColumn: {
           sourceWidth: 1400,
         },
       },
+------------------------------------------------------------------------------------
+        chart.plotOptions.column.events = {
+          click: (event) => {
+            console.log(this);
+            console.log(event.point.category);
+            console.log(event.point.series.name);
+          }
+        };	  
+	  

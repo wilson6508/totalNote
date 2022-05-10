@@ -1,0 +1,96 @@
+{
+  "chart": {
+    "type": "column"
+  },
+  "title": {
+    "text": "來源統計-玉山銀行"
+  },
+  "series": [
+    {
+      "name": "部落格",
+      "data": [
+        {
+          "y": 14
+        }
+      ],
+      "color": "#72c66b"
+    },
+    {
+      "name": "討論區",
+      "data": [
+        {
+          "y": 90
+        }
+      ],
+      "color": "#fed528"
+    },
+    {
+      "name": "評論",
+      "data": [
+        {
+          "y": 44
+        }
+      ],
+      "color": "#ff7417"
+    },
+    {
+      "name": "新聞",
+      "data": [
+        {
+          "y": 159
+        }
+      ],
+      "color": "#12d5ff"
+    },
+    {
+      "name": "問答網站",
+      "data": [
+        {
+          "y": 0
+        }
+      ],
+      "color": "#806699"
+    },
+    {
+      "name": "社群網站",
+      "data": [
+        {
+          "y": 323
+        }
+      ],
+      "color": "#e2211d"
+    }
+  ],
+  "xAxis": {
+    "categories": [
+      "2022/05"
+    ]
+  },
+  "yAxis": [
+    {
+      "title": {
+        "text": "則數"
+      }
+    }
+  ],
+  "plotOptions": {
+    "series": {
+      "dataLabels": {
+        "enabled": true
+      },
+      "events": {
+        "click": {
+          "_custom": {
+            "type": "function",
+            "display": "<span>f</span> click(thi)",
+            "_reviveId": 1
+          }
+        }
+      }
+    }
+  },
+  "id": "tre-chart-429-columnMonth",
+  "exporting": {
+    "sourceWidth": 1400
+  }
+}

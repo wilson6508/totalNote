@@ -1,0 +1,72 @@
+{
+  "id": "dist-chart-0",
+  "chart": {
+    "type": "pie"
+  },
+  "title": {
+    "text": "來源統計-聲量分布"
+  },
+  "series": [
+    {
+      "name": "",
+      "colorByPoint": true,
+      "data": [
+        {
+          "name": "討論區",
+          "y": 6,
+          "color": "#fed528"
+        },
+        {
+          "name": "新聞",
+          "y": 5,
+          "color": "#12d5ff"
+        },
+        {
+          "name": "社群網站",
+          "y": 3,
+          "color": "#e2211d"
+        },
+        {
+          "name": "部落格",
+          "y": 0,
+          "color": "#72c66b"
+        },
+        {
+          "name": "評論",
+          "y": 0,
+          "color": "#ff7417"
+        },
+        {
+          "name": "問答網站",
+          "y": 0,
+          "color": "#806699"
+        }
+      ]
+    }
+  ],
+  "tooltip": {
+    "headerFormat": "<b>{point.key}</b><br>",
+    "pointFormat": "共<b>{point.percentage:.1f}%</b>"
+  },
+  "plotOptions": {
+    "series": {
+      "allowPointSelect": false,
+      "dataLabels": {
+        "enabled": true,
+        "format": "<b>{point.name}</b><br><b>{point.percentage:.1f}%</b>"
+      },
+      "events": {
+        "click": {
+          "_custom": {
+            "type": "function",
+            "display": "<span>f</span> click(thi)",
+            "_reviveId": 3
+          }
+        }
+      }
+    }
+  },
+  "exporting": {
+    "sourceWidth": 500
+  }
+}
