@@ -7,3 +7,7 @@ cls          // clear
 ctrl+c (2次) // 終止批次工作
 
 vue inspect > output.js
+
+npm view webpack versions
+npm view less-loader versions
+npm i less-loader@7
