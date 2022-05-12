@@ -1,0 +1,40 @@
+https://stackoverflow.com/questions/33571382/check-all-checkboxes-vuejs
+
+<input class="form-check-input" type="checkbox" v-model="keyWordSelectAll" />  // 全選checkbox
+
+<tr v-for="(item, index) in keyWordArray" :key="index">
+	<td><input class="form-check-input" type="checkbox" v-model="keyWordSelectArray" :value="item" /></td>  // 勾選各item的checkbox
+	<td>...</td> 																							                                              // item的其他資訊
+</tr>	
+
+
+data() {
+  return {
+	keyWordSelectArray: [], // 必須宣告為陣列, 才可以收集到[item01, item02, ...]. 
+  }
+}
+
+computed: {
+  keyWordSelectAll: { 
+    get() {
+      return this.keyWordSelectArray.length === this.keyWordArray.length; // 布林
+    },
+    set(value) {
+      const selected = [];
+      if (value) {
+        this.keyWordArray.forEach((e) => {
+          selected.push(e);
+        });
+      }
+      this.keyWordSelectArray = selected;
+    },
+  },
+},
+----------------------------------------------------------------------------------------------------------------------------------------- 
+<input class="form-check-input" type="checkbox" v-model="showData"/>
+data() {
+  return {
+	showData: true, // 必須宣告為布林or空字串, 才可以收集到checked屬性. 
+  }
+}
+----------------------------------------------------------------------------------------------------------------------------------------- 

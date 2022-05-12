@@ -1,0 +1,436 @@
+{
+  "id": "pop-channel-chart-0",
+  "chart": {
+    "type": "bar",
+    "height": 2860,
+    "spacingLeft": 30,
+    "spacingRight": 150
+  },
+  "title": {
+    "text": "共出現於 198 個頻道. 主文433則, 回文189則, 總計622則",
+    "x": 50
+  },
+  "yAxis": {
+    "title": {
+      "text": "主回文則數"
+    },
+    "stackLabels": {
+      "enabled": true
+    }
+  },
+  "tooltip": {
+    "headerFormat": "<b>{point.key}</b><br>",
+    "followPointer": true
+  },
+  "legend": {
+    "reversed": true,
+    "align": "right",
+    "verticalAlign": "top",
+    "borderWidth": 1,
+    "x": -50
+  },
+  "exporting": {
+    "sourceWidth": 1700
+  },
+  "series": [
+    {
+      "name": "回文",
+      "data": [
+        {
+          "y": 89
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 45
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 13
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 7
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 4
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 18
+        }
+      ],
+      "color": "#b8ce54"
+    },
+    {
+      "name": "主文",
+      "data": [
+        {
+          "y": 10
+        },
+        {
+          "y": 47
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 33
+        },
+        {
+          "y": 21
+        },
+        {
+          "y": 15
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 12
+        },
+        {
+          "y": 10
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 8
+        },
+        {
+          "y": 7
+        },
+        {
+          "y": 7
+        },
+        {
+          "y": 7
+        },
+        {
+          "y": 5
+        },
+        {
+          "y": 5
+        },
+        {
+          "y": 5
+        },
+        {
+          "y": 5
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 4
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 4
+        },
+        {
+          "y": 4
+        },
+        {
+          "y": 4
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 1
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 0
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 155
+        }
+      ],
+      "color": "#1a5591"
+    }
+  ],
+  "plotOptions": {
+    "series": {
+      "stacking": "normal",
+      "cursor": "pointer",
+      "events": {
+        "click": {
+          "_custom": {
+            "type": "function",
+            "display": "<span>f</span> click(webChannelId, topicName, contentTyp)",
+            "_reviveId": 7
+          }
+        }
+      }
+    }
+  },
+  "xAxis": {
+    "categories": [
+      "Facebook粉絲團<br>玉山銀行 數位生活好康",
+      "Ptt<br>HelpBuy",
+      "Facebook粉絲團<br>玉山招財納福喵喵",
+      "Facebook粉絲團<br>請支持流浪貓TNR計劃",
+      "Taiwan News Agency 台灣新聞通訊社<br>財經",
+      "Youtube 頻道<br>睡大 Still_Sleepy",
+      "GooglePlayStore<br>玉山行動銀行",
+      "Youtube 頻道<br>台灣花枝丸",
+      "Youtube關鍵字搜尋<br>關鍵字搜尋",
+      "校園聊天-Dcard<br>金融",
+      "yahoo股市<br>財經新聞",
+      "Youtube 頻道<br>童溫層",
+      "Facebook公開社團<br>小辣椒洪秀柱後援會",
+      "富聯網<br>總覽",
+      "Ptt<br>Japan_Travel",
+      "PChome股市<br>台股",
+      "經濟日報<br>金融",
+      "中時新聞網<br>財經",
+      "Facebook粉絲團<br>社團法人台灣愛狗人協會",
+      "Facebook公開社團<br>大台南租屋售屋網",
+      "校園聊天-Dcard<br>工作",
+      "聯合新聞網<br>產經",
+      "ETtoday新聞雲<br>財經新聞",
+      "蕃新聞<br>即時新聞",
+      "Facebook粉絲團<br>浪愛回家 Adopt Pets Don't Buy",
+      "Facebook粉絲團<br>白水老人叮嚀話語",
+      "Facebook粉絲團<br>化學原宿 Chemistry",
+      "Ptt<br>Stock",
+      "Ptt<br>Option",
+      "Youtube 頻道<br>Old Man",
+      "Facebook公開社團<br>村長 全國粉絲團2",
+      "校園聊天-Dcard<br>信用卡",
+      "PChome股市<br>產業",
+      "yahoo新聞<br>焦點",
+      "痞客邦 PIXNET<br>生活綜合分類",
+      "工商時報<br>財經要聞-金融",
+      "工商時報<br>各版頭條",
+      "Hinet<br>財經",
+      "mobile01<br>閒聊_投資與理財",
+      "Facebook不公開社團<br>7-11 全家 超商集點買賣交換區",
+      "pchome新聞<br>財經",
+      "LINE TODAY<br>理財",
+      "Plurk搜尋<br>Plurk搜尋",
+      "Facebook粉絲團<br>民視新聞",
+      "Facebook粉絲團<br>達人秀新聞",
+      "Facebook粉絲團<br>寬宏藝術",
+      "Ptt<br>creditcard",
+      "Ptt<br>Bank_Service",
+      "Facebook公開社團<br>台東社會事（111年）",
+      "Facebook公開社團<br>草屯人",
+      "其他網站<br>其他頻道統計"
+    ],
+    "labels": {
+      "align": "right",
+      "useHTML": true,
+      "formatter": {
+        "_custom": {
+          "type": "function",
+          "display": "<span>f</span> formatter(()",
+          "_reviveId": 8
+        }
+      }
+    }
+  }
+}

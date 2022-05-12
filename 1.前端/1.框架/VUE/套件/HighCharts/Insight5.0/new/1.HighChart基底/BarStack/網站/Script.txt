@@ -1,0 +1,85 @@
+const obj = {
+        id: "pop-web-chart-0",
+        chart: {
+          type: "bar",
+          height: chartHeight < 300 ? 300 : chartHeight, // const chartHeight = totalPoints * 55;
+          spacingLeft: 30,
+          spacingRight: 150,
+        },
+        title: {
+          text: titleText,
+          x: 50,
+        },
+        yAxis: {
+          title: {
+            text: "主回文則數",
+          },
+          stackLabels: {
+            enabled: true,
+          }
+        },
+        tooltip: {
+          headerFormat: "<b>{point.key}</b><br>",
+          followPointer: true,
+        },
+        legend: {
+          reversed: true,
+          align: "right",
+          verticalAlign: "top",
+          borderWidth: 1,
+          x: -50,
+        },
+        exporting: {
+          sourceWidth: 1700,
+        },
+        series: [
+          {
+            name: "回文",
+            data: replyData,
+            color: "#b8ce54",
+          },
+          {
+            name: "主文",
+            data: MainData,
+            color: "#1a5591",
+          },
+        ],
+        plotOptions: {
+          series: {
+            stacking: "normal",
+            cursor: "pointer",
+            events: {
+              click: (event) => {	  
+			    console.log(event.point.index);
+                console.log(event.point.category);
+                console.log(event.point.series.name);
+                console.log(event.point.options.y);
+              }
+            },
+          }
+        },
+        xAxis: {
+          categories: categories,
+          labels: {
+            align: "right",
+            useHTML: true,
+            formatter() {
+              const value = vm.shortenString(this.value, 16);
+              if (this.isLast) { // 最後一個
+                return `<span style="width:150px; display:inline-block; cursor: pointer">${value}</span>`;
+              }
+              let badge = "";
+              if (!vm.singleTopicMode) {
+                const topicName = vm.webTableArr[0].rows[this.pos].topicName;
+                const topic = vm.shortenString(topicName, 6);
+                const bgColor = vm.findObjInArray(store.state.settingPanelInfo.uaInfo.topic, "name", topicName).color;
+                badge = `<div style="float: left; width: 100px"><span class="badge me-4" style="background-color: ${bgColor}; color: white; margin:7px 0px 0px 0px; float: left;">${topic}</span></div>`;
+              }
+              const img = `<img style="float:left; margin:10px 5px" class="me-3" src="/assets/img/icons/ranking/icon_${this.pos + 1}.png" >`;
+              const marginRight = vm.singleTopicMode ? 20 : 130;
+              const span = `<div class="popWebData" id="popWebData-${this.pos}" style="margin:7px 0 0 ${marginRight}px; cursor: pointer"><span style="color:#8aa12b; width:150px; display:inline-block;">${value}</span></div>`;
+              return badge + img + span;
+            }
+          }
+        },
+      };
