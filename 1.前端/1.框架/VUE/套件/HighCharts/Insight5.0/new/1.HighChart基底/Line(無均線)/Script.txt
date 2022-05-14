@@ -1,7 +1,10 @@
   chart.plotOptions = {
 	series: {
+	  marker: {
+		enabled: false // 是否顯示連結點
+	  },
 	  dataLabels: {
-		enabled: true
+		enabled: true  // 是否顯示連結點的數據
 	  },
 	  events: {
 		click: (event) => {

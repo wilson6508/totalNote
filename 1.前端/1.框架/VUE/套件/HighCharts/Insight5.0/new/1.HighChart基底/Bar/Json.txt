@@ -1,0 +1,63 @@
+{
+  "chart": {
+    "type": "bar",
+    "height": 0
+  },
+  "title": {
+    "text": "聲量統計-長條圖"
+  },
+  "tooltip": {
+    "headerFormat": "<b>{point.key}</b><br>",
+    "pointFormat": "共{point.y}則"
+  },
+  "series": [
+    {
+      "showInLegend": false,
+      "data": [
+        {
+          "name": "台新銀行",
+          "y": 1072,
+          "color": "#f10937"
+        },
+        {
+          "name": "玉山銀行玉山",
+          "y": 602,
+          "color": "#0b43ea"
+        }
+      ]
+    }
+  ],
+  "xAxis": {
+    "categories": [
+      "台新銀行",
+      "玉山銀行玉山"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "text": "聲量數"
+    }
+  },
+  "plotOptions": {
+    "bar": {
+      "dataLabels": {
+        "enabled": true
+      }
+    },
+    "series": {
+      "events": {
+        "click": {
+          "_custom": {
+            "type": "function",
+            "display": "<span>f</span> click(event.point.nam)",
+            "_reviveId": 0
+          }
+        }
+      }
+    }
+  },
+  "id": "trendBarChart",
+  "exporting": {
+    "sourceWidth": 700
+  }
+}

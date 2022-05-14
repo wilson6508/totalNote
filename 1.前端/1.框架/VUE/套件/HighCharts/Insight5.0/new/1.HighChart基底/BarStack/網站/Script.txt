@@ -5,6 +5,7 @@ const obj = {
           height: chartHeight < 300 ? 300 : chartHeight, // const chartHeight = totalPoints * 55;
           spacingLeft: 30,
           spacingRight: 150,
+		  // borderWidth: 1,
         },
         title: {
           text: titleText,
@@ -62,6 +63,7 @@ const obj = {
           categories: categories,
           labels: {
             align: "right",
+			// x: -350,
             useHTML: true,
             formatter() {
               const value = vm.shortenString(this.value, 16);

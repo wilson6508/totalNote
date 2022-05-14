@@ -9,6 +9,12 @@ array.sort((a, b) => {
 "abcd".indexOf("a") === 0;
 "abcd".indexOf("") === 0;
 
+test() {
+	const str = "abcd";
+	console.log(str.split(""));           // ['a', 'b', 'c', 'd']
+	console.log(str.split("").join(""));  // 'abcd'
+}
+
 vscode摺疊註解
 //#region
 /*

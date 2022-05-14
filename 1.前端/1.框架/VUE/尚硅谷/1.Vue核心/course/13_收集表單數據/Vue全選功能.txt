@@ -30,6 +30,9 @@ computed: {
     },
   },
 },
+
+官方文件英文:https://vuejs.org/guide/essentials/forms.html(優先看)
+官方文件中文:https://cn.vuejs.org/v2/guide/forms.html
 ----------------------------------------------------------------------------------------------------------------------------------------- 
 <input class="form-check-input" type="checkbox" v-model="showData"/>
 data() {
