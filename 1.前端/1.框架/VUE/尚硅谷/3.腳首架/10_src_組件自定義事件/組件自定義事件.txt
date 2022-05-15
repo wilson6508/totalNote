@@ -1,0 +1,43 @@
+// 觸發Student組件實例身上的atguigu事件
+this.$emit('atguigu', this.name, 666, 700)
+
+// 綁定自定義事件, 給Student組件實例對象綁定atguigu事件, 以getStudentName回調
+<Student v-on:atguigu="getStudentName" />
+this.$refs.student.$on('atguigu', this.getStudentName)
+
+// 綁定自定義事件(一次性)
+<Student @atguigu.once="getStudentName" />
+this.$refs.student.$once('atguigu', this.getStudentName)
+
+getStudentName(name, ...params) {
+  console.log(name, params)	
+}
+-----------------------------------------------------------
+解綁自定義事件
+this.$off('atguigu')           // 解綁一個
+this.$off(['atguigu', 'demo']) // 解綁多個
+this.$off()                    // 解綁所有的
+
+this.$destroy() // 銷毀vm或vc, 解绑它的全部指令及"自定義"事件监听器
+進到 beforeDestroy(){}, 可以訪問到數據, 
+但是對數據進行更新, 不會再進到beforeUpdate(){}
+
+updated() {
+  console.log('updated');
+  this.n = 99; // Vue會比較新舊數據, 如果一樣就不觸發setter?
+}
+-----------------------------------------------------------
+關於this
+this.$refs.student.$on('atguigu', function(name, ...params) {
+	console.log(name, ...params);
+	console.log(this) // vc Student
+})
+
+this.$refs.student.$on('atguigu', (name, ...params) => {
+	console.log(name, ...params);
+	console.log(this) // vc App
+})
+-----------------------------------------------------------
+綁定原生JS事件
+<Student @click="show" /> 			// 為自定義事件click, 需要Student組件$emit('click')
+<Student @click.native="show" /> 	// 為原生事件click, 點擊Student組件

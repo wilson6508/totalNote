@@ -10,6 +10,7 @@ Vue3英文     https://vuejs.org/
 030. v-for key    https://www.bilibili.com/video/BV1Zy4y1K7SH?p=30
 037. Vue監視總結  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=37
 049. 生命週期     https://www.bilibili.com/video/BV1Zy4y1K7SH?p=49
+051. 生命週期銷毀 https://www.bilibili.com/video/BV1Zy4y1K7SH?p=51
 059. 組件內置關係 https://www.bilibili.com/video/BV1Zy4y1K7SH?p=59
 061. 腳手架       https://www.bilibili.com/video/BV1Zy4y1K7SH?p=61
 069. lang="less"  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=69

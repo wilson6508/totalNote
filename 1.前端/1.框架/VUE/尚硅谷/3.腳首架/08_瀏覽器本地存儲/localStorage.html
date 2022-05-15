@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>localStorage</title>
+</head>
+
+<body>
+    <h2>localStorage</h2>
+    <button onclick="saveData()">saveData</button>
+    <button onclick="readData()">readData</button>
+    <button onclick="deleteData()">deleteData</button>
+    <button onclick="deleteAllData()">deleteAllData</button>
+
+    <script type="text/javascript">
+        let p = { name: '張三', age: 18 }
+        function saveData() {
+            // window.localStorage
+            localStorage.setItem('msg01', 'hello')
+            localStorage.setItem('msg02', 666)
+            localStorage.setItem('msg03', JSON.stringify(p))
+        }
+        function readData() {
+            console.log(localStorage.getItem('msg01'))
+            console.log(localStorage.getItem('msg02'))
+            const result = localStorage.getItem('msg03')
+            console.log(JSON.parse(result))
+            console.log(localStorage.getItem('AAA')) // null // JSON.parse(null)為null
+        }
+        function deleteData() {
+            localStorage.removeItem('msg02')
+        }
+        function deleteAllData() {
+            localStorage.clear()
+        }
+    </script>
+</body>
+
+</html>
