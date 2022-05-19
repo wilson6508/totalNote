@@ -1,0 +1,79 @@
+    this.chartInfo = {
+      id: "trendMonthColumnChart",
+      chart: {
+        type: "column",
+      },
+      title: {
+        text: "聲量統計-直方圖",
+      },
+      tooltip: {
+        headerFormat: "<b>{point.key}-{series.name}</b><br>",
+        pointFormat: "共{point.y}則",
+      },
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+          },
+        },
+      },
+      exporting: {
+        sourceWidth: 1400,
+      },
+      xAxis: {
+        categories: ["玉山銀行", "兆豐銀行"],
+      },
+      yAxis: [
+        {
+          title: {
+            text: "則數",
+          },
+        },
+        {
+          title: {
+            text: "P/N比",
+          },
+          opposite: true,
+        },
+      ],
+      series: [
+        {
+          name: "正面則數",
+          data: [
+            {
+              y: 19375,
+            },
+            {
+              y: 12795,
+            },
+          ],
+          color: "#85bf29",
+        },
+        {
+          name: "負面則數",
+          data: [
+            {
+              y: 4126,
+            },
+            {
+              y: 2890,
+            },
+          ],
+          color: "#ec5145",
+        },
+        {
+          name: "P/N",
+          data: [
+            {
+              y: 4.7,
+            },
+            {
+              y: 4.43,
+            },
+          ],
+          color: "#0080FF",
+          type: "line",
+          yAxis: 1,
+        },
+      ],
+    };
