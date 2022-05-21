@@ -15,3 +15,6 @@ Vue3英文     https://vuejs.org/
 061. 腳手架       https://www.bilibili.com/video/BV1Zy4y1K7SH?p=61
 069. lang="less"  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=69
 070. toDoList     https://www.bilibili.com/video/BV1Zy4y1K7SH?p=71
+108. 安裝Vuex     https://www.bilibili.com/video/BV1Zy4y1K7SH?p=108 (npm i vuex@3)
+110. actions觀念  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=110
+118. 安裝router   https://www.bilibili.com/video/BV1Zy4y1K7SH?p=118 (npm i vue-router@3)
