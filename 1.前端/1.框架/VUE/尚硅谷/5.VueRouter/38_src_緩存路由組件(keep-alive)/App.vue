@@ -1,11 +1,8 @@
 <template>
   <div>
     <Banner />
-    <!-- <a href="./about.html">About</a><br /><br /> -->
-    <!-- <a href="./home.html">Home</a> -->
-    <!--vue會將router-link標籤轉為a標籤-->
-	<!--可加tag="button"屬性-->
-    <router-link active-class="active" to="/about">About</router-link
+    <router-link active-class="active" :to="{ name: 'guanyu' }"
+      >About</router-link
     ><br /><br />
     <router-link active-class="active" to="/home">Home</router-link>
     <router-view />
@@ -22,7 +19,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .active {
   background-color: yellow;
 }
