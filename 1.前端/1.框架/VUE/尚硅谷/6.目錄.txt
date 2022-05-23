@@ -18,3 +18,4 @@ Vue3英文     https://vuejs.org/
 108. 安裝Vuex     https://www.bilibili.com/video/BV1Zy4y1K7SH?p=108 (npm i vuex@3)
 110. actions觀念  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=110
 118. 安裝router   https://www.bilibili.com/video/BV1Zy4y1K7SH?p=118 (npm i vue-router@3)
+133. node.js部署  https://www.bilibili.com/video/BV1Zy4y1K7SH?p=133
