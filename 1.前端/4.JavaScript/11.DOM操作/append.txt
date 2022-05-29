@@ -1,0 +1,17 @@
+  mounted() {
+    // console.log(document.getElementsByTagName("thead")[0]);
+    // console.log(this.$refs.tr);
+    document.getElementsByTagName("thead")[0].prepend(this.$refs.tr);
+	document.getElementsByTagName("tr")[0].appendChild(this.$refs.tr);
+  },
+
+  <tr class="btn-reveal-trigger" ref="tr">
+	<th
+	  class="text-nowrap"
+	  scope="col"
+	  v-for="(column, index) in tempArr"
+	  :key="index"
+	>
+	  {{ column }}
+	</th>
+  </tr>

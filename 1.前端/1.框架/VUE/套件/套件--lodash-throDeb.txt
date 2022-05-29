@@ -1,4 +1,4 @@
-npm install lodash
+﻿npm install lodash
 throttle(節流): 從最初一次觸發開始，在 t秒後執行函數。中間無論觸發多少次都不會執行。
 debounce(防抖): 從最後一次觸發開始，在 t秒後執行函數。因為是最後一次觸發，所以會把中間的觸發蓋掉。
 <template>
@@ -36,6 +36,10 @@ export default {
 
 安裝參考
 https://www.digitalocean.com/community/tutorials/vuejs-lodash-throttle-debounce
+
+使用參考
+https://www.lodashjs.com/
+https://www.lodashjs.com/docs/lodash.truncate
 
 中文解釋
 https://medium.com/@steven234/throttle%E8%B7%9F-debounce%E6%9C%89%E4%BB%80%E9%BA%BC%E5%8D%80%E5%88%A5-e0b1979b1b4f

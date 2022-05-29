@@ -1,4 +1,5 @@
-cd Desktop
+﻿cd Desktop
+vue create vue3_test
 
 mkdir demo   // 建立資料夾
 
