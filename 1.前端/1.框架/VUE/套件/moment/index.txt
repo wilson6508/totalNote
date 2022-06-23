@@ -1,0 +1,30 @@
+引入moment
+import moment from "moment";
+
+取得現在時間
+const now = moment().format("YYYY-MM-DD HH:mm:ss");
+
+時間加減
+const format = "YYYY/MM/DD HH:mm:ss";
+const str = "2022/06/20 19:15:43";
+const amount = -1;
+const second = moment(str, format).add(amount, "second").format(format); 	// 2022/06/20 19:15:42
+const minute = moment(str, format).add(amount, "minute").format(format); 	// 2022/06/20 19:14:43
+const hour = moment(str, format).add(amount, "hour").format(format); 		// 2022/06/20 18:15:43
+const day = moment(str, format).add(amount, "day").format(format); 			// 2022/06/19 19:15:43
+const week = moment(str, format).add(amount, "week").format(format); 		// 2022/06/13 19:15:43
+const year = moment(str, format).add(amount, "year").format(format); 		// 2021/06/20 19:15:43
+
+比較時間
+const format = "YYYY/MM/DD HH:mm:ss";
+const moment01 = moment("2022/06/01 19:15:50", format);
+const moment02 = moment("2022/06/02 19:15:50", format);
+console.log(moment01.isBefore(moment02, "second"));     // true
+console.log(moment01.isAfter(moment02, "second"));		// false
+console.log(moment01.isSame(moment02, "second"));		// false
+-----------------------------------------------------------------------------------------------------------------------------
+
+moment-js 筆記				https://pjchender.dev/npm/npm-moment-js/
+Moment.js 文档				http://momentjs.cn/docs/
+moment.js - 關於時間的一切	https://ithelp.ithome.com.tw/articles/10208995
+

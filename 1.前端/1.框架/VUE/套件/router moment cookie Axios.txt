@@ -2,23 +2,4 @@ router moment cookie Axios
 https://iter01.com/441404.html
 https://iter01.com/558353.html
 
-moment-js 筆記				https://pjchender.dev/npm/npm-moment-js/
-Moment.js 文档				http://momentjs.cn/docs/
 Ant-design-vue 專案實戰筆記	https://iter01.com/441404.html
-moment.js - 關於時間的一切	https://ithelp.ithome.com.tw/articles/10208995
-
-fakeSearchInfo() {
-  const { timeRange, dateSortType } = this.searchInfo.parameter.searchInformation.necessaryCondition;
-  const start = timeRange.split("~")[0].split(" ")[0];
-  const amount = dateSortType === "day" ? -6 : -27;
-  const format = "YYYY/MM/DD";
-  const fakeStart = moment(start, format).add(amount, "days").format(format);
-  this.searchInfo.parameter.searchInformation.necessaryCondition.timeRange = fakeStart + timeRange.slice(10)
-},
-
-disabledBtn() {
-  const format = "YYYY/MM/DD";
-  const today = moment();
-  const next = moment(this.recordDate, format).add(this.deltaDay, "days");
-  return moment(next).isAfter(today, "days");
-},
