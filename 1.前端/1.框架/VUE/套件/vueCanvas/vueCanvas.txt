@@ -1,0 +1,16 @@
+"vue-html2canvas": "0.0.4",
+https://www.npmjs.com/package/vue-html2canvas
+https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/676610/
+-----------------------------------------------------------------------------------------------------------------------------
+downloadChart(fileType) { // png jpeg
+  const targetArea = document.getElementById(this.id);
+  html2canvas(targetArea).then((canvas) => {
+	const link = document.createElement("a");
+	link.href = canvas.toDataURL();
+	link.setAttribute("download", `chart.${fileType}`);
+	link.style.display = "none";
+	document.body.appendChild(link);
+	link.click();
+  });
+},
+

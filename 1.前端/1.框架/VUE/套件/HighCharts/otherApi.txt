@@ -1,0 +1,28 @@
+const chart = Highcharts.charts.filter((e) => e !== undefined).find((e) => e.userOptions.id === "nanoid");
+chart.setSize(newVal); // 400 800 null
+----------------------------------------------------------------------------------------------------------
+chart: {
+  type: "bar",
+  height: 1000,
+},
+title: {
+  text: "¼öªùÃöÁä¦r",
+  style: { fontWeight: "bold", fontSize: "20px" },
+},
+rgba(152, 145, 255, 1)
+----------------------------------------------------------------------------------------------------------
+const chart = Highcharts.charts.filter((e) => e !== undefined).find((e) => e.userOptions.id === "nanoid");
+chart.series[0].data.forEach((e) => e.update({ color: "#bddaf5" }));
+----------------------------------------------------------------------------------------------------------
+chartInfo.series[0].data.forEach((e) => {
+	e.events = {
+		mouseOver() {
+		  vc.selectBubble = this.name.substring(2) * 1;
+		  this.update({ color: "#eb8c9c" });
+		},
+		mouseOut() {
+		  vc.selectBubble = 0;
+		},
+    };
+});
+----------------------------------------------------------------------------------------------------------
