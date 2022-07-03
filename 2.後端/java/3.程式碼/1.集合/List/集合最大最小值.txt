@@ -1,8 +1,21 @@
-TopicModelResult temp01 = Collections.max(topicModelResultList, Comparator.comparing(TopicModelResult::getTotalCountPnUse));
-TopicModelResult temp02 = Collections.min(topicModelResultList, Comparator.comparing(TopicModelResult::getTotalCountPnUse));
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+-------------------------------------------------------------------------------------------------------
+List<Integer> list = Arrays.asList(400, 200, 300);
+Integer min = Collections.min(list);
 
-TopicModelResult temp03 = Collections.max(topicModelResultList, Comparator.comparing(e -> e.getPnRatioResult().get(3).getRatio()));
-TopicModelResult temp04 = Collections.min(topicModelResultList, Comparator.comparing(e -> e.getPnRatioResult().get(3).getRatio()));
+List<String> list = Arrays.asList("Banana", "Apple", "Cat");
+String min = Collections.min(list);
 
-Double maxValue = Collections.max(list);
-int index = list.indexOf(maxValue);
+int idx = list.indexOf(min);
+-------------------------------------------------------------------------------------------------------
+List<Person> list = new ArrayList<>();
+list.add(new Person("Banana", 40, 4000.0));
+list.add(new Person("Apple", 20, 2000.0));
+list.add(new Person("Cat", 30, 3000.0));
+
+Double maxSalary = Collections.max(list, Comparator.comparingDouble(Person::getSalary)).getSalary();
+Double maxSalary = Collections.max(list, Comparator.comparing(Person::getSalary)).getSalary();
+String maxName = Collections.max(list, Comparator.comparing(Person::getName)).getName();
