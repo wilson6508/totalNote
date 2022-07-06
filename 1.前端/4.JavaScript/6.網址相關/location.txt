@@ -1,0 +1,33 @@
+protocol://host.domain                /path  /filename
+https:   //release-test1.opview.com.tw/OpView/Login
+
+protocol指的是通訊協定，常見的有 http, https, ftp
+host.domain指的是網域
+path/filename指的是路徑和檔案名稱
+
+window.location.href 			取得目前造訪網頁的網址
+window.location.protocol 		取得目前造訪網頁的通訊協定(protocol)
+window.location.host 			取得目前造訪網頁的主機名稱(hostname), 包含port
+window.location.hostname 		取得目前造訪網頁的主機名稱(hostname)
+window.location.pathname 		取得目前造訪網頁的路徑(path)
+window.location.hash 			取得目前造訪網頁錨點(#)(hashtag)
+window.location.port 			取得目前造訪網頁的port
+window.location.search 			取得目前造訪網頁qeuery參數，比如?a=test
+
+導頁寫法
+window.location="https://www.google.com/";
+window.location.href="https://www.google.com/";
+location="https://www.google.com/";
+location.href="https://www.google.com/";
+
+window.location.reload()      // 從cache中重新載入就好，不需要再向server做request
+window.location.reload(false) // 從cache中重新載入就好，不需要再向server做request
+window.location.reload(true)  // 向server重新要資料。
+
+使用 javascript 取得網址(url) 與 window.location 類別
+https://tools.wingzero.tw/article/sn/64
+
+win + r
+calc.exe
+mspaint.exe
+cmd
