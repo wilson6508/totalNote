@@ -1,0 +1,28 @@
+話題拆解結果10個圓圈
+.legend-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 6px 0;
+  border-radius: 50%;
+}
+10個圓圈底下的檢視
+.legend-span:hover {
+  color: #1ca5b8;
+  font-weight: bold;
+}
+
+話題拆解摘要的tag
+.abstract-area-badge:hover {
+  color: #fff;
+  background-color: #0dcaf0;
+}
+.abstract-area-badge {
+  color: #2196f3;
+  display: inline-block;
+  margin-bottom: 5px;
+  height: 24px;
+  line-height: 23px;
+  padding: 0 10px;
+  border-radius: 15px;
+  border: 1px solid #2196f3;
+}
