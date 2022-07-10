@@ -1,0 +1,14 @@
+強制重新渲染
+<div :key="key"></div>
+this.key++;
+
+https://stackoverflow.com/questions/43461338/is-vuex-store-accessible-from-console-or-from-clients-browser
+document.getElementsByTagName('a')[0].__vue__.$store.state
+Array.from(document.querySelectorAll('*')).find(e => e.__vue__).__vue__.$store.state
+Array.from(document.querySelectorAll('*')).find(e => e.__vue_app__).__vue_app__.config.globalProperties.$store.state
+
+for (const i in state) {
+  delete state[i];
+}
+
+Object.assign(state, { userInfo: "" });
