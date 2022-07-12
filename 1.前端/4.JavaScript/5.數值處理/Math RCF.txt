@@ -1,0 +1,14 @@
+函數回傳四捨五入後的近似值
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+Math.round(20.49) = 20   // 小數部分小於0.5不會進位
+Math.round(20.5) = 21    // 小數部分大於0.5進位
+
+回傳大於等於數值的最小整數
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
+Math.ceil(7.004) = 8
+Math.ceil(4) = 4
+
+回傳小於等於所給數字的最大整數
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+Math.floor(5.95) = 5
+Math.floor(-5.05) = -6
