@@ -1,0 +1,4 @@
+String str = String.join("", Collections.nCopies(2, "ABC")); // "ABCABC"
+
+Simple way to repeat a string
+https://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string

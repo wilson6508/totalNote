@@ -1,0 +1,5 @@
+const temp = "ABC";
+const str = temp.repeat(2); // "ABCABC"
+
+使用 JavaScript 重複字串
+https://www.delftstack.com/zh-tw/howto/javascript/repeat-a-string-using-javascript/
