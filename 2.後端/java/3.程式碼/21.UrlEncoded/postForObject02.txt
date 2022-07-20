@@ -1,0 +1,10 @@
+public InsightResponse postInsightApi(InsightRequest postBody) {
+	RestTemplate restTemplate = new RestTemplate();
+	MultiValueMap<String, Object> postParameters = new LinkedMultiValueMap<>();
+	postParameters.add("action", "search");
+	postParameters.add("txtInput_json", gson.toJson(postBody));
+	HttpHeaders headers = new HttpHeaders();
+	headers.add("Content-Type", "application/x-www-form-urlencoded");
+	HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<>(postParameters, headers);
+	return restTemplate.postForObject(insightPropertiesBean.getTdsUrl(), entity, InsightResponse.class);
+}

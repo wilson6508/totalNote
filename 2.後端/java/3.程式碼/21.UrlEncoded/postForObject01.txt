@@ -1,0 +1,15 @@
+private String postInsightApi(InsightRequest postBody) {
+	MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
+	parameters.add("action", "search");
+	parameters.add("txtInput_json", gson.toJson(postBody));
+	HttpHeaders headers = new HttpHeaders();
+	headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+	HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(parameters, headers);
+	try {
+		String response = new RestTemplate().postForObject(insightPropertiesBean.getTdsUrl(), entity, String.class);
+		return response;
+	} catch (Exception e) {
+		e.printStackTrace();
+		return null;
+	}
+}

@@ -35,5 +35,8 @@ public class Test1027 {
         // jodaTime DateTime 轉 Timestamp
         Timestamp t002 = new Timestamp(d002.getMillis());
         System.out.println(t002);
+		
+		// String 轉 LocalDate
+		LocalDate localDate = new LocalDate("2021-05-01");
     }
 }
