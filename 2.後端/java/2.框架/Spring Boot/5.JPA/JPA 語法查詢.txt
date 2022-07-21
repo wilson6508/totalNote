@@ -13,6 +13,9 @@ findTop3ByOrderByUsageAmountDesc() -> SELECT TOP(3) * FROM dbo.user_profile ORDE
 
 ----------------------------------------------------------------------------------------------------------------
 
+import java.sql.Date;
+List<ComplexAnalysisViewLogEntity> findByCreatedTimeGreaterThan(Date date);
+
 Optional<UsaPriceLogEntity> findFirstByOrderByIdDesc(); // 找ID最大的
 Optional<VwSourceInfoEntity> findTop1BySourceId(String sourceId);
 Optional<List<VwUserProfileEntity>> findByTypeIdIn(List<Integer> typeIds);

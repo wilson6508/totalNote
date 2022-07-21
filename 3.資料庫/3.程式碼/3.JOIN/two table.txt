@@ -1,0 +1,16 @@
+SELECT
+dbo.complex_analysis_view_log.id,
+dbo.complex_analysis_view_log.service_account,
+dbo.complex_analysis_view_log.user_account,
+dbo.complex_analysis_view_log.ip_address,
+dbo.complex_analysis_view_log.report_id,
+dbo.complex_analysis_config.report_name AS category,
+dbo.complex_analysis_config.report_type AS type,
+dbo.complex_analysis_result.report_date AS search_time,
+concat ('https://insight.opview.com.tw/trend/CAResult/', dbo.complex_analysis_result.code) AS url,
+dbo.complex_analysis_view_log.created_time
+FROM dbo.complex_analysis_view_log
+LEFT JOIN dbo.complex_analysis_config
+ON dbo.complex_analysis_view_log.report_id = dbo.complex_analysis_config.id
+LEFT JOIN dbo.complex_analysis_result
+ON dbo.complex_analysis_view_log.report_result_id = dbo.complex_analysis_result.id;

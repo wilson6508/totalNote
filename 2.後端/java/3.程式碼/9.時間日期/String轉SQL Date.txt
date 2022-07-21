@@ -1,7 +1,0 @@
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-try {
-    Date parsed = sdf.parse("2021-07-15");
-    transactionRecordEntity.setTransactionDate(new java.sql.Date(parsed.getTime()));
-} catch (ParseException e) {
-    e.printStackTrace();
-}

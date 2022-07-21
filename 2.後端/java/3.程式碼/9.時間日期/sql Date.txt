@@ -1,0 +1,17 @@
+import java.sql.Date;
+
+Date date = new Date(System.currentTimeMillis());
+
+--------------------------------------------------------------------------------------
+
+Date queryDate = Date.valueOf("2020-01-01");
+
+--------------------------------------------------------------------------------------
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+try {
+    Date parsed = sdf.parse("2021-07-15");
+    transactionRecordEntity.setTransactionDate(new java.sql.Date(parsed.getTime()));
+} catch (ParseException e) {
+    e.printStackTrace();
+}
+--------------------------------------------------------------------------------------
