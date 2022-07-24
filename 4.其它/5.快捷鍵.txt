@@ -24,6 +24,7 @@ https://mopcode.com/a/44903859973263360.html
 大小寫轉換  : Ctrl + Shift + u
 複製到下一行: Ctrl + d
 選擇程式碼塊: Ctrl + w
+刪除break point: Ctrl + Shift + F8
 main 右鍵功能表→【Debug】
 F2  跳轉到下一個錯誤or警告位置
 F7	追入此行裡使用的方法 (Step into)
