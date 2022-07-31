@@ -1,3 +1,0 @@
-long longTime = new Date().getTime();
-Timestamp currentTime = new Timestamp(longTime);
-Timestamp currentTime = new Timestamp(System.currentTimeMillis());
