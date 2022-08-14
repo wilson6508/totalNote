@@ -1,7 +1,0 @@
-https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/round
-
-Math.round(20.49) = 20   // 计场だ0.5ぃ穦秈
-Math.round(20.5) = 21    // 计场だ0.5秈
-
-
-

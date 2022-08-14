@@ -1,6 +1,0 @@
-肚单计程俱计
-https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
-
-Math.ceil(7.004) = 8
-Math.ceil(4) = 4
-

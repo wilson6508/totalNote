@@ -42,12 +42,13 @@ https://iter01.com/651963.html
 複製到下一行: Ctrl + d  : Alt + Shift + ↑/↓ (反白可多行)
 刪除行                  : Shift + Delete
 https://blog.poychang.net/vscode-shortcuts/
-Shift + F12 尋找所有參考
-Alt + CLICK 滑鼠選取多個位置
-Ctrl + K, Ctrl + 0 摺疊所有程式碼
-Ctrl + K, Ctrl + J 取消摺疊所有程式碼
-Ctrl + Alt + ↑/↓ 垂直選取
-Ctrl + enter 光標下移
+Shift +  F12           尋找所有參考
+Alt   +  CLICK         滑鼠選取多個位置
+Ctrl  +  K, Ctrl + 0   摺疊所有程式碼
+Ctrl  +  K, Ctrl + J   取消摺疊所有程式碼
+Ctrl  +  Alt + ↑/↓     垂直選取
+Ctrl  +  enter         光標下移
+Alt   +  left          回上一步
 -----------------------------------------------------------------------
 網頁
 ctrl + F5           清除瀏覽器快取
