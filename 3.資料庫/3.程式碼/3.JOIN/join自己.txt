@@ -1,0 +1,24 @@
+id  name  salary  manager_id
+1	AA	  80	  3
+2	BB	  70	  4
+3	CC	  60	  5
+4	DD	  100	  5
+
+SELECT * 
+FROM test AS employee
+INNER JOIN test AS manager ON employee.manager_id = manager.id
+WHERE employee.salary > manager.salary
+
+id  name  salary  manager_id   id  name  salary  manager_id
+1   AA    80      3            3   CC    60      5
+
+--------------------------------------------------------------------------
+
+with 主管 as (
+	Select * 		
+	from dbo.test 
+	where manager_id = 5
+)
+Select * from dbo.test as t 
+join 主管 m on m.ID = t.manager_id
+where t.salary > m.salary

@@ -1,0 +1,19 @@
+getApi(url) {
+  return new Promise((resolve) => {
+	axios.get(url).then(
+	  (response) =>
+		resolve({ isSuccess: true, errMsg: "", data: response.data }),
+	  (error) =>
+		resolve({ isSuccess: false, errMsg: error.message, data: null })
+	);
+  });
+},
+
+------------------------------------------------------------------------
+
+postApi(url, params) {
+  return axios
+	.post(url, params)
+	.then((res) => ({ success: res.data.success, data: res.data }))
+	.catch((err) => ({ success: false, data: err }));
+},
