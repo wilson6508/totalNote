@@ -1,4 +1,0 @@
-        String str = "-988.32";
-        Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
-        Matcher isNum = pattern.matcher(str);
-        System.out.println(isNum.matches());

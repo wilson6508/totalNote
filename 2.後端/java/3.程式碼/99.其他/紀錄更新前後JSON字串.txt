@@ -1,8 +1,0 @@
-    public String logUpdateInfo(String beforeUpdate, String afterUpdate) {
-        return "{"+"\"beforeUpdate\":"+ beforeUpdate +","+"\"afterUpdate\":"+ afterUpdate +"}";
-    }
-
-String beforeUpdate = gson.toJson(welcomeNewsletterEntity);
-String afterUpdate = "";
-afterUpdate = "{}";
-afterUpdate = gson.toJson(welcomeNewsletterEntity);

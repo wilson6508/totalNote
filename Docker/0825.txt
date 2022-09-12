@@ -1,0 +1,12 @@
+hash history
+連DB
+axios async await promise
+undefined
+rebase merge
+lambda 底層
+vue操作DOM底層
+java jar IDE build
+code review
+UI/UX
+CI/CD
+敏捷開發scrum

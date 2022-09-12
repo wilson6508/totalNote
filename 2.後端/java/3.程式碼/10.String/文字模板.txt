@@ -1,3 +1,0 @@
-System.out.printf("key:%s value:%d \t test", "ABC", 5); //  \t空格
-System.out.printf("key:%s value:%d \n test", "ABC", 5); //  \n換行
-System.out.printf("平均盤口:%f", adj/count);

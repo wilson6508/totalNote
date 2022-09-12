@@ -1,0 +1,12 @@
+https://ithelp.ithome.com.tw/articles/10190921
+
+docker search ubuntu -f is-official=true
+docker pull ubuntu
+docker images
+
+//  執行Container並進入Container的terminal
+docker run -it ubuntu /bin/bash
+
+
+mkdir docker-test
+cd docker-test

@@ -1,2 +1,0 @@
-@Query(value = "SELECT * FROM source_cluster as entity WHERE entity.id in (:idSet)", nativeQuery = true)
-List<SourceClusterEntity> findAllByClusterIdIn(@Param("idSet") Set<Integer> idSet);

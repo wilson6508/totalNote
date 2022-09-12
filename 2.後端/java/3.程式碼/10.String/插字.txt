@@ -1,4 +1,0 @@
-        String str = "1234";
-        int index = str.indexOf("2") + 1;
-        str = str.substring(0, index) + "." + str.substring(index);
-        System.out.println(str);

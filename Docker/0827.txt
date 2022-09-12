@@ -1,0 +1,113 @@
+https://www.youtube.com/watch?v=dUkQVN0pu4E
+https://www.youtube.com/watch?v=1W6h2hDmSN8
+
+docker
+
+1. 將軟體編譯成一個鏡像
+2. 在鏡像中做軟體的環境設定
+3. 發布鏡像
+4. 其他使用者如果也有安裝docker
+5. 可以直接運行該鏡像
+6. 運行中的鏡像稱為容器
+
+主機(Host): 安裝了docker的機器
+客戶端(Client): 連接docker主機進行操作
+倉庫(Registry): 用來保存打包好的鏡像
+鏡像(Images):
+容器(Container): 鏡像啟動後的實例稱為一個容器
+
+Host從Registries( Docker Hub / Private Registry )下載鏡像
+運行1個鏡像1次 > 產生1個容器
+對容器的啟動停止等同於對軟體的啟動停止
+
+----------------------------------------------------------------
+
+安裝linux虛擬機
+VMWare(較重) VirtualBox(較輕 免費)
+https://www.youtube.com/watch?v=kciziZYS28U
+
+C:\Program Files\Oracle\VirtualBox\
+root
+123456
+
+C:\Program Files (x86)\Sysprogs\SmarTTY\
+
+service network restart
+ip addr
+使用SmarTTY連接
+
+----------------------------------------------------------------
+
+https://blog.51cto.com/u_15266039/2896011
+
+yum update kernel // 升级linux kernel
+
+https://www.youtube.com/watch?v=0jga2vDN-hQ
+
+uname -r 					// 檢查內核版本(3.10以上)
+yum update 					// (3.09以下更新)
+yum install docker 			// 安裝docker
+systemctl start docker 		// 啟動docker
+docker -v 					// 查看docker版本
+systemctl enable docker 	// 將docker服務設為開機啟動
+systemctl stop docker 		// 停止docker
+
+----------------------------------------------------------------
+
+https://www.youtube.com/watch?v=vQhpwKCB8MY
+
+docker images
+docker rmi imageId         // 刪除鏡像
+
+docker search mysql
+docker pull mysql
+docker pull mysql:5.5
+
+docker search tomcat
+docker pull tomcat:8.5.20
+
+----------------------------------------------------------------
+
+--name自定義容器名 -d後台運行 -p端口映射8888:8080(vm:docker)
+
+docker run --name conatainerName -d imageName 
+docker run --name mytomcat -d tomcat:8.5.20
+docker run -d -p 8888:8080 tomcat:8.5.20
+
+docker ps -a                // 查看所有的容器
+docker ps 					// 查看運行的容器
+
+docker stop containerId     // 停止容器
+docker start containerId    // 重啟容器
+docker rm containerId       // 刪除容器
+docker logs containerId     // 查看容器日誌
+
+service firewalld status    // 查看防火牆狀態
+service firewalld stop      // 關閉防火牆
+docker stop containerName   // 停止容器
+
+----------------------------------------------------------------
+
+https://www.youtube.com/watch?v=eXK9jf4DKtM (docker安裝MySQL)
+https://hub.docker.com/_/mysql
+
+docker run --name mysql01 -d mysql (錯誤示範)
+docker run --name mysql01 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:tag (沒有端口映射)
+docker run -p 3306:3306 --name mysql02 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:tag
+
+把主機的          /my/custom 文件夾掛載到 
+mysqldocker容器的 /etc/mysql/conf.d 文件夾裡面
+docker run --name mysql03 -v /my/custom:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=my-123456 -d mysql:tag
+
+UTF-8
+docker run -p 3307:3306 --name mysql03 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:tag --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+
+
+
+
+
+
+
+
+

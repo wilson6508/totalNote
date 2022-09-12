@@ -1,2 +1,0 @@
-List<String> list = Arrays.asList("AAA", "BBB", "CCC", "DDD");
-Set<String> set = new LinkedHashSet<>(list);

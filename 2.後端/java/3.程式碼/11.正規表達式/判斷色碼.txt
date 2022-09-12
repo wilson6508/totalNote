@@ -1,5 +1,0 @@
-public static boolean isColorString(String colorString) {
-	Pattern p = Pattern.compile("#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})");
-	Matcher m = p.matcher(colorString);
-	return m.matches();
-}

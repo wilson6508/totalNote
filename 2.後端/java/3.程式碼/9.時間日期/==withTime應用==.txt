@@ -1,9 +1,0 @@
-DateTime yesterday = DateTime.now().withTime(8, 0, 0, 0).minusDays(1);
-
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");              // import java.text.SimpleDateFormat;
-System.out.println(sdf.format(yesterday.toDate()));
-
-DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY/MM/dd HH:mm:ss");  // import org.joda.time.format.DateTimeFormatter;
-DateTime dateTime = formatter.parseDateTime("2022/03/16 16:16:16");
-dateTime.isBefore(yesterday)
-dateTime.isAfter(yesterday)
