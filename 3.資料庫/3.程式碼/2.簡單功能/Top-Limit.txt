@@ -1,0 +1,7 @@
+mysql
+SELECT * FROM usa_price_log ORDER BY id DESC LIMIT 10;
+
+mssql
+SELECT TOP 10 * FROM dbo.user_login_info ORDER BY id DESC;
+SELECT TOP 20 PERCENT * FROM dbo.user_login_info;
+
