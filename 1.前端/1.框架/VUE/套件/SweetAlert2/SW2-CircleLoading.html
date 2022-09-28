@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+    <button onclick="display()">轉圈圈loading</button>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script>
+function display() {
+	Swal.fire({
+			width: "400px",
+			title: "我是內容",
+			onOpen: () => {
+                Swal.showLoading();
+			},
+	});
+    setTimeout(() => {
+        Swal.fire({
+			width: "400px",
+			title: "我是內容",
+            showConfirmButton: false,
+            timer: 1,
+          });
+    }, 3000);
+}
+</script>
+</html>
