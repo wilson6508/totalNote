@@ -1,0 +1,16 @@
+SUM AVG  
+
+SELECT SUM(price) as 總和, AVG(price) as 平均 FROM tableName
+----------------------------------------------------------------------------------------------
+COUNT
+
+COUNT(*): 統計 table 有幾筆資料
+COUNT(colName): 統計該欄位不是null的資料數量
+SELECT COUNT(*) FROM dbo.user_profile WHERE usage_amount > 20;
+----------------------------------------------------------------------------------------------
+MAX MIN
+
+SELECT MIN(price) AS 最小值 FROM tableName
+SELECT * FROM dbo.user_profile WHERE id = (SELECT MAX(id) FROM dbo.user_profile);
+----------------------------------------------------------------------------------------------
+delete AVG平均, COUNT, MAX

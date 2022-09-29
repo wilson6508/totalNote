@@ -1,1 +1,0 @@
-SELECT COUNT(*) FROM dbo.user_profile WHERE usage_amount > 20;  // 找 usage_amount>20 的使用者一共有幾位
