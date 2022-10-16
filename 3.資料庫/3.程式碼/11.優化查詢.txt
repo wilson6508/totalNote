@@ -1,0 +1,18 @@
+列名為主鍵，count(列名)會比count(1)快
+
+列名不為主鍵，count(1)會比count(列名)快
+
+如果表多個列並且沒有主鍵，則 count（1） 的執行效率優於 count（*）
+
+如果有主鍵，則 select count（主鍵）的執行效率是最優的
+
+如果表只有一個欄位，則 select count（*）最優。
+
+SELECT stock_id, COUNT(*) tempCal FROM usa_price_log GROUP BY stock_id HAVING tempCal > 0
+#SELECT COUNT(*) FROM usa_price_log;
+
+SELECT name FROM sys.database_principals
+WHERE name LIKE 'db_%';
+
+SELECT name FROM sys.database_principals
+WHERE name LIKE 'db[_]%';

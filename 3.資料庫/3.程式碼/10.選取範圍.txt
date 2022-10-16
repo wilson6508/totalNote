@@ -1,0 +1,9 @@
+MsSQL 取得上一筆及下一筆資料列
+https://dotblogs.com.tw/supershowwei/2019/05/13/155428
+
+MySQL SELECT TOP 10
+http://yhhuang1966.blogspot.com/2013/06/mysql-select-top-20-percent.html
+
+JPA SELECT TOP 10
+@Query(value = "SELECT * FROM system_announcement WHERE classification = '公告' ORDER BY post_time DESC LIMIT 10", nativeQuery = true)
+List<SystemAnnouncementEntity> getTopTenAnnouncement();
