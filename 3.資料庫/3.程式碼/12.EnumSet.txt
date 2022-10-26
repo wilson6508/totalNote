@@ -1,0 +1,19 @@
+MySQL 的 enum 和 set 資料型態應用記錄
+https://www.ptt.cc/bbs/PHP/M.1409376561.A.F23.html
+https://blog.liaosankai.com/2015/03/11/MySQL%20%E7%9A%84%20enum%20%E5%92%8C%20set%20%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E6%87%89%E7%94%A8%E8%A8%98%E9%8C%84/
+
+MySQL欄位範圍
+https://www.796t.com/content/1502096161.html
+
+
+DROP TABLE market;
+
+CREATE TABLE market (
+	id INT NOT NULL AUTO_INCREMENT COMMENT '流水號',
+	name VARCHAR(255) NOT NULL,
+	result ENUM('pass', 'fail') NOT NULL,
+	color SET('red', 'green', 'blue') NOT NULL,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO market (name, result, color) values('Tom', 'pass', 'red,blue');
