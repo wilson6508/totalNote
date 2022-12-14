@@ -1,0 +1,31 @@
+JPQL query --- how to use 'is null'
+https://stackoverflow.com/questions/4482560/jpql-query-how-to-use-is-null
+
+JPA Query to handle NULL parameter value
+https://stackoverflow.com/questions/28554798/jpa-query-to-handle-null-parameter-value
+
+JPA多條件查詢
+https://blog.csdn.net/devilac/article/details/109526238
+
+JPA 支持多参数列表查询
+https://blog.csdn.net/kuun993/article/details/105364162
+
+MySQL coalesce
+https://blog.csdn.net/devilac/article/details/109526238
+
+MySQL STR_TO_DATE
+https://www.w3schools.com/sql/func_mysql_str_to_date.asp
+SET @start_time = '2022-11-18';
+SELECT * FROM tw_etf_info WHERE update_date = STR_TO_DATE(@start_time,'%Y-%m-%d');
+
+SELECT FROM TABLE WHERE id in (); // 不能in空 不能in null
+
+SELECT * FROM tw_etf_info WHERE if (NULL IS NULL, update_date IS NULL , update_date = '2022-11-18');
+
+SET @start_time = '23:00:00';
+SELECT if(@start_time IS NULL, NULL, if(@start_time = '', 'empty', STR_TO_DATE(@start_time,'%T')));
+
+
+MYSQL CASE
+https://ithelp.ithome.com.tw/articles/10252221
+SELECT id, CASE WHEN TRUE THEN NULL END html_content, title FROM general_report_task;
