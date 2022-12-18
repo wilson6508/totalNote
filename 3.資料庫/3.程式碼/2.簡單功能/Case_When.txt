@@ -1,0 +1,5 @@
+select case when exists 
+(select * from table where condition)
+THEN 'TRUE'
+ELSE 'FALSE'
+END
