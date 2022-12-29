@@ -25,7 +25,34 @@ SELECT * FROM tw_etf_info WHERE if (NULL IS NULL, update_date IS NULL , update_d
 SET @start_time = '23:00:00';
 SELECT if(@start_time IS NULL, NULL, if(@start_time = '', 'empty', STR_TO_DATE(@start_time,'%T')));
 
-
 MYSQL CASE
 https://ithelp.ithome.com.tw/articles/10252221
 SELECT id, CASE WHEN TRUE THEN NULL END html_content, title FROM general_report_task;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+private int id;
+private int configId;
+private Byte startDay;
+private Time startTime;
+private Byte endDay;
+private Time endTime;
+private Time sendTime;
+private String reportTimeSetting;
+private String reportTimeType;
+
+@Query(value = "SELECT * FROM general_report_config_time" +
+		" WHERE IF(:startTime = '', TRUE, IF((:startTime) IS NULL, start_time IS NULL, start_time = STR_TO_DATE(:startTime, '%T')))" +
+		" AND IF(:endTime = '', TRUE, IF((:endTime) IS NULL, end_time IS NULL, end_time = STR_TO_DATE(:endTime, '%T')))" +
+		" AND IF(:sendTime0 IS NULL, TRUE, IF((:sendTime1) IS NULL, send_time = STR_TO_DATE(:sendTime0, '%T'), send_time BETWEEN STR_TO_DATE(:sendTime0, '%T') AND STR_TO_DATE(:sendTime1, '%T')))" +
+		" AND IF(:reportTimeSetting = '', TRUE, IF((:reportTimeSetting) IS NULL, report_time_setting IS NULL, report_time_setting = :reportTimeSetting))" +
+		" AND IF(:reportTimeType = '', TRUE, report_time_type = :reportTimeType)" +
+		" AND IF(:startDay IS NOT NULL, start_day = :startDay, TRUE)" +
+		" AND IF(:endDay IS NOT NULL, end_day = :endDay, TRUE)"
+		, nativeQuery = true)
+List<GeneralReportConfigTimeEntity> selectForInternal(@Param("startTime") String startTime,
+													  @Param("endTime") String endTime,
+													  @Param("sendTime0") String sendTime0,
+													  @Param("sendTime1") String sendTime1,
+													  @Param("reportTimeSetting") String reportTimeSetting,
+													  @Param("reportTimeType") String reportTimeType,
+													  @Param("startDay") Byte startDay,
+													  @Param("endDay") Byte endDay);
