@@ -1,0 +1,41 @@
+service_id從別張table動態取 其他為固定資料
+
+INSERT stock_dev.authority_sa_mapping
+(authority_id, service_id, action_id, value)
+SELECT 
+96 as authority_id, id AS service_id, 7 AS action_id, 'desc' AS VALUE 
+FROM stock_prod.id_table
+----------------------------------------------------------------------------
+while迴圈insert
+
+DELIMITER $
+CREATE PROCEDURE test_insert()   
+BEGIN
+	DECLARE i INT DEFAULT 1; 
+	WHILE (i <= 5)
+	DO
+	    INSERT INTO id_table(id) values (i);
+	    SET i = i + 1;
+	END WHILE;
+END $
+DELIMITER ;
+
+CALL test_insert();
+
+使用完重整資料庫 刪掉PROCEDURE
+----------------------------------------------------------------------------
+DELIMITER $
+
+CREATE PROCEDURE proc3(v_count int)
+  BEGIN
+    DECLARE i int DEFAULT 1;
+    a:WHILE i<=v_count DO
+      INSERT into id_table(id) values (i);
+      SET i=i+1;
+    END WHILE;
+  END $
+
+DELIMITER ;
+
+CALL proc3(5);
+----------------------------------------------------------------------------
