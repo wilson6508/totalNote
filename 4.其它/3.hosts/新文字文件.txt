@@ -1,8 +1,0 @@
-C:\Windows\System32\drivers\etc
-
-127.0.0.1 rd3-localhost-test.opview.com.tw
-
-devServer: {
-  host: 'rd3-localhost-test.opview.com.tw',
-  https: true
-},

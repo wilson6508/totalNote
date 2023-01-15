@@ -1,6 +1,0 @@
-正向代理隐藏真實Client，反向代理隱藏真實Server
-https://medium.com/starbugs/web-server-nginx-1-cf5188459108
-https://medium.com/starbugs/web-server-nginx-2-bc41c6268646
-https://iter01.com/551458.html
-https://ithelp.ithome.com.tw/articles/10241354
-https://iter01.com/560026.html
