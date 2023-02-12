@@ -7,6 +7,5 @@ docker images
 //  執行Container並進入Container的terminal
 docker run -it ubuntu /bin/bash
 
-
 mkdir docker-test
 cd docker-test
