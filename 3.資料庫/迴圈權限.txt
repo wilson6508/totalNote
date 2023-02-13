@@ -1,5 +1,11 @@
 service_id從別張table動態取 其他為固定資料
-
+----------------------------------------------------------------------------
+INSERT stock_dev.authority_sa_mapping
+(authority_id, service_id, action_id, value)
+SELECT 
+96 as authority_id, id AS service_id, 7 AS action_id, 'desc' AS value 
+FROM stock_prod.id_table WHERE id IN (3, 5)
+----------------------------------------------------------------------------
 INSERT stock_dev.authority_sa_mapping
 (authority_id, service_id, action_id, value)
 SELECT 
