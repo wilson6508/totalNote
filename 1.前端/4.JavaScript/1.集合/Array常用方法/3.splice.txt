@@ -1,7 +1,1 @@
-if (this.sourceSelect === "pending") {
-	this.webOptions.splice(2, 1);
-	this.channelOptions.splice(2, 1);
-} else {
-	this.webOptions.splice(2, 0, { value: "sourceName", text: "網站名稱" });
-	this.channelOptions.splice(2, 0, { value: "sourceAreaName", text: "頻道名稱" });
-}
+arr.splice(要插入或刪除的索引位置, 要刪除的元素數量, 要插入的元素內容)
