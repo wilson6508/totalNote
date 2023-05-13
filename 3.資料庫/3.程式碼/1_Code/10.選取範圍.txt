@@ -1,0 +1,1 @@
+SELECT * FROM table_name ORDER BY col_name DESC LIMIT 10

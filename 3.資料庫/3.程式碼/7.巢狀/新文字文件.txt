@@ -1,5 +1,0 @@
-SELECT a.report_id, a.次數 from
-(SELECT report_id, COUNT(*) as 次數 FROM dbo.auto_custom_report_config GROUP BY report_id) a
-WHERE a.次數<>1;
-
-select name, age from person where age > ( select age from person where name = '張三');
